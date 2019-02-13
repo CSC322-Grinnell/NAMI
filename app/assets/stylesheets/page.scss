@@ -4,14 +4,21 @@
 
     body {
         display: flex;
+        overflow-y: auto;
+        height: 100%;
         flex-direction: column;
     }
+    
+     .header {
+         margin-top: 10px;
+         margin-bottom: 20px;
+         //font-size: 3em;
+     }
 
     .nav {
         padding: 0;
         height: 40px;
         display: flex;
-        // background-color: gray;
         align-items: center;
         justify-content: center;
     }
@@ -34,42 +41,17 @@
 
     .content-body {
         background-color: blue;
-        flex:1;
+        flex: 1;
     }
 
     .buttons {
-        // list-style-type: none;
-        // display: flex;
-        // // justify-content: space-around;
-        // padding: 0;
-        // margin: 0;
-        // flex: 1;
-        // align-items:center;
-        padding: none;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        margin: none;
         display: flex;
-        flex:1;
+        flex: 1;
         border-left: 1px solid black;
         border-right: 1px solid black;
         justify-content: center;
     }
-
-    // .buttons li {
-    //     padding: none;
-    //     display: flex;
-    //     flex:1;
-    //     border-left: 1px solid black;
-    //     border-right: 1px solid black;
-    //     justify-content: center;
-      
-    //     }
-        
-    // .header {
-    //     padding: 7;
-    // }
-
-    // @media screen and (max-width: 500px) {
-    //     .buttons li {
-    //         flex-direction: column;
-    //     }
-    // }
 
