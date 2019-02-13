@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>NamiWebsite</title>
+    <title>Nami Website</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +8,79 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div style="text-align: center">NAMI Website</div>
+        <div class="nav">
+                <ul class="buttons">
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Home</span>
+                                <i class="fas fa-home"></i>
+                            </div></a>
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Photos</span>
+                                <i class="fas fa-camera-retro"></i>
+                            </div></a>
+            
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Videos</span>
+                                <i class="fas fa-video"></i>
+                                </div></a>
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Info</span>
+                                <i class="fas fa-question-circle"></i>
+                                </div></a>
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Books</span>
+                                <i class="fas fa-book"></i>
+                                </div></a>
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                <span class="titles">Calendar</span>
+                                <i class="fas fa-calendar"></i>
+                                </div></a>
+            
+                        </li>
+            
+                        <li>
+                            <a href="http://www.google.com"><div class="header">
+                                    <span class="titles">Contact</span>
+                                    <i class="fas fa-phone"></i>
+                                    </div></a>
+                        </li>
+            
+                    </ul>
+
+        </div>
+
+        <div class="content">
+            <div class="sidebar">
+                sidebar
+            </div>
+
+            <div class="content-body">
+                content-body
+            </div>
+        </div>
+
+        <div class="footer">
+            footer
+        </div>
+
+
+    </body>
   </body>
 </html>

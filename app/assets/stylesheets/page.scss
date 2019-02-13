@@ -1,0 +1,65 @@
+// Place all the styles related to the Page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav {
+        padding: 0;
+        height: 40px;
+        display: flex;
+        // background-color: gray;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        background-color: purple;
+        flex:1;
+        display: flex;
+    }
+
+    .footer{
+        height: 60px;
+        background-color: yellow;
+    }
+
+    .sidebar {
+        background-color: green;
+        min-width: 20%;
+    }
+
+    .content-body {
+        background-color: blue;
+        flex:1;
+    }
+
+    .buttons {
+        list-style-type: none;
+        display: flex;
+        // justify-content: space-around;
+        padding: 0;;
+        margin: 0;
+        flex: 1;
+        align-items:center;
+    }
+
+    .buttons li {
+        padding: none;
+        display: flex;
+        flex:1;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        justify-content: center;
+      
+        }
+
+    // @media screen and (max-width: 500px) {
+    //     .buttons li {
+    //         flex-direction: column;
+    //     }
+    // }
+
