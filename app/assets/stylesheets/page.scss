@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
     body {
-        display: flex;
+        //display: flex;
         overflow-y: auto;
         height: 100%;
-        flex-direction: column;
+        //flex-direction: column;
     }
     
     .container{
         display: flex;
+        //overflow-y: auto;
         height: 100%;
         flex-direction: column;
     }
@@ -36,7 +37,7 @@
 
     .content {
         flex:1;
-        display: flex;
+        display:flex;
        
     }
 
