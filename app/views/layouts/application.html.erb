@@ -8,8 +8,9 @@
   </head>
 
   <body>
-    <div class="header" style="text-align: center">NAMI Website</div>
-        <div class="nav">
+    <div class="container">
+        <div id="sitename" style="text-align: center">NAMI Website</div>
+            <div class="nav">
                 <div class="buttons">
                     <a href="http://www.google.com"><div class="header">
                         <span class="titles">Home</span>
@@ -33,12 +34,15 @@
                         </div></a>
                 </div>
                 
+                
                 <div class="buttons">
-                    <a href="http://www.google.com"><div class="header">
+                    <a href="http://www.google.com">
+                    <div class="header">
                         <span class="titles">Contact us</span>
                         <i class="fas fa-video"></i>
                         </div></a>
                 </div>
+                
 
         </div>
 
@@ -53,9 +57,10 @@
         </div>
 
         <div class="footer">
-            footer
+            Copyright <%= Time.new.year %> &copy; 
+            Grinnell College. All Rights Reserved
         </div>
-
+    </div>
 
     </body>
   </body>

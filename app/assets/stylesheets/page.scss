@@ -9,49 +9,77 @@
         flex-direction: column;
     }
     
-     .header {
-         margin-top: 10px;
-         margin-bottom: 20px;
-         //font-size: 3em;
-     }
+    .container{
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+    
+    #sitename {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 3em;
+    }
 
     .nav {
+        background-color: #cdd7d8;
         padding: 0;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+    
+    .titles {
+        color: black;
+    }
 
     .content {
-        background-color: purple;
         flex:1;
         display: flex;
+       
     }
 
     .footer{
-        height: 60px;
-        background-color: yellow;
+        height: 50px;
+        background-color: #cdd7d8;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer div{
+        flex:1
     }
 
     .sidebar {
-        background-color: green;
+        background-color: #acfca6;
         min-width: 20%;
     }
 
     .content-body {
-        background-color: blue;
+        background-color: #b8f4f9;
         flex: 1;
     }
 
     .buttons {
-        padding-top: 1px;
-        padding-bottom: 1px;
-        margin: none;
+        height: 100%;
         display: flex;
         flex: 1;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
         justify-content: center;
+        align-items: center;
     }
+    
+    .buttons:hover {
+        background-color: black;
+        .titles {color: white};
+        cursor: pointer;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    
 
