@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
     body {
         //display: flex;
         overflow-y: auto;
@@ -82,5 +83,8 @@
         text-decoration: none;
     }
 
-    
+    .darkFooter{
+      background: #292b2c;
+    }
+
 
