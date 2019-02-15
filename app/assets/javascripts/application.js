@@ -13,3 +13,19 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(".dropdown").on("click", function(e){
+    var fadeDelete = $(this).parents('.product');
+    $(fadeDelete).fadeOut(function() {
+        $(this).remove();
+    });
+
+    e.stopPropagation();
+});
+
+$('.dropdown').hover(function () {
+    $(this).show();//hover on
+}, function () {
+    $(this)..hide();//hover off
+});
+
