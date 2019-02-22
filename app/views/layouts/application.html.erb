@@ -27,16 +27,16 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href='#'><%= link_to "For Parents", parents_path %></a>
+            <a class="nav-link" href='/page/parents'>For Parents</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/app/views/page/providers.html.erb">For Providers</a>
+            <a class="nav-link" href='/page/providers'>For Providers</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="/page/contacts">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -46,6 +46,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
+          <!--<#%= #yield(:myvar) %>-->
         </ul>
         <!--<form class="form-inline my-2 my-lg-0">-->
         <!--  <input class="form-control mr-sm-2" type="text" placeholder="Search">-->
@@ -53,15 +54,8 @@
         <!--</form>-->
       </div>
     </nav>
-    <!-- Begin page content -->
-    <div class="container">
-      <div class="mt-1">
-        <h1>NAMI Johnson County Project</h1>
-      </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
-      <p>Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
-    </div>
-    <!-- End page content -->
+
+    <%= yield %>
     
     <footer class="footer darkFooter">
       <div class="container">
