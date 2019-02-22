@@ -91,18 +91,18 @@
         color: white;
         padding-top: 1.2em;
     }
+    
 // home page buttons ('for parents' and 'for providers') css    
-    .push_button {
-    display: inline-block;
+.push_button {
     position: relative;
-    width:220px;
-    height:40px;
+    width:400px;
+    height:350px;
     text-align:center;
     color:#FFF;
     text-decoration:none;
-    line-height:43px;
+    line-height:200px;
     font-family:'Oswald', Helvetica;
-    display: block;
+    display: inline-block;
     margin: 30px;
     margin-left:auto;
     margin-right:auto;
@@ -192,17 +192,18 @@
     background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
     background-image:linear-gradient(top, #3EACBA, #48C6D4);
 }
+
 //end of home page buttons css
 
 // search bar css  
-    input[type=text] {
+.navbar input[type=text] {
   width: 300px;
   height: 40px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  //border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: white;
+  //background-color: white;
   background-image: url('searchicon.png');
   background-position: 10px 10px; 
   background-repeat: no-repeat;
@@ -211,7 +212,7 @@
   transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.navbar input[type=text]:focus {
   background-position: 0px 20px;
   width: 60%;
 }

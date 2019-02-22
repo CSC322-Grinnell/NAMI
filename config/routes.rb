@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get 'page/parents' => 'page#parents'
   get 'page/providers' => 'page#providers'
   get 'page/contacts' => 'page#contacts'
+  get 'page/login' => 'page#login'
   # get  '/home', to: 'static_pages#home'
+  
+  get 'page/addprovider' => 'providers#new'
   
   #get  '/parents', to: 'static_pages#parents'
 
