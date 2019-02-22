@@ -27,6 +27,11 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
