@@ -1,99 +1,4 @@
-// Place all the styles related to the Page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-    body {
-        //display: flex;
-        overflow-y: auto;
-        height: 100%;
-        //flex-direction: column;
-    }
-    
-    .container{
-        display: flex;
-        //overflow-y: auto;
-        height: 100%;
-        padding-top:1em;
-        flex-direction: column;
-    }
-    
-    #sitename {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 3em;
-    }
-
-    .nav {
-        background-color: #cdd7d8;
-        padding: 0;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .titles {
-        color: black;
-    }
-
-    .content {
-        flex:1;
-        display:flex;
-    }
-
-    .footer{
-        height: 50px;
-        background-color: #cdd7d8;
-        font-size: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .footer div{
-        flex:1
-    }
-
-    .sidebar {
-        background-color: #acfca6;
-        min-width: 20%;
-    }
-
-    .content-body {
-        background-color: #b8f4f9;
-        flex: 1;
-    }
-
-    .buttons {
-        height: 100%;
-        display: flex;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .buttons:hover {
-        background-color: black;
-        .titles {color: white};
-        cursor: pointer;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-
-    .darkFooter{
-      background: #292b2c;
-    }
-    
-    .footerText{
-        color: white;
-        padding-top: 1.2em;
-    }
-// home page buttons ('for parents' and 'for providers') css    
-    .push_button {
-    display: inline-block;
+.push_button {
     position: relative;
     width:220px;
     height:40px;
@@ -104,8 +9,6 @@
     font-family:'Oswald', Helvetica;
     display: block;
     margin: 30px;
-    margin-left:auto;
-    margin-right:auto;
 }
 .push_button:before {
     background:#f0f0f0;
@@ -192,27 +95,31 @@
     background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
     background-image:linear-gradient(top, #3EACBA, #48C6D4);
 }
-//end of home page buttons css
 
-// search bar css  
-    input[type=text] {
-  width: 300px;
-  height: 40px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+.purple {
+    text-shadow:-1px -1px 0 #2C7982;
+    background: #fc6af0;
+    border:1px solid #379AA4;
+    background-image:-webkit-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-moz-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-ms-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-o-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:linear-gradient(top, #48C6D4, #3EACBA);
+    
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
 }
 
-input[type=text]:focus {
-  background-position: 0px 20px;
-  width: 60%;
+.purple:hover {
+    background: #bc60b5;
+    background-image:-webkit-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-moz-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-ms-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:linear-gradient(top, #3EACBA, #48C6D4);
 }
-// end of search bar css
