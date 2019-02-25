@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bi: false
+  id: false
+  cmh: false
+  provider: one
+
+two:
+  bi: false
+  id: false
+  cmh: false
+  provider: two
