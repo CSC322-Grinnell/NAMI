@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProviderTest < ActiveSupport::TestCase
+  
   test "valid provider" do
     provider = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => "1234"})
     assert provider.valid?
