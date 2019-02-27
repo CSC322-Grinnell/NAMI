@@ -1,18 +1,15 @@
 require 'test_helper'
+require_relative 'module_test'
 
 class ProviderTest < ActiveSupport::TestCase
-  object = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => "1234"})
+  include ProviderRespondTest
   
-  test "provider responds to methods" do
-    assert_respond_to(object, :waivers)
-    assert_respond_to(object, :address)
-    assert_respond_to(object, :practiceName)
-    assert_respond_to(object, :phone)
-    assert_respond_to(object, :description)
+  def setup
+    @object = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => "1234"})
   end
-  
+
   test "valid provider" do
-    assert object.valid?
+    assert @object.valid?
   end
   
   test "invalid provider without practiceName" do

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'page/providers' => 'page#providers'
   get 'page/contacts' => 'page#contacts'
   get 'page/login' => 'page#login'
+  get 'page/profile' => 'page#profile'
   # get  '/home', to: 'static_pages#home'
   
   get 'page/addprovider' => 'providers#new'
