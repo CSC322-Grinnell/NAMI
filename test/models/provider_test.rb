@@ -3,7 +3,7 @@ require 'test_helper'
 class ProviderTest < ActiveSupport::TestCase
   object = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => "1234"})
   
-  test "provider_responds_to_methods" do
+  test "provider responds to methods" do
     assert_respond_to(object, :waivers)
     assert_respond_to(object, :address)
     assert_respond_to(object, :practiceName)
