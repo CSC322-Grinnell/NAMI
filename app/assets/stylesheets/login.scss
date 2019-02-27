@@ -16,7 +16,7 @@
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.form input {
+.login_form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   //background: #f2f2f2;
@@ -32,7 +32,7 @@ input:focus::-webkit-input-placeholder {
     opacity: 0;
 }
 
-.form button {
+.login_form .login_button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 1;
@@ -46,7 +46,7 @@ input:focus::-webkit-input-placeholder {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form .login_button:hover,.form .login_button:active,.form .login_button:focus {
   background: #000000;
   color:white;
 }
