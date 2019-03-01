@@ -16,6 +16,11 @@
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+.login_form {
+  display:flex;
+  flex-direction:column;
+}
 .login_form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -49,6 +54,7 @@ input:focus::-webkit-input-placeholder {
 .form .login_button:hover,.form .login_button:active,.form .login_button:focus {
   background: #000000;
   color:white;
+  text-decoration:none;
 }
 .form .message {
   margin: 15px 0 0;
