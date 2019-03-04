@@ -6,7 +6,7 @@
   margin: auto;
 }
 
-.form {
+.user_form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -17,11 +17,11 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.login_form {
+.user_form {
   display:flex;
   flex-direction:column;
 }
-.login_form input {
+.user_form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   //background: #f2f2f2;
@@ -37,7 +37,7 @@ input:focus::-webkit-input-placeholder {
     opacity: 0;
 }
 
-.login_form .login_button {
+.user_form .user_button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 1;
@@ -51,21 +51,21 @@ input:focus::-webkit-input-placeholder {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form .login_button:hover,.form .login_button:active,.form .login_button:focus {
+.user_form .user_button:hover,.form .user_button:active,.form .user_button:focus {
   background: #000000;
   color:white;
   text-decoration:none;
 }
-.form .message {
+.user_form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
-.form .message a {
+.user_form .message a {
   color: #4CAF50;
   text-decoration: none;
 }
-.form .register-form {
+.user_form .register-form {
   display: none;
 }
 .container {
@@ -90,7 +90,7 @@ input:focus::-webkit-input-placeholder {
   font-weight: 300;
   color: #1a1a1a;
 }
-.container .info span {
+.user_container .info span {
   color: #4d4d4d;
   font-size: 12px;
 }
@@ -105,4 +105,10 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+// Following are specifically for the signup page
+.user_tag{
+  text-align:left;
+  margin-bottom:4px;
 }

@@ -20,5 +20,10 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     get page_providers_url
     assert_response :success
   end
+  
+  test "should get signup" do
+    get page_signup_url
+    assert_response :success
+  end
 
 end

@@ -10,4 +10,7 @@ class PageController < ApplicationController
   
   def contacts
   end
+  
+  def signup
+  end
 end
