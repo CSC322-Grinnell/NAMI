@@ -6,13 +6,11 @@ Rails.application.routes.draw do
   get 'page/login' => 'page#login'
   get 'page/profile' => 'page#profile'
   get 'page/signup' => 'page#signup'
-  # get  '/home', to: 'static_pages#home'
+  post 'page/post_create_user' => 'page#post_create_user'
   
   get 'page/addprovider' => 'providers#new'
-  
-  #get  '/parents', to: 'static_pages#parents'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+  # post and get methods should be defined separately
   root 'page#home'
 end

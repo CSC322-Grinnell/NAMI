@@ -14,18 +14,3 @@
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready(function() {
-//   $(".login_form .login_button").css({
-//     'width': ($(".login_form text").width() + 'px')
-//   });
-// });
-
-
-$('.user_form .require').blur(function()
-{
-    if( !$(this).val() ) {
-      $(".user_form .user_button").click(function() {
-        alert('empty')
-       });
-    }
-});

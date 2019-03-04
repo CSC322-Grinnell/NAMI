@@ -1,12 +1,12 @@
 
-
+<!--A POST method must be specified.-->
 <div class="login-page">
   <div class="form">
-    <form class="user_form">
+    <form class="user_form" action="/page/post_create_user" method="POST">
       <span class="user_tag">Username:</span>
-      <input class="require" type="text" placeholder="username"/>
+      <input class="require" name="username" type="text" placeholder="username"/>
       <span class="user_tag">Password:</span>
-      <input class="require" type="text" placeholder="password"/>
+      <input class="require" name="password" type="text" placeholder="password"/>
       <span class="user_tag">Confirm password:</span>
       <input class="require" type="password" placeholder="retype password"/>
       <span class="user_tag">Provider Practice Name:</span>
@@ -17,8 +17,10 @@
       <input class="require" type="text" placeholder="phone"/>
       <span class="user_tag">Description:</span>
       <input type="text" placeholder="description"/>
-      <a class="user_button" href="/page/profile">Submit</a> 
+      <button class="user_button">Submit</button> 
       <p class="message"> Have an account? <a href="/page/providers">Log in!</a></p>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= csrf_meta_tags %>
     </form>
   </div>
 </div>
