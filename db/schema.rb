@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190226194752) do
+ActiveRecord::Schema.define(version: 20190306214727) do
 
   create_table "providers", force: :cascade do |t|
     t.string "practiceName"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190226194752) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "waivers", force: :cascade do |t|

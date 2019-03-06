@@ -5,7 +5,8 @@ class ProviderTest < ActiveSupport::TestCase
   include ProviderRespondTest
   
   def setup
-    @object = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => "1234"})
+    @object = Provider.new({:practiceName => "Provider 1", :address => "Address 1", 
+    :phone => "1234", :email=>"foo@gmail.com"})
   end
 
   test "valid provider" do

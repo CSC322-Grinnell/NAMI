@@ -225,32 +225,39 @@
 }
 // end of search bar css
 
-// hide/show buttons for disorders page
+/*
+// // hide/show buttons for disorders page/
+// .button {
+//   background-color: #4CAF50; /* Green */
+//   border: none;
+//   color: white;
+//   width: 50%;
+//   height: 10%;
+//   padding: 15px 20px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   //display: none;
+//   font-size: 16px;
+//   margin: 30px;
+// }
 
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  width: 50%;
-  height: 10%;
-  padding: 15px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  //display: none;
-  font-size: 16px;
-  margin: 30px;
-}
+
+// label {
+//     display: none;
+//     background: lightgrey;
+//     width: 100px;
+//     height: 100px;
+// }
 
 
-label {
-    display: none;
-    background: lightgrey;
-    width: 100px;
-    height: 100px;
-}
 
-#demo:checked + label {
-    display: inline;
-    color: white;
+// #demo:checked + label {
+//     display: inline;
+//     color: white;
+// }
+// */
+
+.card-body {
+    padding: 2% !important;
 }
