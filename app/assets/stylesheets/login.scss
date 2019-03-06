@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-  width: 360px;
+  width: 100%;
   padding: 8% 0 0;
-  margin: auto;
+  margin: 0 !important;
 }
 
 .user_form {
@@ -71,7 +71,6 @@ input:focus::-webkit-input-placeholder {
 .container {
   position: relative;
   z-index: 1;
-  max-width: 300px;
   margin: 0 auto;
 }
 .container:before, .container:after {

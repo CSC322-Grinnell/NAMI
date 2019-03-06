@@ -4,6 +4,23 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+development:
+  adapter: postgresql
+  database: app_name_development
+  username: your_user
+  password: your_user_password
+  encoding: unicode
+  host: localhost
+  pool: 5
+test:
+  adapter: postgresql
+  database: app_name_test
+  username: your_user
+  password: your_user_password
+  encoding: unicode
+  host: localhost
+  pool: 5
+
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

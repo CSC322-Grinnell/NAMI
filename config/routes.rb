@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'page/login' => 'page#login'
   get 'page/profile' => 'page#profile'
   get 'page/signup' => 'page#signup'
+  get 'page/disorders' => 'page#disorders'
   post 'page/post_create_user' => 'page#post_create_user'
+  
   
   get 'page/addprovider' => 'providers#new'
 

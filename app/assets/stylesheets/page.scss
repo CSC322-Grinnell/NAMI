@@ -27,7 +27,7 @@
     .nav {
         background-color: #cdd7d8;
         padding: 0;
-        height: 40px;
+        height: 10%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -74,7 +74,7 @@
     }
     
     .buttons:hover {
-        //background-color: black;
+        background-color: black;
         .titles {color: white};
         cursor: pointer;
     }
@@ -89,21 +89,27 @@
         padding-top: 1.2em;
     }
     
+    
+    .homeButtons {
+         margin: auto;
+         margin-top: 0;
+    }
+    
 // home page buttons ('for parents' and 'for providers') css    
 .push_button {
     position: relative;
-    width:400px;
-    height:200px;
+    width: 90%;
+    height: 30%;
     text-align:center;
     color:#FFF;
     text-decoration:none;
-    line-height:200px;
     font-family:'Oswald', Helvetica;
-    display: inline-block;
+    display: flex;
     margin: 30px;
    // margin-left:auto;
    // margin-right:auto;
 }
+
 .push_button:before {
     background:#f0f0f0;
     background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D0D0D0), to(#f0f0f0));
@@ -121,6 +127,10 @@
     left: -6px; right: -6px;
     top: -6px; bottom: -10px;
     z-index: -1;
+}
+
+.buttonText{
+    margin: auto;
 }
 
 .push_button:active {
@@ -194,8 +204,8 @@
 
 // search bar css  
 .navbar input[type=text] {
-  width: 300px;
-  height: 35px;
+  width: 40%;
+  height: 5%;
   box-sizing: border-box;
   //border: 2px solid #ccc;
   border-radius: 4px;
@@ -214,3 +224,33 @@
   width: 50%;
 }
 // end of search bar css
+
+// hide/show buttons for disorders page
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width: 50%;
+  height: 10%;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  //display: none;
+  font-size: 16px;
+  margin: 30px;
+}
+
+
+label {
+    display: none;
+    background: lightgrey;
+    width: 100px;
+    height: 100px;
+}
+
+#demo:checked + label {
+    display: inline;
+    color: white;
+}
