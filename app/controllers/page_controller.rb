@@ -18,13 +18,21 @@ class PageController < ApplicationController
     
     puts(params.inspect)
     
-    username = params[:username];
-    password = params[:password];
+    username = params[:username]
+    password = params[:password]
+    confirm = params[:confirm]
+    provider_name = params[:provider_name]
+    address = params[:address]
+    phone = params[:phone]
+    emial = params[:email]
     
-    if (username == "a") then
-      redirect_to '/page/parents'
+    arr = [username, password, confirm, provider_name, address, phone, email]
+    
+    if arr.any? {|user_input| user_input == ""} then
+      redirect_to '/page/signup'
+      @error_message = "Must fill all required fields!"
     else
-      redirect_to '/'
+      redirect_to '/page/login'
     end
     
   end

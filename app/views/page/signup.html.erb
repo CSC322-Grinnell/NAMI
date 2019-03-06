@@ -8,15 +8,15 @@
       <span class="user_tag">Password:</span>
       <input class="require" name="password" type="text" placeholder="password"/>
       <span class="user_tag">Confirm password:</span>
-      <input class="require" type="password" placeholder="retype password"/>
+      <input class="require" name="confirm" type="password" placeholder="retype password"/>
       <span class="user_tag">Provider Practice Name:</span>
-      <input class="require" type="text" placeholder="practice name"/>
+      <input class="require" name="provider_name" type="text" placeholder="practice name"/>
       <span class="user_tag">Address:</span>
-      <input class="require" type="text" placeholder="address"/>
+      <input class="require" name="address" type="text" placeholder="address"/>
       <span class="user_tag">Phone:</span>
-      <input class="require" type="text" placeholder="phone"/>
-      <span class="user_tag">Description:</span>
-      <input type="text" placeholder="description"/>
+      <input class="require" name="phone" type="text" placeholder="phone"/>
+      <span class="user_tag">Email:</span>
+      <input class="require" type="text" name="email" placeholder="email"/>
       <button class="user_button">Submit</button> 
       <p class="message"> Have an account? <a href="/page/providers">Log in!</a></p>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
