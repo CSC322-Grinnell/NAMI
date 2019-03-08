@@ -3,12 +3,12 @@ default: &default
  encoding: unicode
  host: localhost
  pool: 5
- username: username
- password: password
+ username: nami_admin
+ password: 1234
 
 development:
  <<: *default
- database: app_development
+ database: namidb
 
 test:
  <<: *default
