@@ -5,15 +5,26 @@ class PageController < ApplicationController
   def parents
   end
   
-  def providers
-  end
-  
   def contacts
   end
   
-  def post_create_user
-    puts(params.inspect)
+  def post_login
+    username = params[:username]
+    password = params[:password]
     
+    arr = [username, password]
+    if arr.any? {|user_input| user_input == "" or user_input == nil} then
+      flash[:error] = "must fill all fields"
+    else
+      redirect_to '/page/profile'
+    end
+  end
+  
+  def providers
+    @error_message = flash[:error]
+  end
+  
+  def post_create_user
     username = params[:username]
     password = params[:password]
     confirm = params[:confirm]
@@ -23,9 +34,6 @@ class PageController < ApplicationController
     # email = params[:email]
     
     arr = [username, password, confirm, provider_name, address, phone]
-    validity =  arr.any? { |user_input| 
-      (user_input == "" or user_input == nil)
-    }
     
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
       flash[:error] = "must fill all fields"
