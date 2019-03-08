@@ -24,7 +24,7 @@ class FormFieldCheckTest < ActionDispatch::IntegrationTest
     result = post '/page/post_create_user',
       params: {:username => "", :password => "123", :confirm => "123", :provider_name => "provider", :address => "address", :phone => "phone", :email => "email"
       }
-      assert_equal(result, "must fill all fields")
+      assert_equal("must fill all fields", result)
   end
   
   test "should return error message if passwords don't match" do
@@ -33,7 +33,7 @@ class FormFieldCheckTest < ActionDispatch::IntegrationTest
     result = post '/page/post_create_user',
       params: {:username => "user", :password => "122", :confirm => "123", :provider_name => "provider", :address => "address", :phone => "phone", :email => "email"
       }
-      assert_equal(result, "passwords don't match")
+      assert_equal("passwords don't match", result)
   end
       
 end
