@@ -1,31 +1,71 @@
+<!-- disorders page is for the parents of children to find more info about the disorder their child has 
+the user story is a parent of a newly diagnosed child not knowing what sort of therapies are effectiveness for their child's mental disorder
+so they can go to this page, find their child's disorder, and learn basic DSM info, facets, and possible treatments of the disorder
+each infomation blurb should end with a link that searches the database for that sort of therapy/resource.
+
+source: https://mdbootstrap.com/docs/jquery/javascript/accordion/
+-->
+
+
 
 <div class='container'>
     <h1>This is the disorders page</h1>
+    <p>Please remember that this page is for informational purposes only. <br>
+    The information on this page should only be used as general guidelines and cannot replace the advice of a trained professional.<br>
+    Only trained health care providers can make accurate diagnoses.<br>
+    Please note that usually most of the symptoms must be present with sufficient severity in order for the individual to be diagnosed with that disease.</p>
+    
+    <h2>General Resources</h2>
+      <ul>
+        <li>Ask your doctor about possible medications for your child.</li>
+        <li>Ask your therapist about possible therapies for your child.</li>
+        <li>Adapting your parenting style to your child's disorder helps immensely. Seek <a href= "/page/resources#Family">Family Therapy</a> for you and your child.</li>
+        <li>Seek additional support with medicaid waivers.</li>
+        <li>Seek support groups for your child's demographics and disorder.</li>
+      </ul>
+    
+    <!-- grid classes  -->
     <!-- Grid row -->
     <div class="row accordion-gradient-bcg d-flex justify-content-center">
 
       <!-- Grid column -->
-      <div class="col-md-10 col-xl-6 py-5">
+      <div class="col-md-5 col-xl-6 py-5">
     <!--Accordion wrapper-->
-    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+    <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">
 
   <!-- Accordion card -->
   <div class="card">
 
     <!-- Card header -->
-    <div class="card-header red" role="tab" id="headingOne1">
-      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
-        aria-controls="collapseOne1">
-        <h5 class="mb-0">
-          Attention Deficit Hyperactivity Disorder (ADHD) <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
+    <div class="card-header rgba-stylish-strong z-depth-1 mb-1" role="tab" id="headingOne1">
+      <a data-toggle="collapse" data-parent="#accordionEx7" href="#collapse1" aria-expanded="true"
+            aria-controls="collapse1">
+        
+        <h5 class="mb-0 white-text font-thin">
+              Attention Deficit Hyperactivity Disorder (ADHD) <i class="fas fa-angle-down rotate-icon"></i>
+            </h5>
       </a>
     </div>
 
     <!-- Card body -->
-    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-      <div class="card-body">
-        This is ADHD.
+    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+        <h4>Diagnosis</h4>
+        People with ADHD show a persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development:
+        Symptoms of ADHD include 
+        <ul>
+          <li>Inattention</li>
+          <li>Hyperactivity</li>
+          <li>Impulsivity</li>
+        </ul>
+        Symptoms must be present before 12 years of age and be present in two or more settings.
+        Symptoms are not better explained by other disorders.
+        <h4>Resources/Treatment</h4>
+          <p>
+            Medication exists to treat ADHD and its symptoms, ask your doctor about possible medications.
+            <br>
+            <a href= "/page/resources#Behavioral">Behavior Therapy</a>      
+          </p>
       </div>
     </div>
 
@@ -48,7 +88,43 @@
     <!-- Card body -->
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
       <div class="card-body">
-        This is ODD.
+        <h4>Symptoms</h4>
+        For longer than 6 months
+        <ul>
+          <li>Angry or Irritable Mood</li>
+          <li>Argumentative or Defiant Behavior</li>
+          <li>Vindictiveness</li>
+        </ul>
+        
+        Children and adolescents with ODD may have trouble controlling their temper and are often disobedient and defiant toward others. 
+        <br>
+        <h4>Related disorders</h4>
+        <p>
+          children with ODD sometimes also have
+          <ul>
+            <li>Attention Deficit Disorder (ADD)</li>
+            <li>Learning Disabilities</li>
+            <li>Mood Disorders</li>
+            <li>Anxiety Disorders</li>
+          </ul>
+        </p>
+        <h4>Resources</h4>
+        <p>
+          Treatment for ODD included
+          <ul>
+            <li><a href= "/page/resources#Psychotherapy">Psychotherapy</a></li>
+            <li><a href= "/page/resources#Cognitive-Behavioral">Cognitive-Behavioral Therapy</a></li>
+            <li><a href= "/page/resources#Family">Family Therapy</a></li>
+            <li>Parent Management Training (PMT)</li>
+          </ul>
+          
+          No specific medication, though medication is commonly diagnosed to treat symptoms.
+          Providing a nurturing, supportive, and consistent home environment with a balance of love and discipline
+        </p>
+        
+        <h4>Outlook</h4>
+        Treatment is usually very effective if started at a young age.
+        Children without treatment may experience social issues and develop conduct disorder.
       </div>
     </div>
 
@@ -86,7 +162,7 @@
 </div>
 <!-- Grid row -->
     
-    <!--
+    
     <button class = "button red" onclick="hide_show('ADHD')">
         attention deficit hyperactivity disorder (ADHD)
     </button>
@@ -122,6 +198,6 @@
     bipolar disorder.
     learning disorders.
     conduct disorders.
-    -->
+    
     
 </div>

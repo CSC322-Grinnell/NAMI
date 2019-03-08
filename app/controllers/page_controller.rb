@@ -22,20 +22,19 @@ class PageController < ApplicationController
     phone = params[:phone]
     # email = params[:email]
     
-    arr = [username, password, confirm, provider_name, address, phone, email]
+    arr = [username, password, confirm, provider_name, address, phone]
     validity =  arr.any? { |user_input| 
       (user_input == "" or user_input == nil)
     }
     
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
       flash[:error] = "must fill all fields"
-      return false;
-      # redirect_to '/page/signup'
+      return "must fill all fields";
     elsif confirm != password then
       flash[:error] = "passwords don't match"
-      return false;
-      # redirect_to '/page/signup'
+      return "passwords don't match";
     else
+      # add provider to database, create a new user associated with this provider
       redirect_to '/page/providers'
     end
   end
