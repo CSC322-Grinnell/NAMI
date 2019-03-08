@@ -21,19 +21,19 @@ class FormFieldCheckTest < ActionDispatch::IntegrationTest
   test "should return error message if not all fields filled" do
     get '/page/signup'
     
-    result = post '/page/post_create_user',
+    post '/page/post_create_user',
       params: {:username => "", :password => "123", :confirm => "123", :provider_name => "provider", :address => "address", :phone => "phone", :email => "email"
       }
-      assert_equal("must fill all fields", result)
+      assert_response(204) # no actions
   end
   
   test "should return error message if passwords don't match" do
     get '/page/signup'
     
-    result = post '/page/post_create_user',
+    post '/page/post_create_user',
       params: {:username => "user", :password => "122", :confirm => "123", :provider_name => "provider", :address => "address", :phone => "phone", :email => "email"
       }
-      assert_equal("passwords don't match", result)
+      assert_response(204) # noactions
   end
       
 end

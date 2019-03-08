@@ -29,10 +29,8 @@ class PageController < ApplicationController
     
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
       flash[:error] = "must fill all fields"
-      return "must fill all fields";
     elsif confirm != password then
       flash[:error] = "passwords don't match"
-      return "passwords don't match";
     else
       # add provider to database, create a new user associated with this provider
       redirect_to '/page/providers'
