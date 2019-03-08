@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Postgresql Gem
-# gem 'pg', '~> 0.18'
+ gem 'pg', '~> 0.18'
 gem 'rails',        '5.1.6'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
@@ -23,7 +23,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+   gem 'pg', '0.20.0'
 end
 
 
