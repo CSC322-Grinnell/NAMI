@@ -14,14 +14,15 @@ class PageController < ApplicationController
     
     arr = [username, password]
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error] = "must fill all fields"
+      flash[:error_login] = "must fill all fields"
+      redirect_to '/page/providers'
     else
       redirect_to '/page/profile'
     end
   end
   
   def providers
-    @error_message = flash[:error]
+    @error_message = flash[:error_login]
   end
   
   def post_create_user
@@ -31,14 +32,15 @@ class PageController < ApplicationController
     provider_name = params[:provider_name]
     address = params[:address]
     phone = params[:phone]
-    # email = params[:email]
     
     arr = [username, password, confirm, provider_name, address, phone]
     
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error] = "must fill all fields"
+      flash[:error_signup] = "must fill all fields"
+      redirect_to '/page/signup'
     elsif confirm != password then
-      flash[:error] = "passwords don't match"
+      flash[:error_signup] = "passwords don't match"
+      redirect_to '/page/signup'
     else
       # add provider to database, create a new user associated with this provider
       redirect_to '/page/providers'
@@ -46,7 +48,7 @@ class PageController < ApplicationController
   end
   
   def signup
-    @error_message = flash[:error] # flash only passes error message from
+    @error_message = flash[:error_signup] # flash only passes error message from
                                     # post_create_user and then disappears
   end
 end
