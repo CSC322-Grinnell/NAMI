@@ -14,17 +14,25 @@ class ProviderTest < ActiveSupport::TestCase
   end
   
   test "invalid provider without practiceName" do
-    provider = Provider.new({:practiceName => nil, :address => "Address 1", :phone => "1234"})
-    refute provider.valid?
+    @object.practiceName = nil
+    refute @object.valid?
+    @object.practiceName = ""
+    refute @object.valid?
   end
   
   test "invalid provider without address" do
-    provider = Provider.new({:practiceName => "Provider 1", :address => nil, :phone => "1234"})
-    refute provider.valid?
+    @object.practiceName = "something"
+    @object.address = nil
+    refute @object.valid?
+    @object.address = ""
+    refute @object.valid?
   end
   
   test "invalid provider without phone" do
-    provider = Provider.new({:practiceName => "Provider 1", :address => "Address 1", :phone => nil})
-    refute provider.valid?
+    @object.address = "address"
+    @object.phone = nil
+    refute @object.valid?
+    @object.phone = ""
+    refute @object.valid?
   end
 end
