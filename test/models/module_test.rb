@@ -11,5 +11,6 @@ module ProviderRespondTest
         assert_respond_to(@object, :practiceName)
         assert_respond_to(@object, :phone)
         assert_respond_to(@object, :description)
+        assert_respond_to(@object, :email)
     end
 end
