@@ -12,7 +12,7 @@ class FormVerificationTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "span", "Account created!"
+    assert_select ".alert-success", "Account created!"
       
   end
   

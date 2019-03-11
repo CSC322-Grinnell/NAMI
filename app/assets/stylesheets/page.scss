@@ -262,9 +262,16 @@
     padding: 2% !important;
 }
 
-// shared error partial HTML style page:
-#error_explanation {
+// shared message partial HTML style page:
+#alert {
     color:red;
     margin:auto;
     width:50%;
+    
+    .alert-success{
+        text-align: center;
+        list-style-type: none;
+        color:green;
+    }
+
 }
