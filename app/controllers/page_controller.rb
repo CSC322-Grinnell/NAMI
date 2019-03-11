@@ -42,8 +42,9 @@ class PageController < ApplicationController
     @provider = Provider.new(practiceName: provider_name, address: address,
     phone: phone, email: email)
     
-    a = @provider.save
+    
     b = @user.save
+    a = @provider.save
     
     if a && b
       @user.provider = @provider
