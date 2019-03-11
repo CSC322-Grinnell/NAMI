@@ -271,3 +271,17 @@
 .card-body {
     padding: 2% !important;
 }
+
+// shared message partial HTML style page:
+#alert {
+    color:red;
+    margin:auto;
+    width:50%;
+    
+    .alert-success{
+        text-align: center;
+        list-style-type: none;
+        color:green;
+    }
+
+}

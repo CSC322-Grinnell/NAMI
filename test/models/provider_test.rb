@@ -55,14 +55,6 @@ class ProviderTest < ActiveSupport::TestCase
     end
   end
   
-  test "email addresses should be unique" do
-    duplicate_user = @object.dup
-    duplicate_user.email = @object.email.upcase # even if case is different, they should be
-    # counted as the same rather than different emails
-    @object.save # save to database
-    assert_not duplicate_user.valid?
-  end
-  
   test "email addresses should be saved as lower-case" do
     mixed_case_email = "Foo@ExAMPle.CoM"
     @object.email = mixed_case_email

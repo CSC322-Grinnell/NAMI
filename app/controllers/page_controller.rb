@@ -14,7 +14,7 @@ class PageController < ApplicationController
     
     arr = [username, password]
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error_login] = "must fill all fields"
+      flash[:error_login] = ["must fill all fields"]
       redirect_to '/page/providers'
     else
       redirect_to '/page/profile'
@@ -23,9 +23,11 @@ class PageController < ApplicationController
   
   def providers
     @error_message = flash[:error_login]
+    @success_message = flash[:success]
   end
   
   def post_create_user
+    
     username = params[:username]
     password = params[:password]
     confirm = params[:confirm]
@@ -33,23 +35,31 @@ class PageController < ApplicationController
     address = params[:address]
     phone = params[:phone]
     email = params[:email]
+
+    @user = User.new(username: username, password: password,
+    password_confirmation: confirm)
     
-    arr = [username, password, confirm, provider_name, address, phone, email]
+    @provider = Provider.new(practiceName: provider_name, address: address,
+    phone: phone, email: email)
     
-    if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error_signup] = "must fill all fields"
-      redirect_to '/page/signup'
-    elsif confirm != password then
-      flash[:error_signup] = "passwords don't match"
-      redirect_to '/page/signup'
-    else
-      # add provider to database, create a new user associated with this provider
+    a = @provider.save
+    b = @user.save
+    
+    if a && b
+      @user.provider = @provider
+      flash[:success] = ["Account created!"]
       redirect_to '/page/providers'
+    else
+      puts @user.errors.full_messages
+      puts @provider.errors.full_messages
+      flash.now[:error_signup] = @provider.errors.full_messages + @user.errors.full_messages
+      
+      ## todo
+      render 'signup'
     end
   end
   
   def signup
-    @error_message = flash[:error_signup] # flash only passes error message from
-                                    # post_create_user and then disappears
+    @error_signup = flash[:error_signup]
   end
 end

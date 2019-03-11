@@ -1,9 +1,11 @@
 <!--A POST method must be specified.-->
 <div class="login-page">
+  <%= render 'shared/error_message' %>
+  <span>Error message = <%= @error_signup.inspect %></span>
+  <span>flash[:signup_error] = <%= flash[:error_signup].inspect %></span>
   <div class="form">
     <form class="user_form" action="/page/post_create_user" method="POST">
       <!--The following is a line that renders the error message, if there is any-->
-      <span style="color:red;"><%= @error_message %></span>
       <!--beginning of form-->
       <span class="user_tag">Username:</span>
       <input class="require" name="username" type="text" placeholder="username"/>
