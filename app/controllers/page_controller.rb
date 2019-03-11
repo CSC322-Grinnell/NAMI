@@ -34,25 +34,28 @@ class PageController < ApplicationController
     address = params[:address]
     phone = params[:phone]
     email = params[:email]
-    
+
+    # @provider = Provider.new(practiceName: provider_name, address: address,
+    # phone: phone, email: email)
     @user = User.new(username: username, password: password,
     password_confirmation: confirm)
+    
     @provider = Provider.new(practiceName: provider_name, address: address,
     phone: phone, email: email)
-    user_save = @user.save
-    provider_save = @provider.save
-    if !user_save
-      puts @user.errors.full_messages
-    end
     
-    if !provider_save
-      puts @provider.errors.full_messages
-      flash[:error_signup] = @user.errors.full_messages + @provider.errors.full_messages
-      render 'signup'
-    else
+    a = @provider.save
+    b = @user.save
+    
+    if a && b
+      @user.provider = @provider
+      flash = {:success => "Account created!", :fail => "Error!"}
       redirect_to '/page/providers'
+    else
+      puts @user.errors.full_messages
+      puts @provider.errors.full_messages
+      flash[:error_signup] = @provider.errors.full_messages + @user.errors.full_messages
+      render 'signup'
     end
-    
   end
   
   def signup
