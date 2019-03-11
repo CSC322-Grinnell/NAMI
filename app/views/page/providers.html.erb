@@ -1,8 +1,6 @@
 <div class='container'>
 <div class="login-page">
-  <%= render 'shared/error_message' %>
-  <span>Success message = <%= @success_message.inspect %></span>
-  <span>Error message = <%= @error_message.inspect %></span>
+  <%= render 'shared/alert_message' %>
   <span style="color:green; text-align: center;"><=% @success_message.inspect %></span>
   <div class="form">
     <form class="user_form" action="/page/post_login" method="POST">
