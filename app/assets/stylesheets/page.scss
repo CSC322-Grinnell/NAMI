@@ -261,3 +261,10 @@
 .card-body {
     padding: 2% !important;
 }
+
+// shared error partial HTML style page:
+#error_explanation {
+    color:red;
+    margin:auto;
+    width:50%;
+}

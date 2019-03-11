@@ -26,6 +26,7 @@ class PageController < ApplicationController
   end
   
   def post_create_user
+    
     username = params[:username]
     password = params[:password]
     confirm = params[:confirm]
@@ -34,19 +35,39 @@ class PageController < ApplicationController
     phone = params[:phone]
     email = params[:email]
     
-    arr = [username, password, confirm, provider_name, address, phone, email]
-    
-    if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error_signup] = "must fill all fields"
-      redirect_to '/page/signup'
-    elsif confirm != password then
-      flash[:error_signup] = "passwords don't match"
-      redirect_to '/page/signup'
-    else
-      # add provider to database, create a new user associated with this provider
-      redirect_to '/page/providers'
+    @user = User.new(username: username, password: password,
+    password_confirmation: confirm)
+    @provider = Provider.new(practiceName: provider_name, address: address,
+    phone: phone, email: email)
+    user_save = @user.save
+    provider_save = @provider.save
+    if !user_save
+      puts @user.errors.full_messages
     end
+    
+    if !provider_save
+      puts @provider.errors.full_messages
+      flash[:error_signup] = @user.errors.full_messages + @provider.errors.full_messages
+      render 'signup'
+    else
+      redirect_to 'providers'
+    end
+    
   end
+    
+  #   arr = [username, password, confirm, provider_name, address, phone, email]
+    
+  #   if arr.any? {|user_input| user_input == "" or user_input == nil} then
+  #     flash[:error_signup] = "must fill all fields"
+  #     redirect_to '/page/signup'
+  #   elsif confirm != password then
+  #     flash[:error_signup] = "passwords don't match"
+  #     redirect_to '/page/signup'
+  #   else
+  #     # add provider to database, create a new user associated with this provider
+  #     redirect_to '/page/providers'
+  #   end
+  # end
   
   def signup
     @error_message = flash[:error_signup] # flash only passes error message from
