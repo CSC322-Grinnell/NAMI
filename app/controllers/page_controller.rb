@@ -14,7 +14,7 @@ class PageController < ApplicationController
     
     arr = [username, password]
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error_login] = "must fill all fields"
+      flash[:error_login] = ["must fill all fields"]
       redirect_to '/page/providers'
     else
       redirect_to '/page/profile'
@@ -36,8 +36,6 @@ class PageController < ApplicationController
     phone = params[:phone]
     email = params[:email]
 
-    # @provider = Provider.new(practiceName: provider_name, address: address,
-    # phone: phone, email: email)
     @user = User.new(username: username, password: password,
     password_confirmation: confirm)
     
@@ -49,16 +47,19 @@ class PageController < ApplicationController
     
     if a && b
       @user.provider = @provider
-      flash[:success] = "Account created!"
+      flash[:success] = ["Account created!"]
       redirect_to '/page/providers'
     else
       puts @user.errors.full_messages
       puts @provider.errors.full_messages
-      flash[:error_signup] = @provider.errors.full_messages + @user.errors.full_messages
+      flash.now[:error_signup] = @provider.errors.full_messages + @user.errors.full_messages
+      
+      ## todo
       render 'signup'
     end
   end
   
   def signup
+    @error_signup = flash[:error_signup]
   end
 end

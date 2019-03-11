@@ -2,8 +2,8 @@
     <ul>
         <% flash.each do |type, message| %>
             <% message.each do |m| %>
-            <li><%= m %></li>
+            <li class="alert-<%= type %>"><%= m %></li>
             <% end %>
-        <% end %>   
+        <% end %>
     </ul>
 </div>

@@ -1,9 +1,11 @@
 <div class='container'>
-  <span style = "color:green;"><%= @success_message %></span>
 <div class="login-page">
+  <%= render 'shared/error_message' %>
+  <span>Success message = <%= @success_message.inspect %></span>
+  <span>Error message = <%= @error_message.inspect %></span>
+  <span style="color:green; text-align: center;"><=% @success_message.inspect %></span>
   <div class="form">
     <form class="user_form" action="/page/post_login" method="POST">
-      <span style="color:red;"><%= @error_message %></span>
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
       <button class="user_button">login</button> 
