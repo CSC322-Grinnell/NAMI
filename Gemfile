@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Postgresql Gem
-<<<<<<< HEAD
+
 gem 'pg', '~> 0.18'
 
 gem 'rails',        '5.1.6'

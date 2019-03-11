@@ -38,21 +38,26 @@
     }
 
     .content {
-        flex:1;
-        display:flex;
+        flex: 1;
+        display: flex;
     }
 
+    
     .footer{
         height: 50px;
         background-color: #cdd7d8;
         font-size: 12px;
+        width: 100%;
         display: flex;
+        clear:both; 
+        position: relative;
         align-items: center;
         justify-content: center;
     }
     
     .footer div{
-        flex:1
+        position: relative;
+        // flex:1
     }
 
     .sidebar {
