@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20190311031016) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "providers", force: :cascade do |t|
     t.string "practiceName"
     t.text "address"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20190311031016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
@@ -35,10 +38,12 @@ ActiveRecord::Schema.define(version: 20190311031016) do
     t.boolean "braininjury"
     t.boolean "intellectualdisability"
     t.boolean "childrensmentalhealth"
-    t.integer "provider_id"
+    t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider_id"], name: "index_waivers_on_provider_id"
   end
 
+  add_foreign_key "providers", "users"
+  add_foreign_key "waivers", "providers"
 end

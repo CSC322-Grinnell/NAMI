@@ -38,21 +38,26 @@
     }
 
     .content {
-        flex:1;
-        display:flex;
+        flex: 1;
+        display: flex;
     }
 
+    
     .footer{
         height: 50px;
         background-color: #cdd7d8;
         font-size: 12px;
+        width: 100%;
         display: flex;
+        clear:both; 
+        position: relative;
         align-items: center;
         justify-content: center;
     }
     
     .footer div{
-        flex:1
+        position: relative;
+        // flex:1
     }
 
     .sidebar {
@@ -105,7 +110,7 @@
     text-decoration:none;
     font-family:'Oswald', Helvetica;
     display: flex;
-    margin: 30px;
+    margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
    // margin-left:auto;
    // margin-right:auto;
 }
@@ -258,6 +263,11 @@
 // }
 // */
 
+.card{
+    //width: 100% !important;
+    //position:relative !important;
+    //left: 0% !important;
+}
 .card-body {
     padding: 2% !important;
 }
