@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190311011654) do
+ActiveRecord::Schema.define(version: 20190311031016) do
 
   create_table "providers", force: :cascade do |t|
     t.string "practiceName"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20190311011654) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "provider_id"
+    t.index ["provider_id"], name: "index_users_on_provider_id"
   end
 
   create_table "waivers", force: :cascade do |t|

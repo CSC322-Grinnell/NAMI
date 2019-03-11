@@ -50,7 +50,7 @@ class PageController < ApplicationController
       flash[:error_signup] = @user.errors.full_messages + @provider.errors.full_messages
       render 'signup'
     else
-      redirect_to 'providers'
+      redirect_to '/page/providers'
     end
     
   end
