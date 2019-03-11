@@ -23,6 +23,7 @@ class PageController < ApplicationController
   
   def providers
     @error_message = flash[:error_login]
+    @success_message = flash[:success]
   end
   
   def post_create_user
@@ -48,7 +49,7 @@ class PageController < ApplicationController
     
     if a && b
       @user.provider = @provider
-      flash = {:success => "Account created!", :fail => "Error!"}
+      flash[:success] = "Account created!"
       redirect_to '/page/providers'
     else
       puts @user.errors.full_messages
@@ -59,7 +60,5 @@ class PageController < ApplicationController
   end
   
   def signup
-    @error_message = flash[:error_signup] # flash only passes error message from
-                                    # post_create_user and then disappears
   end
 end
