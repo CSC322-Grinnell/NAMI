@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get 'page/resources' => 'page#resources'
   post 'page/post_create_user' => 'page#post_create_user'
   post 'page/post_login' => 'page#post_login'
-  
-  
-  get 'page/addprovider' => 'providers#new'
+  #get 'page/addprovider' => 'providers#new'
 
+  resources :providers
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # post and get methods should be defined separately
   root 'page#home'

@@ -32,8 +32,9 @@ class PageController < ApplicationController
     provider_name = params[:provider_name]
     address = params[:address]
     phone = params[:phone]
+    email = params[:email]
     
-    arr = [username, password, confirm, provider_name, address, phone]
+    arr = [username, password, confirm, provider_name, address, phone, email]
     
     if arr.any? {|user_input| user_input == "" or user_input == nil} then
       flash[:error_signup] = "must fill all fields"

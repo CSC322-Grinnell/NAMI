@@ -34,6 +34,7 @@ class FormFieldCheckTest < ActionDispatch::IntegrationTest
       follow_redirect!
       assert_select "span", "passwords don't match"
   end
+
  
   # tests of login: 
   test "should be able to submit if login form completed" do 
