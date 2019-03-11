@@ -1,8 +1,6 @@
 <!--A POST method must be specified.-->
 <div class="login-page">
   <%= render 'shared/error_message' %>
-  <span>Error message = <%= @error_signup.inspect %></span>
-  <span>flash[:signup_error] = <%= flash[:error_signup].inspect %></span>
   <div class="form">
     <form class="user_form" action="/page/post_create_user" method="POST">
       <!--The following is a line that renders the error message, if there is any-->
@@ -27,4 +25,8 @@
       <%= csrf_meta_tags %>
     </form>
   </div>
+</div>
+
+<div>
+  Provide name: <%= @example.practiceName %>
 </div>

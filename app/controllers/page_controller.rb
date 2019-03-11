@@ -61,5 +61,7 @@ class PageController < ApplicationController
   
   def signup
     @error_signup = flash[:error_signup]
+    ## just testing 
+    @example = Provider.first
   end
 end

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20190311031016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
@@ -44,5 +44,6 @@ ActiveRecord::Schema.define(version: 20190311031016) do
     t.index ["provider_id"], name: "index_waivers_on_provider_id"
   end
 
+  add_foreign_key "providers", "users"
   add_foreign_key "waivers", "providers"
 end
