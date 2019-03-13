@@ -13,27 +13,15 @@ class PageController < ApplicationController
     password = params[:password]
     
     user = User.find_by(username: username)
-    if user && user.authenticate(password)
+    if user && user.authenticate(password) # successful login
       flash[:success] = ["Welcome!"]
       redirect_to '/page/profile'
-    else
+    else # unsuccessful login
       flash[:error_login] = ["Invalid username or password!"]
       render 'providers'
     end
-    
-    # arr = [username, password]
-    # if arr.any? {|user_input| user_input == "" or user_input == nil} then
-    #   flash[:error_login] = ["must fill all fields"]
-    #   redirect_to '/page/providers'
-    # else
-    #   redirect_to '/page/profile'
-    # end
   end
-  
-  def providers
-    @error_message = flash[:error_login]
-    @success_message = flash[:success]
-  end
+
   
   def post_create_user
     
@@ -62,10 +50,13 @@ class PageController < ApplicationController
       puts @user.errors.full_messages
       puts @provider.errors.full_messages
       flash.now[:error_signup] = @provider.errors.full_messages + @user.errors.full_messages
-      
-      ## todo
       render 'signup'
     end
+  end
+  
+  def providers
+    @error_message = flash[:error_login]
+    @success_message = flash[:success]
   end
   
   def signup
