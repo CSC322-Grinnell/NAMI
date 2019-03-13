@@ -7,3 +7,8 @@ function hide_show(name) {
     x.style.display = "none";
   }
 } 
+
+function cPsychotherapy(name){
+  var x = document.getElementById(name);
+  x.collapse('hide');
+}
