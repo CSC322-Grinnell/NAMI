@@ -12,12 +12,12 @@ class PageController < ApplicationController
     username = params[:username]
     password = params[:password]
     
-    user = User.find_by(username: username)
-    if user && user.authenticate(password) # successful login
+    @user = User.find_by(username: username)
+    if @user && @user.authenticate(password) # successful login
       flash[:success] = ["Welcome!"]
-      redirect_to '/page/profile'
+      redirect_to '/page/profile', {:user => @user}
     else # unsuccessful login
-      flash[:error_login] = ["Invalid username or password!"]
+      flash.now[:error_login] = ["Invalid username or password!"]
       render 'providers'
     end
   end
@@ -54,12 +54,12 @@ class PageController < ApplicationController
     end
   end
   
+  def profile
+  end
+  
   def providers
-    @error_message = flash[:error_login]
-    @success_message = flash[:success]
   end
   
   def signup
-    @error_signup = flash[:error_signup]
   end
 end
