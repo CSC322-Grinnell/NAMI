@@ -12,13 +12,22 @@ class PageController < ApplicationController
     username = params[:username]
     password = params[:password]
     
-    arr = [username, password]
-    if arr.any? {|user_input| user_input == "" or user_input == nil} then
-      flash[:error_login] = ["must fill all fields"]
-      redirect_to '/page/providers'
-    else
+    user = User.find_by(username: username)
+    if user && user.authenticate(password)
+      flash[:success] = ["Welcome!"]
       redirect_to '/page/profile'
+    else
+      flash[:error_login] = ["Invalid username or password!"]
+      render 'providers'
     end
+    
+    # arr = [username, password]
+    # if arr.any? {|user_input| user_input == "" or user_input == nil} then
+    #   flash[:error_login] = ["must fill all fields"]
+    #   redirect_to '/page/providers'
+    # else
+    #   redirect_to '/page/profile'
+    # end
   end
   
   def providers
