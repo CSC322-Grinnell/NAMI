@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #get 'page/home'
   get 'page/parents' => 'page#parents'
   get 'page/providers' => 'page#providers'

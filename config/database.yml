@@ -5,7 +5,9 @@ default: &default
  pool: 5
  username: nami_admin
  password: 1234
-
+ host: localhost
+ port: 5432
+ 
 development:
  <<: *default
  database: namidb

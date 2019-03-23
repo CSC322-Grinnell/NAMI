@@ -8,6 +8,12 @@ class PageController < ApplicationController
   def contacts
   end
   
+  def providers
+  end
+  
+  def signup
+  end
+
   def post_login
     username = params[:username]
     password = params[:password]
@@ -22,7 +28,7 @@ class PageController < ApplicationController
     end
   end
 
-  
+  before_action :authenticate_user!
   def post_create_user
     
     username = params[:username]
@@ -34,10 +40,10 @@ class PageController < ApplicationController
     email = params[:email]
 
     @user = User.new(username: username, password: password,
-    password_confirmation: confirm)
+    password_confirmation: confirm, email: email)
     
     @provider = Provider.new(practiceName: provider_name, address: address,
-    phone: phone, email: email)
+    phone: phone)
     
     b = @user.save
     a = @provider.save
@@ -55,11 +61,5 @@ class PageController < ApplicationController
   end
   
   def profile
-  end
-  
-  def providers
-  end
-  
-  def signup
   end
 end
