@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 100%;
+  padding: 8% 0 0;
+  margin: 0 !important;
+}
+
+#new_user {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#new_user {
+  display:flex;
+  flex-direction:column;
+}
+#new_user input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  //background: #f2f2f2;
+  width: 100%;
+  border: 1;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+#new_user .actions input {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 1;
+  background: #afafaf;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+#new_user .actions input:hover, #new_user .actions input:active, #new_user .actions input:focus {
+  background: #000000;
+  color:white;
+  text-decoration:none;
+}
+
+#new_user .field{
+  text-align:left;
+  margin-bottom:4px;
+}
+
+#new_user .checkbox input{
+    width: 10%;
+}
+
+#new_user a {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 1em;
+}
+#new_user a {
+  color: #4CAF50;
+  text-decoration: none;
+}
