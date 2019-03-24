@@ -29,7 +29,7 @@ class PageController < ApplicationController
   #   end
   # end
 
-  # before_action :authenticate_user!
+  #before_action :authenticate_user!
   # def post_create_user
     
   #   username = params[:username]
