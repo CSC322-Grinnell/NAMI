@@ -9,6 +9,7 @@ class PageController < ApplicationController
   end
   
   def providers
+    redirect_to user_session_path
   end
   
   def signup
@@ -28,7 +29,7 @@ class PageController < ApplicationController
     end
   end
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   def post_create_user
     
     username = params[:username]
