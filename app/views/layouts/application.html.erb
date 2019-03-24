@@ -32,19 +32,21 @@
           <li class="nav-item active">
             <a class="nav-link" href='/page/parents'>For Parents</a>
           </li>
+          <% if !user_signed_in? %>
           <li class="nav-item active">
             <a class="nav-link" href='/page/providers'>For Providers</a>
           </li>
+          <% end %>
           <li class="nav-item active">
             <a class="nav-link" href="/page/contacts">Contact</a>
           </li>
-          <!--<#%= #yield(:myvar) %>-->
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">-->
-        <!--  <input class="form-control mr-sm-2" type="text" placeholder="Search">-->
-        <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-        <!--</form>-->
         <input type="text" placeholder="Simple Database Search">
+        <% if user_signed_in? %>
+          <div style="color: white;">
+            User id is : <%= current_user.id %>
+          </div>
+        <% end %>
       </div>
     </nav>
 
