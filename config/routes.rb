@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get 'page/parents' => 'page#parents'
   get 'page/providers' => 'page#providers'
   get 'page/contacts' => 'page#contacts'
-  get 'page/login' => 'page#login'
   get 'page/profile' => 'page#profile'
-  get 'page/signup' => 'page#signup'
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
   post 'page/post_create_user' => 'page#post_create_user'
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
   #get 'page/addprovider' => 'providers#new'
 
   resources :providers
-  resources :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # post and get methods should be defined separately
   root 'page#home'
