@@ -42,10 +42,25 @@
         padding-right: 10px;
     }    
     
+    .dropdown_content {
+      display:none;
+      position: absolute;
+      color: black;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+      margin-top: 8px;
+    }
+    
     .user_icon:hover{
         background:black;
         cursor:pointer;
+        .dropdown_content{
+            display: block;
+        }
     }
+
 //-------------------- end of code for user drop-down ----------    
     .titles {
         color: black;

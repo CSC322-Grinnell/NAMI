@@ -45,6 +45,9 @@
         <% if user_signed_in? %>
           <div class="user_icon">
             <i class="fas fa-user fa-2x"></i>
+            <div class="dropdown_content">
+              <%= current_user.email %>
+            </div>
           </div>
         <% end %>
       </div>
