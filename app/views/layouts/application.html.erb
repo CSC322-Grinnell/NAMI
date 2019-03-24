@@ -46,7 +46,9 @@
           <div class="user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
-              <%= current_user.email %>
+              <span><%= current_user.email %></span>
+            <a href="#">Profile</a>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
             </div>
           </div>
         <% end %>
