@@ -8,7 +8,14 @@ function hide_show(name) {
   }
 } 
 
-function cPsychotherapy(name){
-  var x = document.getElementById(name);
-  x.collapse('hide');
-}
+
+
+//$(document).ready(() => {
+document.body.onload(() => {
+  let hash = window.location.hash;
+  let element = $(hash+"_card");
+  
+  console.debug(hash, element);
+  
+  element.collapse('show');
+});
