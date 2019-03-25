@@ -1,8 +1,13 @@
 // This is the javascript that allows real-time word count for the textbox
 // in "new" view for provider
 document.getElementById('textbox').addEventListener('input', function () {
-        var text = this.value,
-        count = text.trim().replace(/\s+/g, ' ').split(' ').length;
+        var text = this.value;
+        var count;
+        if (text != "") {
+                count = text.trim().replace(/\s+/g, ' ').split(' ').length;
+            
+        } else {
+                count = 0
+        }
         document.getElementById('wordCount').textContent = count;
-
     });
