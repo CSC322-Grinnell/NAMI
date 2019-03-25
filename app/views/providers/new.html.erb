@@ -21,7 +21,7 @@
     <em>(not exceeding 250 words)</em><br />
      <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10"%><br />
   </div>
-  <span class="count">Word count: <span id="wordCount"></span></span>
+  <span id="count">Word count: <span id="wordCount"></span></span>
 
     <%= hidden_field_tag "provider[user_id]", "#{current_user.id}" %>
   <div class="actions">
