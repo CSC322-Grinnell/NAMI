@@ -1,4 +1,0 @@
-class ProviderController < ApplicationController
-    
-    
-end
