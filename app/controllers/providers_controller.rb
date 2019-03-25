@@ -7,7 +7,7 @@ class ProvidersController < ApplicationController
       provider_params.inspect
       p = Provider.new(provider_params)
       if p.save
-        flash[:success] = "Success!"
+        flash[:success] = "Profile created!"
         redirect_to '/page/profile'
       else
         render new_provider_path

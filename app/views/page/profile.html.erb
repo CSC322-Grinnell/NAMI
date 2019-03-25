@@ -1,8 +1,8 @@
 <div class="container">
       <div class="mt-1">
-        <h1>Here goes your profile:</h1>
-        <% if p = session[:provider] %>
-          <div>Provider address is <%= p.address %></div>
+        <% render 'devise/shared/success_message' %>
+        <% if p = Provider.find_by_user_id(current_user.id) %>
+          <div>Provider name is <%= p.practiceName %></div>
         <% else %>
           <div>You do not have a profile yet!</div>
           <%= link_to 'Create Profile', new_provider_path %>
