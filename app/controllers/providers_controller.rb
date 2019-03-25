@@ -3,13 +3,12 @@ class ProvidersController < ApplicationController
     end
     
     def create
-      p.inspect
-      provider_params.inspect
-      p = Provider.new(provider_params)
-      if p.save
+      @p = Provider.new(provider_params)
+      if @p.save
         flash[:success] = "Profile created!"
         redirect_to '/page/profile'
       else
+        flash[:errors] = @p.errors
         render new_provider_path
       end
     end

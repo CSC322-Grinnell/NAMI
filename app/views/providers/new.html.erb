@@ -1,6 +1,6 @@
 <div class="login-page">
 <%= form_for(:provider, url: '/providers/create', html: { method: :post, id: 'new_user'}) do |f| %>
-
+  <%= render 'providers/shared/error_messages' %>
   <div class="field">
      <%= f.label :"practice name" %><br />
     <%= f.text_field :practiceName %><br />
@@ -19,7 +19,7 @@
    <div class="field">
     <%= f.label :description %>
     <em>(not exceeding 250 words)</em><br />
-     <%= f.text_area :description, class: "textbox", cols: "32", rows: "10"%><br />
+     <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10"%><br />
   </div>
 
     <%= hidden_field_tag "provider[user_id]", "#{current_user.id}" %>
@@ -28,3 +28,6 @@
   </div>
 <% end %>
 </div>
+
+<h1>The number of words is <span id="wordCount"></span></h1>
+<%= javascript_include_tag "textbox" %>
