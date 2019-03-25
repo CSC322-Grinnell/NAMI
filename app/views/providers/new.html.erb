@@ -1,0 +1,30 @@
+<div class="login-page">
+<%= form_for(@provider, url: '/providers/create', html: { method: :post, id: 'new_user'}) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @provider %>
+
+  <div class="field">
+     <%= f.label :"practice name" %><br />
+    <%= f.text_field :practiceName %><br />
+  </div>
+  
+  <div class="field">
+     <%= f.label :address %><br />
+     <%= f.text_field :address %><br />
+  </div>
+  
+  <div class="field">
+     <%= f.label :phone %><br />
+     <%= f.text_field :phone %><br />
+  </div>
+
+   <div class="field">
+    <%= f.label :description %>
+    <em>(not exceeding 250 words)</em><br />
+     <%= f.text_area :description, class: "textbox", cols: "32", rows: "10"%><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit profile" %>
+  </div>
+<% end %>
+</div>

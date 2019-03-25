@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'page/profile' => 'page#profile'
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
+  post 'providers/create' => 'providers#create'
 
   resources :providers
 
