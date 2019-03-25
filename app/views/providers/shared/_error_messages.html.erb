@@ -1,0 +1,12 @@
+<% if flash[:errors] %>
+  <div id="error_explanation" style="color:red;">
+    <h2>
+       You have <%= flash[:errors].full_messages.count %> errors:
+    </h2>
+    <ul>
+      <% flash[:errors].full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

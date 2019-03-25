@@ -6,7 +6,7 @@
   margin: 0 !important;
 }
 
-.user_form {
+#new_user {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -17,14 +17,13 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.user_form {
+#new_user {
   display:flex;
   flex-direction:column;
 }
-.user_form input {
+#new_user input, textarea {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  //background: #f2f2f2;
   width: 100%;
   border: 1;
   margin: 0 0 15px;
@@ -33,11 +32,16 @@
   font-size: 14px;
 }
 
+#new_user textarea {
+  border-color: #d1d3d6;
+  margin-bottom: 15px;
+}
+
 input:focus::-webkit-input-placeholder {
     opacity: 0;
 }
 
-.user_form .user_button {
+#new_user .actions input {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 1;
@@ -51,63 +55,27 @@ input:focus::-webkit-input-placeholder {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.user_form .user_button:hover,.form .user_button:active,.form .user_button:focus {
+#new_user .actions input:hover, #new_user .actions input:active, #new_user .actions input:focus {
   background: #000000;
   color:white;
   text-decoration:none;
 }
-.user_form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.user_form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.user_form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.user_container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-body {
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
-}
 
-// Following are specifically for the signup page
-.user_tag{
+#new_user .field{
   text-align:left;
   margin-bottom:4px;
+}
+
+#new_user .checkbox input{
+    width: 10%;
+}
+
+#new_user a {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 1em;
+}
+#new_user a {
+  color: #4CAF50;
+  text-decoration: none;
 }

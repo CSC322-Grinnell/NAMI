@@ -1,6 +1,11 @@
 <div class="container">
       <div class="mt-1">
-        <%= render 'shared/alert_message' %>
-        <h1>Here goes your profile:</h1>
+        <% render 'providers/shared/success_message' %>
+        <% if p = Provider.find_by_user_id(current_user.id) %>
+          <div>Provider name is <%= p.practiceName %></div>
+        <% else %>
+          <div>You do not have a profile yet!</div>
+          <%= link_to 'Create Profile', new_provider_path %>
+        <% end %>
       </div>
 </div>

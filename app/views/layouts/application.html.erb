@@ -32,24 +32,30 @@
           <li class="nav-item active">
             <a class="nav-link" href='/page/parents'>For Parents</a>
           </li>
+          <% if !user_signed_in? %>
           <li class="nav-item active">
             <a class="nav-link" href='/page/providers'>For Providers</a>
           </li>
+          <% end %>
           <li class="nav-item active">
             <a class="nav-link" href="/page/contacts">Contact</a>
           </li>
-          <!--<#%= #yield(:myvar) %>-->
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">-->
-        <!--  <input class="form-control mr-sm-2" type="text" placeholder="Search">-->
-        <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-        <!--</form>-->
-        <form>
-          <input type="text" name="username">
-          <input type="submit" value="search">
-        </form>
+
+        <input type="text" placeholder="Simple Database Search">
+        
+        <% if user_signed_in? %>
+          <div class="user_icon">
+            <i class="fas fa-user fa-2x"></i>
+            <div class="dropdown_content">
+              <span><%= current_user.email %></span>
+            <a href='/page/profile'>Profile</a>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </div>
+          </div>
+        <% end %>
       </div>
-    </nav>
+  </nav>
 
     <%= yield %>
     

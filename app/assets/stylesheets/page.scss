@@ -33,6 +33,54 @@
         justify-content: center;
     }
     
+// ------------------- Code for user drop-down -----------       
+    .user_icon {
+        color:white;
+        text-align:center;
+        margin-left:5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }    
+    
+    .dropdown_content {
+      display:none;
+      position: absolute;
+      color: black;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+      margin-top: 8px;
+      right:16px;
+      
+      a {
+        padding: 12px 16px;
+        display:block;
+        color:black;
+      }
+      
+      a:hover{
+          color:black;
+          background-color: #ddd;
+      }
+      
+      span {
+          font-size:0.7em;
+      }
+    }
+    
+    .user_icon:hover{
+        background:black;
+        .dropdown_content{
+            display: block;
+        }
+        a {
+            cursor:pointer;
+            text-decoration:none; 
+        }
+    }
+
+//-------------------- end of code for user drop-down ----------    
     .titles {
         color: black;
     }
@@ -99,6 +147,8 @@
          margin: auto;
          margin-top: 0;
     }
+    
+    
     
 // home page buttons ('for parents' and 'for providers') css    
 .push_button {
@@ -230,38 +280,6 @@
 }
 // end of search bar css
 
-/*
-// hide/show buttons for disorders page/
-// .button {
-//   background-color: #4CAF50; /* Green */
-//   border: none;
-//   color: white;
-//   width: 50%;
-//   height: 10%;
-//   padding: 15px 20px;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   //display: none;
-//   font-size: 16px;
-//   margin: 30px;
-// }
-
-
-// label {
-//     display: none;
-//     background: lightgrey;
-//     width: 100px;
-//     height: 100px;
-// }
-
-
-
-// #demo:checked + label {
-//     display: inline;
-//     color: white;
-// }
-// */
 
 .card{
     //width: 100% !important;
@@ -272,19 +290,7 @@
     padding: 2% !important;
 }
 
-//---------- shared message partial HTML style page:
-#alert {
-    color:red;
-    margin:auto;
-    width:50%;
-    
-    .alert-success{
-        height: 40px;
-        text-align: center;
-        list-style-type: none;
-        color:green;
-    }
-
-}
-
-//---------- shared message partial HTML style page end---
+// #success-message{
+//     color:green;
+//     text-align: center;
+// }

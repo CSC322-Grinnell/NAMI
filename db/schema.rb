@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20190313200041) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
@@ -34,10 +33,15 @@ ActiveRecord::Schema.define(version: 20190313200041) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "waivers", force: :cascade do |t|
@@ -50,6 +54,5 @@ ActiveRecord::Schema.define(version: 20190313200041) do
     t.index ["provider_id"], name: "index_waivers_on_provider_id"
   end
 
-  add_foreign_key "providers", "users"
   add_foreign_key "waivers", "providers"
 end
