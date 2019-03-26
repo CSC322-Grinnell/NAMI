@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'page/parents' => 'page#parents'
   get 'page/providers' => 'page#providers'
   get 'page/contacts' => 'page#contacts'
-  get 'page/profile' => 'page#profile'
+  get 'providers/profile' => 'providers#profile'
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
   post 'providers/create' => 'providers#create'
