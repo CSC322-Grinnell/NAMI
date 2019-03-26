@@ -114,7 +114,6 @@ img { border: 0; max-width: 100%; }
 	white-space: nowrap;
 	text-align: center;
 }
-
 p {
   display: block;
   font-size: 1.4em;
@@ -169,12 +168,20 @@ a:hover { text-decoration: underline; }
   display: block;
   margin-bottom: 4px;
   height: 50px;
+  text-align: center;
 }
 
-#profiletabs ul { list-style: none; display: block; width: 70%; height: 50px; }
-#profiletabls ul li { float: left; }
+#profiletabs ul { 
+  list-style: none; 
+  width: 70%; 
+  height: 50px; 
+  
+}
+#profiletabls ul li { 
+  float: left; 
+  
+}
 #profiletabs ul li a { 
-  display: block;
   float: left;
   padding: 8px 11px;
   font-size: 1.2em;
@@ -228,23 +235,6 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
 }
 
-
-#friendslist {
-  display: block;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-#friendslist li { line-height: 30px; }
-#friendslist li a {
-  float: left;
-  height: 30px;
-  padding: 3px 6px;
-  line-height: 22px;
-   margin-right: 15px;
-  border: 1px solid #c9d8b8;
-}
-
-#friendslist li a img { float: left; margin-right: 5px; }
 
 /** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
