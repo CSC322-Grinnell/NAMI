@@ -5,13 +5,18 @@ class ProvidersController < ApplicationController
     end
     
     def create
-      @p = Provider.new(provider_params)
-      if @p.save
-        flash[:success] = "Profile created!"
+      if Provider.find_by_user_id(current_user.id)
+        flash[:errors] = ["You already have a provider profile!"]
         redirect_to '/providers/profile'
       else
-        flash[:errors] = @p.errors
-        render new_provider_path
+        @p = Provider.new(provider_params)
+        if @p.save
+          flash[:success] = "Profile created!"
+          redirect_to '/providers/profile'
+        else
+          flash[:errors] = @p.errors.full_messages
+          render new_provider_path
+        end
       end
     end
     
