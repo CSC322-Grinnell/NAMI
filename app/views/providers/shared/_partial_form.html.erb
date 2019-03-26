@@ -1,0 +1,4 @@
+<%= form_for p = Provider.find_by_user_id(current_user.id), :url => {:controller => 'providers', :action => 'update' } do |f| %>
+          <%= f.text_field :email %>
+          <%= submit_tag 'Update' %>
+<% end %>

@@ -20,6 +20,12 @@ class ProvidersController < ApplicationController
       end
     end
     
+    def edit
+      @provider = Provider.find(params[:id])
+    end
+    
+    def update
+    end
     
     private
 

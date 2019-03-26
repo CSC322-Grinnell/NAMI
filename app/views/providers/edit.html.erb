@@ -1,0 +1,4 @@
+<%= form_for @provider, :url => {:controller => 'providers', :action => 'update' } do |f| %>
+          <%= f.text_field :address %>
+          <%= submit_tag 'Update' %>
+<% end %>

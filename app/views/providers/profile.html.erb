@@ -1,18 +1,17 @@
 <div class="container">
-        <%= render 'providers/shared/success_message' %>
-        <%= render 'providers/shared/error_messages' %>
-        <% if p = Provider.find_by_user_id(current_user.id) %>
-
-  
+    <%= render 'providers/shared/success_message' %>
+    <%= render 'providers/shared/error_messages' %>
+    <% if p = Provider.find_by_user_id(current_user.id) %>
     <div id="w">
       <div id="content" class="clearfix">
-        <div id="userphoto"><img src="images/user.png" alt="default avatar"></div>
+        <div id="userphoto"><img src="assets/images/user.png" alt="default avatar"></div>
       <h1><%= p.practiceName %></h1>
 
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#bio" class="sel">Description</a></li>
           <li><a href="#settings">Basic info</a></li>
+          <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
         </ul>
       </nav>
       
@@ -22,9 +21,9 @@
       
       <section id="settings" class="hidden">
         
-        <p class="setting"><span>E-mail Address </span> <%= current_user.email %></p>
+        <p class="setting"><span>E-mail Address </span> <%= current_user.email %> </p>
         
-        <p class="setting"><span>Address </span> <%= p.address %></p>
+        <p class="setting"><span>Address </span> <%= p.address %> </p>
         
         <p class="setting"><span>Phone </span> <%= p.phone %></p>
         
