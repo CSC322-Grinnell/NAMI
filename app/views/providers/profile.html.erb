@@ -9,17 +9,20 @@
 
       <nav id="profiletabs">
         <ul class="clearfix">
-          <li><a href="#bio" class="sel">Description</a></li>
-          <li><a href="#settings">Basic info</a></li>
+          <li><a href="#description" class="sel">Description</a></li>
+          <li><a href="#info">Basic info</a></li>
           <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
+          <% if user_signed_in? && p.user_id = current_user.id %>
+          <li><%= link_to('Edit user', edit_user_registration_path(current_user), method: :GET) %></li>
+          <% end %>
         </ul>
       </nav>
       
-      <section id="bio">
+      <section id="description">
         <p><%= p.description %></p>
       </section>
       
-      <section id="settings" class="hidden">
+      <section id="info" class="hidden">
         
         <p class="setting"><span>E-mail Address </span> <%= current_user.email %> </p>
         

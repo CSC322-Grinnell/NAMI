@@ -41,30 +41,8 @@ strong { font-weight: bold; }
 table { border-collapse: collapse; border-spacing: 0; }
 img { border: 0; max-width: 100%; }
 
-#topbar {
-  background: #4f4a41;
-  padding: 10px 0 10px 0;
-  text-align: center;
-  height: 36px;
-  overflow: hidden;
-  -webkit-transition: height 0.5s linear;
-  -moz-transition: height 0.5s linear;
-  transition: height 0.5s linear;
-}
-#topbar a {
-  color: #fff;
-  font-size:1.3em;
-  line-height: 1.25em;
-  text-decoration: none;
-  opacity: 0.5;
-  font-weight: bold;
-}
-#topbar a:hover {
-  opacity: 1;
-}
-
-/** typography **/
- h1 {
+// /** typography **/
+h1 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   line-height: 1.5em;
@@ -77,44 +55,8 @@ img { border: 0; max-width: 100%; }
 	white-space: nowrap;
 	text-align: center;
 }
-#topbar h1:before,
-#topbar h1:after {
-  content: "";
-  position: relative;
-  display: inline-block;
-  width: 50%;
-  height: 1px;
-  vertical-align: middle;
-  background: #f0f0f0;
-}
-#topbar h1:before {    
-  left: -.5em;
-  margin: 0 0 0 -50%;
-}
-#topbar h1:after {    
-  left: .5em;
-  margin: 0 -50% 0 0;
-}
-#topbar h1 > span {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: normal;
-}
 
-
-#topbar h2 {
-  font-size: 2.1em;
-  line-height: 1.4em;
-  letter-spacing: normal;
-  margin-bottom: 20px;
-  padding: .1em 0;
-  color: #444;
-	position: relative;
-	overflow: hidden;
-	white-space: nowrap;
-	text-align: center;
-}
-p {
+#w p {
   display: block;
   font-size: 1.4em;
   line-height: 1.55em;
@@ -122,8 +64,8 @@ p {
   color: #555;
 }
 
-a { color: #5a9352; text-decoration: none; }
-a:hover { text-decoration: underline; }
+#w a { color: #5a9352; text-decoration: none; }
+#w a:hover { text-decoration: underline; }
 
 .center { display: block; text-align: center; }
 
@@ -173,7 +115,7 @@ a:hover { text-decoration: underline; }
 
 #profiletabs ul { 
   list-style: none; 
-  width: 70%; 
+  width: 90%; 
   height: 50px; 
   
 }
