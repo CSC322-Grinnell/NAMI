@@ -1,4 +1,8 @@
-<%= form_for @provider, id: "edit_provider", :url => {:controller => 'providers', :action => 'update' } do |f| %>
+<div class="login-page">
+<%= form_for @provider, :url => {:controller => 'providers', :action => 'update' } do |f| %>
+          <div class="field">
           <%= f.text_field :address %>
           <%= submit_tag 'Update' %>
+          </div>
 <% end %>
+</div>
