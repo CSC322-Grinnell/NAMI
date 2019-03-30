@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
   post 'providers/create' => 'providers#create'
+  post 'admins/admin' => 'admins#admin'
+  get 'admins/index' => 'admins#index'
 
   resources :providers
 

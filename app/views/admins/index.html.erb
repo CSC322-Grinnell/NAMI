@@ -1,0 +1,42 @@
+<!--source: https://codepen.io/anon/pen/MRgQyP-->
+<div class='container'>
+<div id="demo">
+  <h1>All Current Users</h1>
+  
+  <!-- Responsive table starts here -->
+  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  <div class="table-responsive-vertical shadow-z-1">
+  <!-- Table starts here -->
+  <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+        <tr>
+          <th>User Email</th>
+          <th>Status</th>
+          <th>Practice Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td data-title="email"><%= user.email %></td>
+          <% if user.admin? %>
+              <td data-title="status">Admin</td>
+              <td data-title="practiceName">N/A</td>
+              <td data-title="address">N/A</td>
+              <td data-title="phone">N/A</td>
+          <% else %>
+            <td data-title="status">Provider</td>
+            <td data-title="practiceName"><%= Provider.find_by_user_id(user.id).practiceName %></td>
+            <td data-title="address"><%= Provider.find_by_user_id(user.id).address %>fewhifohigoehwifoewhfieowhgieowhfieowhfiewo</td>
+            <td data-title="phone"><%= Provider.find_by_user_id(user.id).phone %></td>
+          <% end %>
+        </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
