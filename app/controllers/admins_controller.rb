@@ -1,7 +1,11 @@
 class AdminsController < ApplicationController
     
-    def admin
+    def grant_admin
       User.find(params[:id]).update_attribute :admin, true
+      if p = Provider.find_by_user_id(params[:id])
+        p.delete
+      end
+      redirect_to admins_index_path
     end
     
     def index
@@ -14,8 +18,8 @@ class AdminsController < ApplicationController
     end
     
     def destroy_user
+      Provider.find_by_user_id(params[:id]).delete
       User.find(params[:id]).delete
-      flash.now[:success] = ["User deleted!"]
-      render 'index'
+      redirect_to admins_index_path
     end
 end

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post 'providers/create' => 'providers#create'
   post 'admins/admin' => 'admins#admin'
   get 'admins/index' => 'admins#index'
-  delete 'admins/destroy_user' => "admins#destroy_user"
-
+  match 'admins/destroy_user/:id' => "admins#destroy_user", :via => :delete, :as => :admins_destroy_user
+  match 'admins/grant_admin/:id' => "admins#grant_admin", :via => :post, :as => :admins_grant_admin
   resources :providers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
