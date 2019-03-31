@@ -18,7 +18,9 @@ class AdminsController < ApplicationController
     end
     
     def destroy_user
-      Provider.find_by_user_id(params[:id]).delete
+      if p = Provider.find_by_user_id(params[:id])
+        p.delete
+      end
       User.find(params[:id]).delete
       redirect_to admins_index_path
     end

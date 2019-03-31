@@ -40,7 +40,7 @@
             <% end %>
           <% end %>
           <td><%= link_to "Delete", admins_destroy_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
-          <td><%= link_to "Grant Admin", admins_grant_admin(user), data: {confirm: "Are you sure?" }, method: :post %></td>
+          <td><%= link_to "Grant Admin", admins_grant_admin_path(user), data: {confirm: "Are you sure?" }, method: :post %></td>
         </tr>
         <% end %>
         
