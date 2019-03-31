@@ -12,4 +12,10 @@ class AdminsController < ApplicationController
         redirect_to '/providers/profile'
       end
     end
+    
+    def destroy_user
+      User.find(params[:id]).delete
+      flash.now[:success] = ["User deleted!"]
+      render 'index'
+    end
 end

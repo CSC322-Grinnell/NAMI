@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'providers/create' => 'providers#create'
   post 'admins/admin' => 'admins#admin'
   get 'admins/index' => 'admins#index'
+  delete 'admins/destroy_user' => "admins#destroy_user"
 
   resources :providers
 
