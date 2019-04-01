@@ -39,8 +39,10 @@
               <td data-title="phone"></td>
             <% end %>
           <% end %>
+          <% if current_user != user %>
           <td><%= link_to "Delete", admins_destroy_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
           <td><%= link_to "Grant Admin", admins_grant_admin_path(user), data: {confirm: "Are you sure?" }, method: :post %></td>
+          <% end %>
         </tr>
         <% end %>
         

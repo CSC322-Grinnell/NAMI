@@ -18,10 +18,15 @@ class AdminsController < ApplicationController
     end
     
     def destroy_user
-      if p = Provider.find_by_user_id(params[:id])
-        p.delete
+      if current_user.try(:admin?)
+        if p = Provider.find_by_user_id(params[:id])
+          p.delete
+        end
+        User.find(params[:id]).delete
+        redirect_to admins_index_path
+      else
+        flash[:errors] = ["Only an Admin can delete the accounts!"]
+        redirect_to '/providers/profile'
       end
-      User.find(params[:id]).delete
-      redirect_to admins_index_path
     end
 end
