@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
   
     include AdminHelper
-    before_action :authenticate_admin!
+    before_action :authenticate_admin! # authenticates admin status
     
     def grant_admin
       User.find(params[:id]).update_attribute :admin, true
