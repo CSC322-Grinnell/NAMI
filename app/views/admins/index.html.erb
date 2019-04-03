@@ -3,6 +3,11 @@
 <div id="demo">
   <h1>All Current Users</h1>
   
+  <nav id='profiletabs'>
+    <ul class="clearfix admin_create_button">
+      <li><%= link_to 'Create new user', new_provider_path %></li>
+    </ul>
+  </nav>
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
   <div class="table-responsive-vertical shadow-z-1">
@@ -41,7 +46,7 @@
           <% end %>
           <% if current_user != user %>
           <td><%= link_to "Delete", admins_destroy_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
-          <td><%= link_to "Grant Admin", admins_grant_admin_path(user), data: {confirm: "Are you sure?" }, method: :post %></td>
+          <td><%= link_to('Edit Provider', edit_provider_path(Provider.find_by_user_id(user.id)), method: :GET) %></td>
           <% end %>
         </tr>
         <% end %>

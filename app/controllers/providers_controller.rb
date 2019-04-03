@@ -28,7 +28,11 @@ class ProvidersController < ApplicationController
       @provider = Provider.find(params[:id])
       if @provider.update_attributes(provider_params)
         flash[:success] = ["Profile updated!"]
-        redirect_to providers_profile_path
+        if current_user.admin?
+          redirect_to admins_index_path
+        else
+          redirect_to providers_profile_path
+        end
       else
         flash.now[:errors] = @provider.errors.full_messages
         render 'edit'
