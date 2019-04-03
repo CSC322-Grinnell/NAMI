@@ -65,6 +65,7 @@
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
             <a href='/admins/index'>Manage Accounts</a>
+            <%= link_to('Edit Account', edit_user_registration_path(current_user), method: :GET) %>
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
             </div>
           </div>
@@ -74,6 +75,7 @@
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
             <a href='/providers/profile'>Profile</a>
+            <%= link_to('Edit Account', edit_user_registration_path(current_user), method: :GET) %>
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
             </div>
           </div>

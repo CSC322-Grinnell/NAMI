@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+  
+    include AdminHelper
+    before_action :authenticate_admin! # authenticates admin status
     
     def grant_admin
       User.find(params[:id]).update_attribute :admin, true
@@ -9,12 +12,7 @@ class AdminsController < ApplicationController
     end
     
     def index
-      if current_user.try(:admin?) # if user is admin
-        @users = User.all
-      else
-        flash[:errors] = ["Only an Admin can view the accounts!"]
-        redirect_to '/providers/profile'
-      end
+      @users = User.order(:admin)
     end
     
     def destroy_user
