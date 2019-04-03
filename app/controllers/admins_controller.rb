@@ -22,4 +22,22 @@ class AdminsController < ApplicationController
       User.find(params[:id]).delete
       redirect_to admins_index_path
     end
+    
+    def create_account
+      user = User.new(configure_permitted_parameters)
+      if user.save
+        provider = Provider.new(configure_permitted_parameters.provider_params)
+        if provider.save
+          user.provider = provider
+          redirect_to admins_index_path
+        else
+          flash.now[:errors] = user.errors.full_messages + provider.errors.full_messages
+          render 'create_account'
+        end
+      end
+    end
+    
+    def form_params
+      devise_parameter_sanitizer.sanitize(:sign_up)
+    end
 end

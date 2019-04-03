@@ -1,0 +1,48 @@
+<div class="login-page">
+<%= form_for :user, url: admin_create_account_path do |f| %>
+          <%= render 'providers/shared/success_message' %>
+          <%= render 'providers/shared/error_messages' %>
+          <div class="field">
+              <%= f.label "email" %>
+              <%= f.text_field :email %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :password %><br />
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+            <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+          </div>
+          
+          <%= f.fields_for :provider do |u| %>
+          <div class="field">
+          <%= u.label "practice name" %>
+          <%= u.text_field :practiceName %>
+          </div>
+          
+          <div class="field">
+          <%= u.label :address %>
+          <%= u.text_field :address %>
+          </div>
+          
+          <div class="field">
+          <%= u.label :phone %>
+          <%= u.text_field :phone %>
+          </div>
+          
+          <div class="field">
+          <%= u.label :description %>
+          <em>(not exceeding 250 words)</em><br />
+          <%= u.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10" %><br />
+          </div>
+          <span id="count">Word count: <span id="wordCount"></span></span>
+        <% end %>
+         
+         
+          <div class="actions">
+          <%= f.submit 'Create' %>
+          </div>
+<% end %>
+</div>
+<%= javascript_include_tag "textbox" %>
