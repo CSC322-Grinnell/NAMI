@@ -46,7 +46,7 @@
               <td data-title="phone"></td>
             <% end %>
           <% end %>
-          <% if current_user != user %>
+          <% if current_user != user && Provider.find_by_user_id(user.id) %>
           <td><%= link_to "Delete", admins_destroy_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
           <td><%= link_to('Edit', edit_provider_path(Provider.find_by_user_id(user.id)), method: :GET) %></td>
           <% end %>
