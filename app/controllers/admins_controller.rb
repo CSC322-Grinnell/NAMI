@@ -24,16 +24,28 @@ class AdminsController < ApplicationController
     end
     
     def create_account
-      user = User.new(configure_permitted_parameters)
+      info = form_params
+      info[:provider] = Provider.new(form_params[:provider])
+      user = User.new(info)
       if user.save
-        provider = Provider.new(configure_permitted_parameters.provider_params)
-        if provider.save
-          user.provider = provider
-          redirect_to admins_index_path
-        else
-          flash.now[:errors] = user.errors.full_messages + provider.errors.full_messages
-          render 'create_account'
-        end
+        redirect_to admins_index_path
       end
+      # if user.save
+      #   provider = Provider.new(form_params[:provider])
+      #   if provider.save
+      #     user.provider = provider
+      #     redirect_to admins_index_path
+      #   else
+      #     flash.now[:errors] = user.errors.full_messages + provider.errors.full_messages
+      #     redirect_to 'create_account'
+      #   end
+      # else
+      #   flash.now[:errors] = user.errors.full_messages
+      #   redirect_to 'create_account'
+      # end
+    end
+    
+    def form_params
+      params.require(:user).permit(:email, :password, :provider => [:practiceName, :address, :phone, :description])
     end
 end
