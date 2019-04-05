@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   post 'admins/admin' => 'admins#admin'
   get 'admins/index' => 'admins#index'
   match 'admins/destroy_user/:id' => "admins#destroy_user", :via => :delete, :as => :admins_destroy_user
-  match 'admins/grant_admin/:id' => "admins#grant_admin", :via => :post, :as => :admins_grant_admin
   match "admins/new_account" => "admins#new_account", :via => :get, :as => :admin_new_account
   match "admins/create_account" => "admins#create_account", :via => :post, :as => :admin_create_account
   resources :providers
