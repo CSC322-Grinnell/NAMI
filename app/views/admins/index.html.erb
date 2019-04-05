@@ -26,6 +26,7 @@
       </thead>
       <tbody>
         <% @users.each do |user| %>
+        <% @p = Provider.find_by_user_id(user.id) %>
         <tr>
           <td data-title="email"><%= user.email %></td>
           <% if user.admin? %>
@@ -34,11 +35,11 @@
               <td data-title="address">N/A</td>
               <td data-title="phone">N/A</td>
           <% else %>
-            <% if Provider.find_by_user_id(user.id) %>
+            <% if @p %>
               <td data-title="status">Provider</td>
-              <td data-title="practiceName"><%= Provider.find_by_user_id(user.id).practiceName %></td>
-              <td data-title="address"><%= Provider.find_by_user_id(user.id).address %></td>
-              <td data-title="phone"><%= Provider.find_by_user_id(user.id).phone %></td>
+              <td data-title="practiceName"><%= @p.practiceName %></td>
+              <td data-title="address"><%= @p.address %></td>
+              <td data-title="phone"><%= @p.phone %></td>
             <% else %>
               <td data-title="status">Provider</td>
               <td data-title="practiceName"></td>
@@ -46,9 +47,17 @@
               <td data-title="phone"></td>
             <% end %>
           <% end %>
+          
+          <% if current_user != user %>
           <td><%= link_to "Delete", admins_destroy_user_path(user), data: { confirm: "Are you sure?" }, method: :delete %></td>
-          <% if current_user != user && Provider.find_by_user_id(user.id) %>
-          <td><%= link_to('Edit', edit_provider_path(Provider.find_by_user_id(user.id)), method: :GET) %></td>
+          <% else %>
+          <td></td>
+          <% end %>
+          
+          <% if @p %>
+          <td><%= link_to('View detail', admin_show_account_path(@p), method: :GET) %></td>
+          <% else %>
+          <td></td>
           <% end %>
         </tr>
         <% end %>

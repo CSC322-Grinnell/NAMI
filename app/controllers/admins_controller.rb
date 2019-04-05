@@ -15,6 +15,10 @@ class AdminsController < ApplicationController
       @users = User.order(:admin)
     end
     
+    def show
+      @provider = Provider.find(params[:id])
+    end
+    
     def destroy_user
       if p = Provider.find_by_user_id(params[:id])
         p.delete
@@ -33,7 +37,6 @@ class AdminsController < ApplicationController
         flash.now[:errors] = user.errors.full_messages
         redirect_to admin_create_account
       end
-      
     end
     
     def form_params
