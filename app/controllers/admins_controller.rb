@@ -29,20 +29,11 @@ class AdminsController < ApplicationController
       user = User.new(info)
       if user.save
         redirect_to admins_index_path
+      else
+        flash.now[:errors] = user.errors.full_messages
+        redirect_to admin_create_account
       end
-      # if user.save
-      #   provider = Provider.new(form_params[:provider])
-      #   if provider.save
-      #     user.provider = provider
-      #     redirect_to admins_index_path
-      #   else
-      #     flash.now[:errors] = user.errors.full_messages + provider.errors.full_messages
-      #     redirect_to 'create_account'
-      #   end
-      # else
-      #   flash.now[:errors] = user.errors.full_messages
-      #   redirect_to 'create_account'
-      # end
+      
     end
     
     def form_params
