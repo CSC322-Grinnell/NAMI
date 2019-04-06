@@ -2,16 +2,16 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nami Website</title>
+        <link rel="stylesheet" type="text/css" href="reset.scss">
+
     <%= csrf_meta_tags %>
     <%= yield(:button_style) %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!--<%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track': 'reload' %>     this line caused problems with refreshing, so line 14 handles the reset.scss file instead--> 
 
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="reset.scss">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -46,16 +46,16 @@
           
         </ul>
     
-   <form action="" class="form-inline">
+   <form action="" style="margin: 0; padding: 0;"  class="form-inline">
   <div class="form-group">
       <div class="input-group">
-      <input class="form-control" placeholder="Find a resource" type="text">
+      <input class="form-control" name="query" placeholder="Find a resource" type="text">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit">Search</span></button>
+        <a href="/search/search"><button class="btn btn-default" type="submit">Search</span></button></a>
       </span>
     </div>
   </div>
-</form>
+</s>
         
         
         
@@ -88,6 +88,6 @@
     <footer class="footer darkFooter">
         <span class="text-muted footerText" style="style=position: relative; center"><%= Time.new.year %> Copyright &copy; Grinnell College. All rights reserved.</span>
     </footer>
-
+    
     </body>
 </html>

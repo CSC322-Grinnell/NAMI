@@ -1,0 +1,40 @@
+<!--source: https://codepen.io/anon/pen/MRgQyP-->
+<div class='container'>
+<div id="demo">
+  <h1>All Current Providers</h1>
+  
+  <nav id='profiletabs'>
+    <!--<ul class="clearfix admin_create_button">
+      <li><%= link_to 'Create new user', admin_new_account_path, method: :GET %></li>
+    </ul>-->
+  </nav>
+  <!-- Responsive table starts here -->
+  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  <div class="table-responsive-vertical shadow-z-1">
+  <!-- Table starts here -->
+  <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+        <tr>
+          <th>Practice Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @results.each do |result| %>
+        <tr>
+          <td data-title="Provider Name"><%= result.practiceName %></td>
+            <td data-title="address"><%= result.address %></td>
+            <td data-title="phone"><%= result.phone %></td>
+            <td data-title="description"><%= result.description %></td>
+  
+         
+          </tr>
+        <% end %>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
