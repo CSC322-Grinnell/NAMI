@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
   
-  # #routes  for search
-  # get 'search/search' => 'search#search'
-  # resources :search, only: [:search]
+  #routes  for search
+  get 'search/search' => 'search#search'
+  resources :search, only: [:search]
   
   #routes to login and signup
   post 'providers/create' => 'providers#create'
