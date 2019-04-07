@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 # Postgresql Gem
 
 gem 'pg', '~> 0.18'
-
+gem 'pg_search'
 gem 'rails',        '5.1.6'
 gem 'bcrypt',         '3.1.12'
 gem 'puma',         '3.9.1'

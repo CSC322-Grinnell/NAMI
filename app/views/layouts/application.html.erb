@@ -2,9 +2,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nami Website</title>
+        <link rel="stylesheet" type="text/css" href="reset.scss">
+
     <%= csrf_meta_tags %>
     <%= yield(:button_style) %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -40,9 +43,21 @@
           <li class="nav-item active">
             <a class="nav-link" href="/page/contacts">Contact</a>
           </li>
+          
         </ul>
-
-        <input type="text" placeholder="Simple Database Search">
+    
+   <form action="" style="margin: 0; padding: 0;"  class="form-inline">
+  <div class="form-group">
+      <div class="input-group">
+      <input class="form-control" name="query" placeholder="Find a resource" type="text">
+      <span class="input-group-btn">
+        <a href="/search/search"><button class="btn btn-default" type="submit">Search</span></button></a>
+      </span>
+    </div>
+  </div>
+</s>
+        
+        
         
         <% if current_user.try(:admin?) %>
           <div class="user_icon">
@@ -73,6 +88,6 @@
     <footer class="footer darkFooter">
         <span class="text-muted footerText" style="style=position: relative; center"><%= Time.new.year %> Copyright &copy; Grinnell College. All rights reserved.</span>
     </footer>
-
+    
     </body>
 </html>

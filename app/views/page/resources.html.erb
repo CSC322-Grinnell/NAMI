@@ -1,13 +1,17 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+<head>
+  <link rel="stylesheet" type="text/css" href="reset.scss">
+  <link rel="stylesheet" type="text/css" href="page.scss">
+</head>
 <div class='container'>
-    <h1>This is the resources/therapies page</h1>
+    <h1 style="font-size:5vw;">Understanding Available Resources</h1>
     <p>Please remember that this page is for informational purposes only. 
     The information on this page should only be used as general guidelines and cannot replace the advice of a trained professional.
     Only a trained professional can make accurate diagnoses.</p>
     
-    
-    <h2>General Therapies/Tips</h2>
+
+    <h2 style="font-size:3vw;">Common Types of Therapy</h2>
      <!-- grid classes  -->
     <!-- Grid row -->
     <div class="row accordion-gradient-bcg d-flex justify-content-center">
@@ -36,6 +40,17 @@
       <div class="card-body card-body mb-1 rgba-grey-light white-text">
         <h4>Definition</h4>
         <p>Psychotherapy (a type of counseling) is aimed at helping the child develop more effective coping and problem-solving skills, and ways to express and control anger.</p>
+        <h4>Search Database</h4>
+<form action="" class="form-inline">
+  <div class="form-group">
+      <div class="input-group">
+      <input class="form-control" placeholder="Psychotherapy Resources" type="text">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Search</span></button>
+      
+    </div>
+  </div>
+</form>
       </div>
     </div>
 
@@ -58,7 +73,9 @@
     <!-- Card body -->
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
       <div class="card-body">
+        <p>
         Cognitive-Behavioral Therapy aims to reshape the child's thinking (cognition) to improve behavior
+        </p>
     </div>
 
   </div>
@@ -80,7 +97,9 @@
     <!-- Card body -->
     <div id="Family_card" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
       <div class="card-body">
+        <p>
         Family Therapy may be used to help improve family interactions and communication among family members.
+        </p>
       </div>
     </div>
 
@@ -137,6 +156,11 @@ https://www.additudemag.com/adhd-therapy-behavioral-treatment-with-medication/
 
 </div>
 <!-- Grid row -->
+
+ <footer class="footer darkFooter">
+           <span class="text-muted footerText" style="style=position: relative; center"><%= Time.new.year %> Copyright &copy; Grinnell College. All rights reserved.</span>
+ </footer>
+    
     
 <!-- trying to search database
 <button class = "button red" onclick="hide_show('ADHD')">
@@ -150,3 +174,4 @@ https://www.additudemag.com/adhd-therapy-behavioral-treatment-with-medication/
 </div>
 </div>
 </div>
+

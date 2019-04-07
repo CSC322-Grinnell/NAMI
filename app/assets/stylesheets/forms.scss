@@ -1,9 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
   width: 100%;
-  padding: 8% 0 0;
-  margin: 0 !important;
+  padding: 0 0 0;
+  margin: 0%;// !important;
 }
 
 form {
@@ -21,15 +20,20 @@ form {
   display:flex;
   flex-direction:column;
 }
-form input, textarea {
-  font-family: "Roboto", sans-serif;
+
+form input, textarea { // input box
+  font-family: "lato", sans-serif;
   outline: 0;
   width: 100%;
   border: 1;
-  margin: 0 0 15px;
+  margin: 0 0 15px; // vertical distance between words and input boxes
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+}
+
+form input:focus {
+    //border: 1px solid red; //commented out to keep boxes from shifting when clicked
 }
 
 form textarea {
@@ -42,7 +46,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 form .actions input {
-  font-family: "Roboto", sans-serif;
+  font-family: "lato", sans-serif;
   text-transform: uppercase;
   outline: 1;
   background: #afafaf;
@@ -55,7 +59,8 @@ form .actions input {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-form .actions input:hover, #new_user .actions input:active, #new_user .actions input:focus {
+
+form .actions input:hover, #new_user .actions input:active, #new_user .actions input:focus { // "log in" button
   background: #000000;
   color:white;
   text-decoration:none;
