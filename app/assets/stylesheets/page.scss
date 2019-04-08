@@ -12,7 +12,6 @@
 
     body {
         //display: flex;
-        background: url('http://thecodeplayer.com/uploads/media/geometry.png');
         overflow: scroll;
         height: 100%;
         font-family: 'Lato', sans-serif;
@@ -22,7 +21,7 @@
     h1.myclass{
         font-size:5vw;
         font-weight: normal;
-        //letter-spacing: 0.9em;
+       // letter-spacing: 0.005em;
         font-family: 'Neuton';
         
     }
@@ -228,19 +227,25 @@ input[type=text] {
 
 
 .input-group-btn {
-    margin-bottom: 5% !important;    
+    // margin-bottom: 5%; //!important;    
 }
 
 .input-group {
-    height: 6% !important;
+    height: 6%;// !important;
 }
 
+.searchSubmit{
+    margin:0;
+    padding:1;
+    height:100%;
+    
+}
 
 .accordion{
-    margin-bottom: 7% !important;
+    margin-bottom: 7%;// !important;
 }
 .card-body {
-    padding: 2% !important;
+    padding: 2%;//!important;
 }
 
 // #success-message{
