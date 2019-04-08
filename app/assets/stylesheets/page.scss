@@ -7,26 +7,29 @@
 
     html{
         scroll-behavior: smooth;
+        font-size: 16px;
     }
 
     body {
         //display: flex;
-        overflow-y: auto;
+        background: url('http://thecodeplayer.com/uploads/media/geometry.png');
+        overflow: scroll;
         height: 100%;
         font-family: 'Lato', sans-serif;
         //flex-direction: column;
     }
     
-    h1 {
+    h1.myclass{
         font-size:5vw;
         font-weight: normal;
-        font-size: 100%;
         //letter-spacing: 0.9em;
-        font-family: 'Lato';
+        font-family: 'Neuton';
+        
     }
     
-    h2{
+    h2.myclass{
         font-size:3vw;
+        font-family: 'Neuton';
     }
     
     h5 {
@@ -43,6 +46,7 @@
         font-variant: normal;
         font-weight: 400;
         line-height: 20px;
+        overflow: normal;
     }
     
     .container{
@@ -55,8 +59,16 @@
         flex-direction: column;
     }
     
+    table {
+        margin-bottom: 6em !important;
+    }
+    
     .wrapper{
         
+    }
+    
+    td{
+       white-space: normal !important; 
     }
     
     #sitename {
@@ -215,10 +227,17 @@ input[type=text] {
 }
 
 
-.card{
-    //width: 100% !important;
-    //position:relative !important;
-    //left: 0% !important;
+.input-group-btn {
+    margin-bottom: 5% !important;    
+}
+
+.input-group {
+    height: 6% !important;
+}
+
+
+.accordion{
+    margin-bottom: 7% !important;
 }
 .card-body {
     padding: 2% !important;
@@ -254,6 +273,10 @@ a {
   background-color: $green;
   //padding: 100px 0;
   text-align: center;
+}
+
+.form-control{
+    margin: 0 !important;
 }
 
 .front_page_button {
@@ -328,7 +351,7 @@ a {
   transition: $hover;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
-  //margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
+  margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
   
   
   &:before {

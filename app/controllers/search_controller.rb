@@ -2,9 +2,8 @@ class SearchController < ApplicationController
    
 def search
    if params[:query].present?
-       puts params[:query]
-       puts params[:locale]
         @results = Provider.search_practiceName(params[:query])
+   # @results = Provider.where("address like ?", "#{params[:query]}%")
    else
      @results = Provider.all
    end
