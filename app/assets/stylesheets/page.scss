@@ -17,16 +17,17 @@
         //flex-direction: column;
     }
     
-    h1 {
+    .h1, h1 {
         font-size:5vw;
         font-weight: normal;
         font-size: 100%;
-        //letter-spacing: 0.9em;
-        font-family: 'Lato';
+        letter-spacing: 0.9em;
+        font-family: 'Neuton';
     }
     
     h2{
         font-size:3vw;
+        font-family: 'Neuton';
     }
     
     h5 {
@@ -43,6 +44,7 @@
         font-variant: normal;
         font-weight: 400;
         line-height: 20px;
+        overflow: hidden;
     }
     
     .container{
@@ -215,6 +217,15 @@ input[type=text] {
 }
 
 
+.input-group-btn {
+    margin-bottom: 5% !important;    
+}
+
+.input-group {
+    height: 6% !important;
+}
+
+
 .card{
     //width: 100% !important;
     //position:relative !important;
@@ -254,6 +265,10 @@ a {
   background-color: $green;
   //padding: 100px 0;
   text-align: center;
+}
+
+.form-control{
+    margin: 0 !important;
 }
 
 .front_page_button {
@@ -328,7 +343,7 @@ a {
   transition: $hover;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
-  //margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
+  margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
   
   
   &:before {
