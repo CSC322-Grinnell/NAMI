@@ -252,7 +252,7 @@ a {
 //ELEMENTS
 .button-container {
   background-color: $green;
-  padding: 100px 0;
+  //padding: 100px 0;
   text-align: center;
 }
 
@@ -328,7 +328,7 @@ a {
   transition: $hover;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
-  margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
+  //margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
   
   
   &:before {
