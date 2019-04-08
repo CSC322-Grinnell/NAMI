@@ -2,7 +2,8 @@
 <div class='container'>
 <div id="demo">
   <h1>All Current Users</h1>
-  
+    <%= render 'providers/shared/success_message' %>
+    <%= render 'providers/shared/error_messages' %>  
   <nav id='profiletabs'>
     <ul class="clearfix admin_create_button">
       <li><%= link_to 'Create new user', admin_new_account_path, method: :GET %></li>
