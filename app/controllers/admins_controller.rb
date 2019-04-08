@@ -3,16 +3,12 @@ class AdminsController < ApplicationController
     include AdminHelper
     before_action :authenticate_admin! # authenticates admin status
     
-    def grant_admin
-      User.find(params[:id]).update_attribute :admin, true
-      if p = Provider.find_by_user_id(params[:id])
-        p.delete
-      end
-      redirect_to admins_index_path
-    end
-    
     def index
       @users = User.order(:admin)
+    end
+    
+    def show
+      @provider = Provider.find(params[:id])
     end
     
     def destroy_user
@@ -29,20 +25,10 @@ class AdminsController < ApplicationController
       user = User.new(info)
       if user.save
         redirect_to admins_index_path
+      else
+        flash.now[:errors] = user.errors.full_messages
+        redirect_to admin_create_account
       end
-      # if user.save
-      #   provider = Provider.new(form_params[:provider])
-      #   if provider.save
-      #     user.provider = provider
-      #     redirect_to admins_index_path
-      #   else
-      #     flash.now[:errors] = user.errors.full_messages + provider.errors.full_messages
-      #     redirect_to 'create_account'
-      #   end
-      # else
-      #   flash.now[:errors] = user.errors.full_messages
-      #   redirect_to 'create_account'
-      # end
     end
     
     def form_params
