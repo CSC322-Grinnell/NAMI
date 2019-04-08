@@ -5,5 +5,5 @@ class Provider < ApplicationRecord
     validates :phone, presence: true
     belongs_to :user
     include PgSearch
-    pg_search_scope :search, against: [:practiceName]
+    pg_search_scope :search_practiceName, against: [:practiceName]
 end
