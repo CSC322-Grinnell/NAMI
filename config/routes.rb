@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'page/resources' => 'page#resources'
   
   #routes  for search
-  get 'search/search' => 'search#search'
+  match 'search/search' => 'search#search', :via => :get, :as => :data_serach
   resources :search, only: [:search]
   
   #routes to login and signup

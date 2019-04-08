@@ -45,13 +45,13 @@
           </li>
           
         </ul>
-    
-   <form action="" style="margin: 0; padding: 0;"  class="form-inline">
+        
+   <form action='/search/search' style="margin: 0; padding: 0;"  class="form-inline">
   <div class="form-group">
       <div class="input-group">
       <input class="form-control" name="query" id = "query" placeholder="Find a resource" type="text">
       <span class="input-group-btn">
-        <a href="/search/search"><button class="btn btn-default" type="submit">Search</span></button></a>
+      <input type="submit" name="commit" value="Search" data-disable-with="Create" />
       </span>
     </div>
     </form>
