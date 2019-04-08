@@ -1,5 +1,7 @@
 <div class="container">
-<h2 class="admin_show_h"><div><%= @provider.practiceName %></div><i class="far fa-edit fa-1x"></i></h2>
+<div>
+    <h2 class="admin_show_h"><%= @provider.practiceName %></h2>
+</div>
 <span class="admin_show_line">Email: <%= User.find(@provider.user_id).email %></span>
 <span class="admin_show_line">Phone: <%= @provider.phone %></span>
 <span class="admin_show_line">Address: <%= @provider.address %></span>
