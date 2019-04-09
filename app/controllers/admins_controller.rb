@@ -32,6 +32,6 @@ class AdminsController < ApplicationController
     end
     
     def form_params
-      params.require(:user).permit(:email, :password, :provider => [:practiceName, :address, :phone, :description, :insurance])
+      params.require(:user).permit(:email, :password, :provider => [:practiceName, :address, :phone, :description, :insurance => [])
     end
 end
