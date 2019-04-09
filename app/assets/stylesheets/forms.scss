@@ -84,3 +84,11 @@ form a {
   color: #4CAF50;
   text-decoration: none;
 }
+
+form .checkbox_field {
+  display: flex;
+  flex-wrap: wrap;
+}
+form .checkbox_div {
+  padding: 0 1em;
+}
