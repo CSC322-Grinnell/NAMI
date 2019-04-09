@@ -17,7 +17,18 @@
           <%= f.text_field :phone %>
           </div>
           
-          <div class="field">@
+           <div class="field" style="display: flex;">
+            <%= f.label :Medicaid %>
+            <%= f.check_box :insurance, {:multiple => true}, "Medicaid", nil %> 
+            
+            <%= f.label "Title-19" %>
+            <%= f.check_box :insurance, {:multiple => true}, "Title", nil %>
+            
+            <%= f.label "Hawkeye" %>
+            <%= f.check_box :insurance, {:multiple => true}, "Hawkeye", nil %>
+           </div>
+          
+          <div class="field">
           <%= f.label :description %>
           <em>(not exceeding 250 words)</em><br />
           <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10" %><br />

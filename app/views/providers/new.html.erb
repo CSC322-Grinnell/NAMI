@@ -15,6 +15,14 @@
      <%= f.label :phone %><br />
      <%= f.text_field :phone %><br />
   </div>
+  
+  <div class="field">
+      <%= f.label :Medicaid %>
+      <%= f.check_box, :insurance, {:multiple => true}, "Medicaid", nil %>
+      
+      <%= f.label "Title 19" %>
+      <%= f.check_box, :insurance, {:multiple => true}, "Title 19", nil %> 
+  </div>
 
    <div class="field">
     <%= f.label :description %>
