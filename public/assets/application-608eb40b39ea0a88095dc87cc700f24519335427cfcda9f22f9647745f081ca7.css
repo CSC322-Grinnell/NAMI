@@ -1,0 +1,917 @@
+/* line 1, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_index.scss */
+.shadow-z-1 {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* line 13, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_index.scss */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 3px;
+  height: 5px;
+}
+
+/* line 18, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_index.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* line 24, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_index.scss */
+#table td {
+  max-width: 330;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+/* line 30, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_index.scss */
+#table .td_practiceName {
+  max-width: 167;
+}
+/* line 1, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_show.scss */
+.admin_show_h {
+  border-bottom: 2px solid;
+}
+
+/* line 6, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/admin_show.scss */
+.admin_show_line {
+  font-size: 1.5em;
+}
+.darkFooter{
+  background: #292b2c;
+}
+/* line 2, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+.login-page {
+  width: 100%;
+  padding: 0 0 0;
+  margin: 0%;
+}
+
+/* line 8, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* line 19, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 24, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form input, textarea {
+  font-family: "lato", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 1;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* line 39, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form textarea {
+  border-color: #d1d3d6;
+  margin-bottom: 15px;
+}
+
+/* line 44, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+/* line 48, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form .actions input {
+  font-family: "lato", sans-serif;
+  text-transform: uppercase;
+  outline: 1;
+  background: #afafaf;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+/* line 63, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form .actions input:hover, #new_user .actions input:active, #new_user .actions input:focus {
+  background: #000000;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 69, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form .field {
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+/* line 74, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form .checkbox input {
+  width: 10%;
+}
+
+/* line 78, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form a {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 1em;
+}
+
+/* line 83, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/forms.scss */
+form a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+@import url("https://fonts.googleapis.com/css?family=Lato|Neuton");
+/* line 8, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* line 13, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+body {
+  overflow: scroll;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 21, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+h1.myclass {
+  font-size: 5vw;
+  font-weight: normal;
+  font-family: 'Neuton';
+}
+
+/* line 29, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+h2.myclass {
+  font-size: 3vw;
+  font-family: 'Neuton';
+}
+
+/* line 34, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+h5 {
+  font-weight: normal;
+  font-size: 100%;
+  font-family: 'Lato';
+}
+
+/* line 41, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  overflow: normal;
+}
+
+/* line 51, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.container {
+  font-family: 'Neuton';
+  display: flex;
+  height: 100%;
+  padding-top: 1em;
+  flex-direction: column;
+}
+
+/* line 61, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+table {
+  margin-bottom: 6em !important;
+}
+
+/* line 69, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+td {
+  white-space: normal !important;
+}
+
+/* line 73, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+#sitename {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 5%;
+  font-size: 3em;
+  font-family: 'Lato';
+}
+
+/* line 81, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.nav {
+  background-color: #cdd7d8;
+  font-family: 'Neuton';
+  padding: 0;
+  height: 5%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 94, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.user_icon {
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 102, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.dropdown_content {
+  display: none;
+  position: absolute;
+  color: black;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  margin-top: 8px;
+  right: 16px;
+}
+/* line 113, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.dropdown_content a {
+  padding: 12px 16px;
+  display: block;
+  color: black;
+}
+/* line 119, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.dropdown_content a:hover {
+  color: red;
+  background-color: #ddd;
+}
+/* line 124, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.dropdown_content span {
+  font-size: 0.7em;
+}
+
+/* line 129, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.user_icon:hover {
+  background: black;
+}
+/* line 131, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.user_icon:hover .dropdown_content {
+  display: block;
+}
+/* line 134, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.user_icon:hover a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 141, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.titles {
+  color: black;
+  font-family: 'Neuton', serif;
+}
+
+/* line 147, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.content {
+  flex: 1;
+  display: flex;
+  overflow-y: scroll;
+}
+
+/* line 155, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.footer {
+  height: 50px;
+  background-color: #cdd7d8;
+  font-size: 12px;
+  width: 100%;
+  display: flex;
+  clear: both;
+  bottom: 0;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 168, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.footer div {
+  position: relative;
+}
+
+/* line 173, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.sidebar {
+  background-color: #acfca6;
+  min-width: 20%;
+}
+
+/* line 178, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.content-body {
+  font-family: 'Lato', sans-serif;
+  background-color: #b8f4f9;
+  flex: 1;
+}
+
+/* line 184, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.buttons {
+  height: 100%;
+  font-family: 'Neuton', serif;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 193, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.buttons:hover {
+  background-color: black;
+  cursor: pointer;
+}
+/* line 195, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.buttons:hover .titles {
+  color: white;
+}
+
+/* line 200, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.darkFooter {
+  background: #292b2c;
+}
+
+/* line 204, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.footerText {
+  color: white;
+  padding-top: 1.2em;
+}
+
+/* line 210, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.homeButtons {
+  margin: auto;
+  margin-top: 0;
+}
+
+/* line 215, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.buttonText {
+  font-family: 'Neuton', serif;
+  font-size: 30px;
+  margin: auto;
+}
+
+/* line 221, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+/* line 233, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.input-group {
+  height: 6%;
+}
+
+/* line 237, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.searchSubmit {
+  margin: 0;
+  padding: 1;
+  height: 100%;
+}
+
+/* line 244, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.accordion {
+  margin-bottom: 7%;
+}
+
+/* line 247, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.card-body {
+  padding: 2%;
+}
+
+/* line 271, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+a {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+
+/* line 277, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.button-container {
+  background-color: #39bda7;
+  text-align: center;
+}
+
+/* line 283, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.form-control {
+  margin: 0 !important;
+}
+
+/* line 287, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button {
+  position: relative;
+  color: black;
+  width: 90%;
+  text-align: center;
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #F7E221;
+  border-radius: 4px;
+  transition: all 1s ease-in;
+  display: flex;
+  overflow: hidden;
+  margin: 5%;
+}
+/* line 303, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button:before {
+  content: "";
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+/* line 313, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #F7E221;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+/* line 328, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button:hover {
+  color: black;
+  border: 2px solid #F7E221;
+}
+/* line 332, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button:hover:before {
+  top: -35%;
+  background-color: #F7E221;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* line 338, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.front_page_button:hover:after {
+  top: -45%;
+  background-color: #F7E221;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* line 346, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button {
+  position: relative;
+  color: black;
+  width: 90%;
+  text-align: center;
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #FF0000;
+  border-radius: 4px;
+  transition: all 1s ease-in;
+  display: flex;
+  overflow: hidden;
+  margin: 5%;
+}
+/* line 362, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button:before {
+  content: "";
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+/* line 372, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #FF0000;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+/* line 387, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button:hover {
+  color: black;
+  border: 2px solid #FF0000;
+}
+/* line 391, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button:hover:before {
+  top: -35%;
+  background-color: #FF0000;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* line 397, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/page.scss */
+.parent_page_button:hover:after {
+  top: -45%;
+  background-color: #FF0000;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* line 1, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+::selection {
+  background: #a4dcec;
+}
+
+/* line 2, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+::-moz-selection {
+  background: #a4dcec;
+}
+
+/* line 3, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+::-webkit-selection {
+  background: #a4dcec;
+}
+
+/* line 5, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc;
+  font-style: italic;
+}
+
+/* line 9, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+  font-style: italic;
+}
+
+/* line 13, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+  font-style: italic;
+}
+
+/* line 17, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc !important;
+  font-style: italic;
+}
+
+/* line 22, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+br {
+  display: block;
+  line-height: 2.2em;
+}
+
+/* line 24, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 25, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 27, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+input, textarea {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* line 37, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 38, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 39, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 41, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 42, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+/* line 45, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+h1 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5em;
+  line-height: 1.5em;
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+  padding: .1em 0;
+  color: #444;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* line 59, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#w p {
+  display: block;
+  font-size: 1.4em;
+  line-height: 1.55em;
+  margin-bottom: 22px;
+  color: #555;
+}
+
+/* line 67, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#w a {
+  color: #5a9352;
+  text-decoration: none;
+}
+
+/* line 68, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#w a:hover {
+  text-decoration: underline;
+}
+
+/* line 70, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.center {
+  display: block;
+  text-align: center;
+}
+
+/** page structure **/
+/* line 73, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#w {
+  display: block;
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 45px;
+}
+
+/* line 81, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#content {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 25px 20px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+/* line 92, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#userphoto {
+  display: block;
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
+/* line 98, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#userphoto img {
+  display: block;
+  padding: 2px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/** profile nav links **/
+/* line 109, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabs {
+  display: block;
+  margin-bottom: 4px;
+  height: 50px;
+  text-align: center;
+}
+
+/* line 116, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabs ul {
+  list-style: none;
+  width: 90%;
+  height: 50px;
+}
+
+/* line 122, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabls ul li {
+  float: left;
+}
+
+/* line 126, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabs ul li a {
+  float: left;
+  padding: 8px 11px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: #eae8db;
+  color: #666;
+  margin-right: 7px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 5px;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius: 5px;
+  -moz-border-radius-bottomleft: 0;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+}
+
+/* line 142, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabs ul li a:hover {
+  text-decoration: none;
+  background: #dad7c2;
+  color: #565656;
+}
+
+/* line 148, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+#profiletabs ul li a.sel {
+  background: #fff;
+  border-color: #d1cdb5;
+}
+
+/** profile content sections **/
+/* line 155, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.hidden {
+  display: none;
+}
+
+/* line 159, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.activity {
+  border-bottom: 1px solid #d6d1af;
+  padding-bottom: 4px;
+}
+
+/* line 164, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.setting {
+  display: block;
+  font-weight: normal;
+  padding: 7px 3px;
+  border-top: 1px solid #d6d1af;
+  margin-bottom: 5px;
+}
+
+/* line 171, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.setting span {
+  float: left;
+  width: 250px;
+  font-weight: bold;
+}
+
+/* line 176, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.setting span img {
+  cursor: pointer;
+}
+
+/** clearfix **/
+/* line 182, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 183, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 185, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+html[xmlns] .clearfix {
+  display: block;
+}
+
+/* line 186, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/profile.scss */
+* html .clearfix {
+  height: 1%;
+}
+/* line 1, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/providers.scss */
+#success-message {
+  color: green;
+  text-align: center;
+}
+
+/* line 6, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/providers.scss */
+#count {
+  text-align: left;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+/* resets CSS so that the website looks the same on all browsers */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 8, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+html, body, div, span, applet, object, iframe, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: 'Lato';
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 32, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 35, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 38, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 41, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 46, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 22, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/scaffolds.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 28, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/scaffolds.scss */
+.navbar .nav-item:visited {
+  color: #666;
+}
+/* line 32, /home/ubuntu/workspace/nami_website/app/assets/stylesheets/scaffolds.scss */
+.navbar .nav-item:hover {
+  color: #fff;
+  background-color: #000;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ 

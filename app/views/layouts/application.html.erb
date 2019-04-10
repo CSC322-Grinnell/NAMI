@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nami Website</title>
+    <title>NAMI Database</title>
         <link rel="stylesheet" type="text/css" href="reset.scss">
 
     <%= csrf_meta_tags %>
@@ -25,21 +25,23 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="/">NAMI Johnson County Database</a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 40px">
+          <ul class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="/" type="image/png"> 
+            <!--<img src="/assets/images/nami-logo-transparent.png" alt="logo" style="width:202px;height:56px;">-->
+            <%= image_tag("yellow-logo-transparent.png", height: '40', width: '40') %>
+            </a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href='/page/parents'>For Parents</a>
           </li>
-          <% if !user_signed_in? %>
           <li class="nav-item active">
             <a class="nav-link" href='/page/providers'>For Providers</a>
           </li>
-          <% end %>
           <li class="nav-item active">
             <a class="nav-link" href="/page/contacts">Contact</a>
           </li>

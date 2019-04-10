@@ -11,6 +11,7 @@
     }
 
     body {
+        
         //display: flex;
         overflow: scroll;
         height: 100%;
@@ -266,16 +267,23 @@ $yellow: #F7E221;
 $red: #FF0000;
 $transparent: rgba(255, 255, 255, 0);
 $black-05: rgba(0, 0, 0, 0.05);
-
+// NAMI color scheme
+$darkgreen: #6B8E23;
+$lightgreen: #96B441;
+$darkcyan: #008B8B;
+$blue: #156FB5;
+$red: #8B0000;
+$yellow: #FFD700;
+$black: rgb(0, 0, 0);
 
 a {
   text-decoration: none;
-  color: $grey;
+  color: $black;
 }
 
 //ELEMENTS
 .button-container {
-  background-color: $green;
+  background-color: $darkcyan;
   //padding: 100px 0;
   text-align: center;
 }
@@ -284,15 +292,19 @@ a {
     margin: 0 !important;
 }
 
-.front_page_button {
+
+  
+  .front_page_button {
   position: relative;
-  color: black; // text color while hovering
+  color: $black; // text color while hovering
   width: 90%;
-  //height: 30%;
+  //height: 300px;
   text-align:center;
   display: inline-block;
   padding: 12px 24px;
-  border: 2px solid $yellow;
+  background-color: $blue;
+  opacity: 0.8;
+  border: 2px solid $blue;
   border-radius: 4px;
   transition: $hover;
   display: flex; // puts text in vertical middle of button
@@ -318,6 +330,7 @@ a {
     top: 180%;
     width: 160%;
     height: 190%;
+    border: 2px solid $yellow;
     background-color: $yellow;
     border-radius: 50%;
     display: block;
@@ -326,7 +339,7 @@ a {
   }
   
   &:hover {
-    color: black; // text color while hovering
+    color: $black; // text color while hovering
     border: 2px solid $yellow;
     
     &:before {
@@ -342,16 +355,17 @@ a {
     }
   }
 }
-  
-  .parent_page_button {
+.parent_page_button {
   position: relative;
-  color: black; // text color while hovering
+  color: $black; // text color while hovering
   width: 90%;
-  //height: 300px;
+  //height: 30%;
   text-align:center;
   display: inline-block;
   padding: 12px 24px;
-  border: 2px solid $red;
+  background-color: $darkcyan;
+  opacity: 0.8;
+  border: 2px solid $darkcyan;
   border-radius: 4px;
   transition: $hover;
   display: flex; // puts text in vertical middle of button
@@ -365,6 +379,7 @@ a {
     top: 100%;
     border-radius: 50%;
     display: block;
+    color: $black; // text color while hovering
     transition: $slide;
     z-index: -1;
   }
@@ -372,12 +387,14 @@ a {
   &:after {
     content: "";
     position: absolute;
+    color: $black; // text color while hovering
     left: 55%;
     transform: translateX(-50%)scaleY(1)scaleX(1.45);
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: $red;
+    background-color: $lightgreen !important;
+    border: 2px solid $lightgreen;
     border-radius: 50%;
     display: block;
     transition: $slide;
@@ -386,17 +403,17 @@ a {
   
   &:hover {
     color: black; // text color while hovering
-    border: 2px solid $red;
+    border: 2px solid $lightgreen;
     
     &:before {
-      top: -35%;
-      background-color: $red;
+      top: -45%;
+      background-color: $lightgreen;
       transform: translateX(-50%)scaleY(1.3)scaleX(0.8);
     }
     
     &:after {
       top: -45%;
-      background-color: $red;
+      background-color: $lightgreen;
       transform: translateX(-50%)scaleY(1.3)scaleX(0.8);
     }
   }
