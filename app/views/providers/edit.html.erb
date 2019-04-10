@@ -1,57 +1,56 @@
 <div class="login-page">
 <%= form_for @provider, :url => {:controller => 'providers', :action => 'update' } do |f| %>
-          <%= render 'providers/shared/success_message' %>
-          <%= render 'providers/shared/error_messages' %>
-          <div class="field">
-          <%= f.label "practice name" %>
-          <%= f.text_field :practiceName %>
-          </div>
-          
-          <div class="field">
-          <%= f.label :address %>
-          <%= f.text_field :address %>
-          </div>
-          
-          <div class="field">
-          <%= f.label :phone %>
-          <%= f.text_field :phone %>
-          </div>
-          
-          <div class="field">
-          <%= f.label :insurance %>
-           <div class="field checkbox_field">
-            <div class="checkbox_div">
-            <%= f.label :Medicaid %>
-            <%= f.check_box :insurance, {:multiple => true}, "Medicaid", nil %> 
-            </div>
-            
-            <div class="checkbox_div">
-            <%= f.label "Title 19" %>
-            <%= f.check_box :insurance, {:multiple => true}, "Title 19", nil %>
-            </div>
-            
-            <div class="checkbox_div">
-            <%= f.label "Hawkeye" %>
-            <%= f.check_box :insurance, {:multiple => true}, "Hawkeye", nil %>
-            </div>
-           
-           <div class="checkbox_div">
-            <%= f.label "Private" %>
-            <%= f.check_box :insurance, {:multiple => true}, "Private", nil %>
-           </div>
-           </div>
-          </div>
-          
-          <div class="field">
-          <%= f.label :description %>
-          <em>(not exceeding 250 words)</em><br />
-          <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10" %><br />
-          </div>
-          <span id="count">Word count: <span id="wordCount"></span></span>
-          
-          <div class="actions">
-          <%= f.submit 'Update' %>
-          </div>
+ <%= render 'providers/shared/success_message' %>
+ <%= render 'providers/shared/error_messages' %>
+ <div class="field">
+ <%= f.label "practice name" %>
+ <%= f.text_field :practiceName %>
+ </div>
+ 
+ <div class="field">
+ <%= f.label :address %>
+ <%= f.text_field :address %>
+ </div>
+ 
+ <div class="field">
+ <%= f.label :phone %>
+ <%= f.text_field :phone %>
+ </div>
+ 
+  <div class="field">
+    <%= f.label :insurance %>
+    <div class="field checkbox_field">
+    <% @insurance_params.each do |i| %>
+     <div class="checkbox_div">
+     <%= f.label i %>
+     <%= f.check_box :insurance, {:multiple => true}, i, nil %>
+     </div>
+    <% end %>
+  </div>
+ </div>
+ 
+ <div class="field">
+  <%= f.label :waivers %>
+  <div class="field checkbox_field">
+   <% @waiver_params.each do |w| %>
+   <div class="checkbox_div">
+    <%= f.label w %>
+    <%= f.check_box :waiver, {:multiple => true}, w, nil %>
+   </div>
+   <% end %>
+  </div>
+ </div>
+  
+ <div class="field">
+ <%= f.label :description %>
+ <em>(not exceeding 250 words)</em><br />
+ <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10" %><br />
+ </div>
+ <span id="count">Word count: <span id="wordCount"></span></span>
+ 
+ <div class="actions">
+  <%= f.submit 'Update' %>
+  </div>
 <% end %>
 </div>
 <%= javascript_include_tag "textbox" %>

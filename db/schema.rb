@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190409184158) do
+ActiveRecord::Schema.define(version: 20190410193156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20190409184158) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.text "insurance", default: [], array: true
+    t.text "waiver", default: [], array: true
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
