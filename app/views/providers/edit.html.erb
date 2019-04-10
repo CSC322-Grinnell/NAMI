@@ -28,6 +28,18 @@
     <% end %>
   </div>
  </div>
+ 
+ <div class="field">
+  <%= f.label :waivers %>
+  <div class="field checkbox_field">
+   <% @waiver_params.each do |w| %>
+   <div class="checkbox_div">
+    <%= f.label w %>
+    <%= f.check_box :waiver, {:multiple => true}, w, nil %>
+   </div>
+   <% end %>
+  </div>
+ </div>
   
  <div class="field">
  <%= f.label :description %>

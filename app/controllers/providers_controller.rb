@@ -5,6 +5,7 @@ class ProvidersController < ApplicationController
     
     def new
       @insurance_params = insurance_params
+      @waiver_params = waiver_params
     end
     
     def create
@@ -26,6 +27,7 @@ class ProvidersController < ApplicationController
     def edit
       @provider = Provider.find(params[:id])
       @insurance_params = insurance_params
+      @waiver_params = waiver_params
     end
     
     def update
@@ -46,6 +48,6 @@ class ProvidersController < ApplicationController
     private
 
     def provider_params
-      params.require(:provider).permit(:user_id, :practiceName, :address, :phone, :description, :insurance => [])
+      params.require(:provider).permit(:user_id, :practiceName, :address, :phone, :description, :waiver => [], :insurance => [])
     end
 end

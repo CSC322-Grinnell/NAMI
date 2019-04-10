@@ -1,5 +1,5 @@
 <div class="login-page">
-<%= form_for :user, url: admin_create_account_path do |f| %>
+<%= form_for @user, html: { method: :put }, :url => {:controller => 'admins', :action => 'update' } do |f| %>
           <%= render 'providers/shared/success_message' %>
           <%= render 'providers/shared/error_messages' %>
           <div class="field">
@@ -8,14 +8,14 @@
           </div>
           
           <div class="field">
-            <%= f.label :password %><br />
+            <%= f.label "Reset password" %><br />
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em><br />
             <% end %>
               <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
           </div>
           
-          <%= f.fields_for :provider do |u| %>
+          <%= f.fields_for @user.provider do |u| %>
           <div class="field">
           <%= u.label "practice name" %>
           <%= u.text_field :practiceName %>
@@ -32,24 +32,24 @@
           </div>
           
           <div class="field">
-          <%= f.label :insurance %>
+          <%= u.label :insurance %>
           <div class="field checkbox_field">
           <% @insurance_params.each do |i| %>
            <div class="checkbox_div">
-           <%= f.label i %>
-           <%= f.check_box :insurance, {:multiple => true}, i, nil %>
+           <%= u.label i %>
+           <%= u.check_box :insurance, {:multiple => true}, i, nil %>
            </div>
           <% end %>
           </div>
          </div>
          
           <div class="field">
-          <%= f.label :waivers %>
+          <%= u.label :waivers %>
           <div class="field checkbox_field">
            <% @waiver_params.each do |w| %>
            <div class="checkbox_div">
-            <%= f.label w %>
-            <%= f.check_box :waiver, {:multiple => true}, w, nil %>
+            <%= u.label w %>
+            <%= u.check_box :waiver, {:multiple => true}, w, nil %>
            </div>
            <% end %>
           </div>
@@ -65,7 +65,7 @@
          
          
           <div class="actions">
-          <%= f.submit 'Create' %>
+          <%= f.submit 'Update' %>
           </div>
 <% end %>
 </div>

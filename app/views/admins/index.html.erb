@@ -56,7 +56,7 @@
           <% end %>
           
           <% if @p %>
-          <td><%= link_to('View detail', admin_show_account_path(@p), method: :GET) %></td>
+          <td><%= link_to('View detail', admin_show_account_path(user), method: :GET) %></td>
           <% else %>
           <td></td>
           <% end %>
