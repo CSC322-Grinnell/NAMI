@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
   
     include AdminHelper
+    include CheckboxParams
+    
     before_action :authenticate_admin! # authenticates admin status
     
     def index
@@ -9,6 +11,7 @@ class AdminsController < ApplicationController
     
     def show
       @provider = Provider.find(params[:id])
+      @insurance_params = insurance_params
     end
     
     def destroy_user
@@ -17,6 +20,10 @@ class AdminsController < ApplicationController
       end
       User.find(params[:id]).delete
       redirect_to admins_index_path
+    end
+    
+    def new_account
+      @insurance_params = insurance_params
     end
     
     def create_account
@@ -32,6 +39,6 @@ class AdminsController < ApplicationController
     end
     
     def form_params
-      params.require(:user).permit(:email, :password, :provider => [:practiceName, :address, :phone, :description, :insurance => [])
+      params.require(:user).permit(:email, :password, :provider => [:practiceName, :address, :phone, :description, :insurance => []])
     end
 end

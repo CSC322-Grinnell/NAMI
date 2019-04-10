@@ -32,6 +32,18 @@
           </div>
           
           <div class="field">
+          <%= f.label :insurance %>
+          <div class="field checkbox_field">
+          <% @insurance_params.each do |i| %>
+           <div class="checkbox_div">
+           <%= f.label i %>
+           <%= f.check_box :insurance, {:multiple => true}, i, nil %>
+           </div>
+          <% end %>
+          </div>
+         </div>
+          
+          <div class="field">
           <%= u.label :description %>
           <em>(not exceeding 250 words)</em><br />
           <%= u.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10" %><br />

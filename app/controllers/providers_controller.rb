@@ -1,7 +1,10 @@
 class ProvidersController < ApplicationController
     before_action :authenticate_user!
 
+    include CheckboxParams
+    
     def new
+      @insurance_params = insurance_params
     end
     
     def create
@@ -22,6 +25,7 @@ class ProvidersController < ApplicationController
     
     def edit
       @provider = Provider.find(params[:id])
+      @insurance_params = insurance_params
     end
     
     def update
