@@ -7,5 +7,14 @@ class Provider < ApplicationRecord
     include PgSearch
     pg_search_scope :search_practiceName, against: [:practiceName], using: {
                     tsearch: { prefix: true }
-                  }
+    }
+    pg_search_scope :search_address, against: [:address], using: {
+                    tsearch: { prefix: true }
+    }
+    pg_search_scope :search_waiver, against: [:waiver], using: {
+                    tsearch: { prefix: true }
+    }
+    pg_search_scope :search_insurance, against: [:insurance],using: {
+                    tsearch: { prefix: true }
+    } 
 end

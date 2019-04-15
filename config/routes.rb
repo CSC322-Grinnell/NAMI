@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   match "admins/show/:id" => "admins#show", :via => :get, :as => :admin_show_account
   match "admins/edit/:id" => "admins#edit", :via => :get, :as => :admin_edit_account
   get "search/advanced_search" 
+  get "search/advanced_search_result"
   #get 'admins/update/:id' => 'admins#update'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
