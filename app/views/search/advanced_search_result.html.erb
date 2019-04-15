@@ -1,4 +1,8 @@
 <h1>Advanced Search Result</h1>
-<% @results.each do |result| %>
-<span><%= result.practiceName %></span>
-<% end %>
+    <% if @results.any? %>
+        <% @results.each do |result| %>
+        <span><%= result.practiceName %></span>
+        <% end %>
+    <% else %>
+        <h2>No results!</h2>
+    <% end %>
