@@ -1,1 +1,10 @@
 <h1>Advanced search</h1>
+
+ <form action='/search/advanced_search'>
+     <% @search_criteria.each do |criteria| %>
+     <%= label_tag criteria %>
+     <input type="radio", name = "criteria", value=<%= criteria %> >
+     <% end %>
+      <input class="form-control" name="query" id = "query" placeholder="Find a resource" type="text">
+      <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
+</form>

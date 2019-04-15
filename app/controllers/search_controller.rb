@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+   include CheckboxParams
    
    def search
       if params[:query].present?
@@ -9,6 +10,7 @@ class SearchController < ApplicationController
    end
 
    def advanced_search
+      @search_criteria = search_criteria
    end
 
 end
