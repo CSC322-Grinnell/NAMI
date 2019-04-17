@@ -32,6 +32,12 @@ Rails.application.routes.draw do
   get "search/advanced_search_result"
   #get 'admins/update/:id' => 'admins#update'
   
+  #routes to create/update services for a provider
+  match "services/new" => "services#new", :via => :get, :as => :new_service
+  match "services/create" => "services#create", :via => :post, :as => :create_service
+  match "services/edit/:id" => "services#edit", :via => :get, :as => :edit_service
+  match "services/update/:id" => "services#update", :via => :put, :as => :update_service
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # post and get methods should be defined separately
   root 'page#home'

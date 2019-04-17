@@ -13,6 +13,7 @@
           <li><a href="#info">Basic info</a></li>
           <% if user_signed_in? && p.user_id = current_user.id %>
           <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
+          <li><%= link_to('Add Service', new_service_path, method: :GET) %></li>
           <% end %>
         </ul>
       </nav>

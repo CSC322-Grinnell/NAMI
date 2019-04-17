@@ -1,0 +1,11 @@
+<div class="login-page">
+<%= form_for :services, :url => {:controller => 'services', :action => 'create' }, html: { method: :post} do |f| %>
+    <div class="field">
+        <%= f.label :"practice name" %><br />
+    </div>
+    
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
+<%= javascript_include_tag "textbox" %>
