@@ -35,6 +35,13 @@ a {
   }
 }
 
+//mobile css
+@media only screen and (max-width: 1000px){
+  a.navbar{
+    min-height: 100px;
+  }
+}
+
 // th {
 //   padding-bottom: 5px;
 // }
