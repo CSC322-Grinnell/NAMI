@@ -1,5 +1,6 @@
 class Provider < ApplicationRecord
     has_many :waivers
+    has_many :services
     validates :practiceName,  presence: true
     validates :address, presence: true
     validates :phone, presence: true

@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   #get 'admins/update/:id' => 'admins#update'
   
   #routes to create/update services for a provider
-  match "services/new" => "services#new", :via => :get, :as => :new_service
+  match "services/new/:id" => "services#new", :via => :get, :as => :new_service
   match "services/create" => "services#create", :via => :post, :as => :create_service
   match "services/edit/:id" => "services#edit", :via => :get, :as => :edit_service
   match "services/update/:id" => "services#update", :via => :put, :as => :update_service
