@@ -4,13 +4,14 @@
     <% if p = Provider.find_by_user_id(current_user.id) %>
     <div id="w">
       <div id="content" class="clearfix">
-        <div id="userphoto"><img src="assets/images/user.png" alt="default avatar"></div>
+  
       <h1><%= p.practiceName %></h1>
 
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#description" class="sel">Description</a></li>
           <li><a href="#info">Basic info</a></li>
+          <li><a href="#services">Services</a></li>
           <% if user_signed_in? && p.user_id = current_user.id %>
           <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
           <li><%= link_to('Add Service', new_service_path(p), method: :GET) %></li>
@@ -33,16 +34,10 @@
         <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
       
         <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+      </section>
       
-        <p class="setting"><span>Services </span> 
-        <div>
-        <% @s = Service.where(provider_id: p.id) %>
-        <% @s.each do |service| %>
-        <span class="profile_service" ><%= service.service_name %></span>
-        <div class="service_content"><%= service.description %></div>
-        <% end %>
-        </div>
-        </p>
+      <section id="services">
+        <p>Services</p>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->

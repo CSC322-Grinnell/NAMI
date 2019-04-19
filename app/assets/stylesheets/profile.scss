@@ -116,7 +116,7 @@ h1 {
 
 #profiletabs ul { 
   list-style: none; 
-  width: 90%; 
+  width: 95%; 
   height: 50px; 
   
 }
@@ -178,15 +178,6 @@ h1 {
   cursor: pointer;
 }
 
-.profile_service:hover {
-  cursor:pointer;
-  background: yellow;
-}
-
-.service_content{
-  position:absolute;
-  display:none;
-}
 
 /** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
