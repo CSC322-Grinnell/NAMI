@@ -1,12 +1,6 @@
-// $(document).ready(function(){
-//   document.getElementById("#addBranch").click(function(){
-//       alert("hello")
-//     // document.getElementById("#branches").append(document.getElementById("#new_service_branch"));
-//   });
-// });
-
-$(document).ready(function(){
-    $("#addBranch").click(function(){
-        $("#branches").append($("#new_service_branch"))
-    })
-})
+$("#addBranch").on('click', (e) => {
+    var branch = document.createElement("INPUT")
+    branch.setAttribute("type", "text")
+    branch.setAttribute("class", "branch")
+    $("#branches")[0].append(branch)
+});
