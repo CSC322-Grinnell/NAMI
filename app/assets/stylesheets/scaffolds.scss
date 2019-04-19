@@ -35,11 +35,31 @@ a {
   }
 }
 
+.mobile-navbar-search{
+  display: none;
+}
+
 //mobile css
 @media only screen and (max-width: 1000px){
   a.navbar{
     min-height: 100px;
   }
+  #logo-navbar{
+   display: none; 
+  }
+  #logo-next-to-button{
+    display: flex;
+  }
+  .mobile-navbar-search  {  
+    display: flex;
+      width: 100%;
+
+  }
+  .parent{
+    display: flex;
+    justify-content: space-between;
+  }
+  
 }
 
 // th {

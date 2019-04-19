@@ -20,49 +20,14 @@
   </head>
   <body>
     
-
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 40px">
-          <ul class="navbar-nav mr-auto">
-            <a class="navbar-brand" href="/" type="image/png"> 
-            <!--<img src="/assets/images/nami-logo-transparent.png" alt="logo" style="width:202px;height:56px;">-->
-            <%= image_tag("yellow-logo-transparent.png", height: '40', width: '40') %>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href='/page/parents'>For Parents</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href='/page/providers'>For Providers</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/page/contacts">Contact</a>
-          </li>
-          
-        </ul>
-        
-   <form action='/search/search' style="margin: 0; padding: 0;"  class="form-inline">
-  <div class="form-group">
-      <div class="input-group">
-      <input class="form-control" name="query" id = "query" placeholder="Find a resource" type="text">
-      <span class="input-group-btn" style="height:100px">
-      <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
-      </span>
-    </div>
-    </form>
-  </div>
-</s>
-        
-        
-        
-        <% if current_user.try(:admin?) %>
+      <div class="parent">
+        <!-- Logo: mobile version --> 
+      <a class="navbar-brand" href="/" type="image/png"> 
+        <%= image_tag("yellow-logo-transparent.png", id: 'logo-next-to-button', height: '40', width: '40') %>
+      </a>
+      <!-- User icon: mobile version --> 
+      <% if current_user.try(:admin?) %>
           <div class="user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
@@ -83,9 +48,63 @@
             </div>
           </div>
         <% end %>
+        <!-- Navbar menu opener: mobile version --> 
+      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+</div>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 40px">
+          <ul class="navbar-nav mr-auto">
+            <a class="navbar-brand" href="/" type="image/png"> 
+            <%= image_tag("yellow-logo-transparent.png", id: 'logo-navbar', height: '40', width: '40') %>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href='/page/parents'>For Parents</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href='/page/providers'>For Providers</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/page/contacts">Contact</a>
+          </li>
+          
+        </ul>
+        
+  <!--Nav bar search: PC version-->
+  <form action='/search/search' style="margin: 0; padding: 0;">
+  <div class="navbar-search">
+      <div class="input-group">
+      <input class="form-control" name="query" id = "query" placeholder="Search Database" type="text">
+      <span class="input-group-btn" style="height=10">
+      <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
+      </span>
+    </div>
+    </form>
+  </div>
+  
+ 
+</s>
+        
+        
+        
+        
       </div>
   </nav>
-
+<!--Nav bar search: Mobile version-->
+  <form action='/search/search' style="margin: 0; padding: 0;">
+  <div class="mobile-navbar-search">
+      <div class="input-group" >
+      <input class="form-control" name="query" id = "query" placeholder="Search Database" type="text">
+      <span class="input-group-btn">
+      <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
+      </span>
+    </div>
+    </form>
+  </div>
     <%= yield %>
     
     <footer class="footer darkFooter">

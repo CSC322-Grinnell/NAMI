@@ -92,7 +92,14 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+    .navbar-search {
+        @media only screen and (max-width: 1000px){
+            display: none;
+        }
+    }
+    .parent{
+        display: none;
+    }
 // ------------------- Code for user drop-down -----------       
     .user_icon {
         color:white;
@@ -127,7 +134,7 @@
       span {
           font-size:0.7em;
       }
-    }
+    } //dropdown-content
     
     .user_icon:hover{
         background:black;
@@ -234,7 +241,15 @@ input[type=text] {
 }
 
 .input-group {
-    height: 6%;// !important;
+    //height: 6%;// !important;
+}
+
+//mobile css
+@media only screen and (max-width: 1000px){
+  .input-group{
+    height: 50px;
+    width: 100%;
+  }
 }
 
 .searchSubmit{
