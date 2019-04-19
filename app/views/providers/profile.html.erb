@@ -4,13 +4,14 @@
     <% if p = Provider.find_by_user_id(current_user.id) %>
     <div id="w">
       <div id="content" class="clearfix">
-        <div id="userphoto"><img src="assets/images/user.png" alt="default avatar"></div>
+  
       <h1><%= p.practiceName %></h1>
 
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#description" class="sel">Description</a></li>
           <li><a href="#info">Basic info</a></li>
+          <li><a href="#services">Services</a></li>
           <% if user_signed_in? && p.user_id = current_user.id %>
           <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
           <li><%= link_to('Add Service', new_service_path(p), method: :GET) %></li>
@@ -28,8 +29,27 @@
         
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         
-        <p class="setting"><span>Phone </span> <%= p.phone %></p>
+        <p class="setting"><span>Phone </span> <%= p.phone %> </p>
         
+        <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
+      
+        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+      </section>
+      
+      <section id="services" class="hidden">
+        <% @s = Service.where(provider_id: p.id) %>
+        <% @s.each do |service| %>
+          <h2 class="service-name"><%= service.service_name %></h2>
+          <p class="service-description"><%= service.description %></p>
+          <% if service.branch.any? %>
+            <p class="service-description">Includes:</p>
+            <% service.branch.each do |branch| %>
+            <ul>
+              <li><%= branch %></li>
+            </ul>
+            <% end %>
+          <% end %>
+        <% end %>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->
