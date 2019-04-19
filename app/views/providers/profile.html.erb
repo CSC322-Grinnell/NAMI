@@ -36,8 +36,20 @@
         <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
       </section>
       
-      <section id="services">
-        <p>Services</p>
+      <section id="services" class="hidden">
+        <% @s = Service.where(provider_id: p.id) %>
+        <% @s.each do |service| %>
+          <h2 class="service-name"><%= service.service_name %></h2>
+          <p class="service-description"><%= service.description %></p>
+          <% if service.branch.any? %>
+            <p class="service-description">Includes:</p>
+            <% service.branch.each do |branch| %>
+            <ul>
+              <li><%= branch %></li>
+            </ul>
+            <% end %>
+          <% end %>
+        <% end %>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->
