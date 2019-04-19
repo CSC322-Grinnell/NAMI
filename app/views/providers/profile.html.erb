@@ -28,8 +28,21 @@
         
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         
-        <p class="setting"><span>Phone </span> <%= p.phone %></p>
+        <p class="setting"><span>Phone </span> <%= p.phone %> </p>
         
+        <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
+      
+        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+      
+        <p class="setting"><span>Services </span> 
+        <div>
+        <% @s = Service.where(provider_id: p.id) %>
+        <% @s.each do |service| %>
+        <span class="profile_service" ><%= service.service_name %></span>
+        <div class="service_content"><%= service.description %></div>
+        <% end %>
+        </div>
+        </p>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->
