@@ -184,7 +184,7 @@ $black: rgb(0, 0, 0);
     .content {
         flex: 1;
         display: flex;
-          overflow-y: scroll;
+        overflow-y: scroll;
 
     }
 
@@ -201,11 +201,10 @@ $black: rgb(0, 0, 0);
         position: fixed;
         align-items: center;
         justify-content: center;
-
     }
     
     .footer div{
-        position: relative;
+        position: fixed;
     }
 
     .sidebar {
