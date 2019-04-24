@@ -9,20 +9,20 @@ form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 500px;
+  max-width: 300px;
   margin: 0 auto 100px;
   padding: 45px;
-  //text-align: center;
+  text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  //display:flex;
+  display:grid;
   flex-direction:column;
 }
 
 
 form input, textarea { // input box
   font-family: "lato", sans-serif;
-  //outline: 45%;
-  //width: 100%;
+  outline: 45%;
+  width: 100%;
   border: 1;
   margin: 0 0 15px; // vertical distance between words and input boxes
   padding: 15px;

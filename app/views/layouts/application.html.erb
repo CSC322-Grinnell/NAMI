@@ -1,5 +1,9 @@
 <html>
   <head>
+    <head>
+      <link rel="stylesheet" type="text/css" href="reset.scss">
+      <link rel="stylesheet" type="text/css" href="page.scss">
+  </head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAMI Database</title>
         <link rel="stylesheet" type="text/css" href="reset.scss">
@@ -21,7 +25,7 @@
   <body>
     
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <div class="parent">
+      <div class="parent" >
         <!-- Logo: mobile version --> 
       <a class="navbar-brand" href="/" type="image/png"> 
         <%= image_tag("yellow-logo-transparent.png", id: 'logo-next-to-button', height: '40', width: '40') %>
@@ -52,13 +56,17 @@
       <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
-</div>
+    </div> <!-- End of mobile code -->
+    
+    
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 40px">
           <ul class="navbar-nav mr-auto">
+            <!-- Logo: PC version --> 
             <a class="navbar-brand" href="/" type="image/png"> 
             <%= image_tag("yellow-logo-transparent.png", id: 'logo-navbar', height: '40', width: '40') %>
             </a>
           </li>
+          <!-- Links: both versions --> 
           <li class="nav-item active">
             <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
           </li>
@@ -71,12 +79,34 @@
           <li class="nav-item active">
             <a class="nav-link" href="/page/contacts">Contact</a>
           </li>
-          
-        </ul>
-        
+          </ul>
+
+          <!-- User icon: PC version --> 
+          <% if current_user.try(:admin?) %>
+          <div class="user_icon">
+            <i class="fas fa-user fa-2x"></i>
+            <div class="dropdown_content">
+              <span><%= current_user.email %></span>
+            <a href='/admins/index'>Manage Accounts</a>
+            <%= link_to('Edit Account', edit_user_registration_path(current_user), method: :GET) %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </div>
+          </div>
+        <% elsif user_signed_in? %>
+          <div class="user_icon">
+            <i class="fas fa-user fa-2x"></i>
+            <div class="dropdown_content">
+              <span><%= current_user.email %></span>
+            <a href='/providers/profile'>Profile</a>
+            <%= link_to('Edit Account', edit_user_registration_path(current_user), method: :GET) %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </div>
+          </div>
+        <% end %>
+        </div>
   <!--Nav bar search: PC version-->
   <form action='/search/search' style="margin: 0; padding: 0;">
-  <div class="navbar-search">
+  <div class="navbar-search" style=" height: 50px; max-width: none;" >
       <div class="input-group">
       <input class="form-control" name="query" id = "query" placeholder="Search Database" type="text">
       <span class="input-group-btn" style="height=10">
@@ -95,8 +125,8 @@
       </div>
   </nav>
 <!--Nav bar search: Mobile version-->
-  <form action='/search/search' style="margin: 0; padding: 0;">
-  <div class="mobile-navbar-search">
+  <form action='/search/search' style="margin: 0; padding: 0; max-width:none;">
+  <div class="mobile-navbar-search" style="">
       <div class="input-group" >
       <input class="form-control" name="query" id = "query" placeholder="Search Database" type="text">
       <span class="input-group-btn">
