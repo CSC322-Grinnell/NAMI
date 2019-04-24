@@ -3,6 +3,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//don't use h1, use p.long_header. p can be wordwrapped.
 @import url('https://fonts.googleapis.com/css?family=Lato|Neuton|Roboto|Arvo|Open%20Sans');
 
 //COLORS
@@ -44,6 +45,8 @@ $black: rgb(0, 0, 0);
         
     }
     
+    
+    
     h2.myclass{
         font-size:3vw;
         font-family: 'Neuton';
@@ -62,11 +65,18 @@ $black: rgb(0, 0, 0);
         font-style: normal;
         font-variant: normal;
         font-weight: 400;
-        //line-height: 20px;
+        
         overflow: normal;
     }
     
-
+	p.long-header{ // functionally the same as h1, but they're seperated because headers can't word wrap
+        font-size:5vw;
+        font-weight: normal;
+       // letter-spacing: 0.005em;
+        font-family: 'Neuton';
+        line-height: 50px;
+        text-align: center;
+    }
     
     .container{
         font-family: 'Neuton';
@@ -103,7 +113,7 @@ $black: rgb(0, 0, 0);
         font-family: 'Neuton';
         padding: 0;
         height: 5%;
-        // display: flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 10px;
@@ -187,14 +197,15 @@ $black: rgb(0, 0, 0);
         display: flex;
         clear:both; 
         bottom: 0;
+        z-index: 500;
         position: fixed;
         align-items: center;
         justify-content: center;
+
     }
     
     .footer div{
         position: relative;
-        // flex:1
     }
 
     .sidebar {
@@ -442,9 +453,15 @@ a {
     @media only screen and (max-width: 1000px){
         h1.myclass{
             font-size: 50px;
-            overflow: scroll;
+            //overflow: scroll;
+            word-wrap: break-word ;
+            //padding: 30%;
+        }
+        p.long-header{
+        	font-size: 50px;
+            //overflow: scroll;
             word-wrap: break-word;
-
+            text-align: center;
         }
         
         h2.myclass{
