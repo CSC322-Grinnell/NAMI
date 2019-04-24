@@ -34,6 +34,8 @@ function create_branch(index){
     })
 }
 
+// separate event handler for the input fields that
+// are already rendered for edit page
 $(".delete").on('click', (e) => {
         var id = e.target.id;
         console.log(id)
