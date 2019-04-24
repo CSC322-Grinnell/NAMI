@@ -35,9 +35,8 @@ function create_branch(index){
 }
 
 $(".delete").on('click', (e) => {
-    var id = e.target.id;
-    console.log(id)
-    var branch_name = "#branch\\[" + id + "\\]";
-    console.log(branch_name)
-    $(branch_name).remove()
-})
+        var id = e.target.id;
+        console.log(id)
+        var branch_name = "#branch\\[" + id + "\\]";
+        $(branch_name).remove()
+    })
