@@ -15,9 +15,23 @@ class ServicesController < ApplicationController
     end
     
     def edit
+        @service = Service.find(params[:id])
+        @branches = @service.branch
     end
     
     def update
+        @service = Service.find(params[:id])
+        if @service.update_attributes(service_params)
+            flash[:success] = ["Service updated!"]
+            if current_user.admin?
+                redirect_to admins_index_path
+            else
+                redirect_to providers_profile_path
+            end
+        else
+            flash.now[:errors] = @service.errors.full_messages
+            render 'edit'
+        end
     end
     
     def service_params

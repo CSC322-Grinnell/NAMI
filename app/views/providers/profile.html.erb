@@ -39,7 +39,7 @@
       <section id="services" class="hidden">
         <% @s = Service.where(provider_id: p.id) %>
         <% @s.each do |service| %>
-          <h2 class="service-name"><%= service.service_name %></h2>
+          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2> <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div>
           <p class="service-description"><%= service.description %></p>
           <% if service.branch.any? %>
             <p class="service-description">Includes:</p>

@@ -1,6 +1,12 @@
-var index = 0
+var index = $(".branch").length
 $("#addBranch").on('click', (e) => {
     
+    create_branch(index)
+    index++;
+});
+
+
+function create_branch(index){
     var branch = document.createElement("INPUT")
     branch.setAttribute("type", "text")
     branch.setAttribute("class", "branch")
@@ -26,6 +32,12 @@ $("#addBranch").on('click', (e) => {
         var branch_name = "#branch\\[" + id + "\\]";
         $(branch_name).remove()
     })
-    
-    index++;
-});
+}
+
+$(".delete").on('click', (e) => {
+    var id = e.target.id;
+    console.log(id)
+    var branch_name = "#branch\\[" + id + "\\]";
+    console.log(branch_name)
+    $(branch_name).remove()
+})

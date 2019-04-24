@@ -1,0 +1,34 @@
+<div class="login-page">
+<%= form_for @service, :url => {:controller => 'services', :action => 'update' }, html: { method: :put} do |f| %>
+    <div class="field">
+        <%= f.label "service name" %><br />
+        <%= f.text_field :service_name %>
+    </div>
+    
+    <div class="field" id="branches">
+    <a href="javascript:;" id="addBranch">Add branching</a>
+    <% if @branches.any? %>
+        <% @branches.each_with_index do |branch, index| %>
+        <% puts branch %>
+        <div id="branch[<%= index %>]">
+            <input type="text" class="branch" multiple="true" value="<%= branch %>" name="service[branch][]">
+            <span class="delete" id="0">❌</span>
+        </div>
+        <% end %>
+    <% end %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :description %>
+        <em>(not exceeding 250 words)</em><br />
+        <%= f.text_area :description, class: "textbox", id: 'textbox', cols: "32", rows: "10"%><br />
+    </div>
+    <span id="count">Word count: <span id="wordCount"></span></span>
+    
+    <div class="actions">
+        <%= f.submit "Save Service" %>
+    </div>
+    
+<% end %>
+<%= javascript_include_tag "textbox" %>
+<%= javascript_include_tag "addBranch" %>

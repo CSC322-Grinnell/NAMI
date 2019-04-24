@@ -181,6 +181,22 @@ h1 {
   cursor: pointer;
 }
 
+// Service
+.service-title {
+  display: flex;
+  
+  a {
+    flex: 1;
+  }
+}
+
+.service-name{
+  flex: 1;
+}
+
+
+
+//----
 
 /** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
