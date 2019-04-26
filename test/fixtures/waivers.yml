@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  braininjury: false
-  intellectualdisability: false
-  childrensmentalhealth: false
-  provider: one
+# one:
+#   braininjury: false
+#   intellectualdisability: false
+#   childrensmentalhealth: false
+#   provider: one
 
-two:
-  braininjury: false
-  intellectualdisability: false
-  childrensmentalhealth: false
-  provider: two
+# two:
+#   braininjury: false
+#   intellectualdisability: false
+#   childrensmentalhealth: false
+#   provider: two

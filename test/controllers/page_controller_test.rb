@@ -16,9 +16,9 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  test "should get providers" do
+  test "should get from providers to signup" do
     get page_providers_url
-    assert_response :success
+    assert_response :redirect
   end
   
   test "should get disorders" do
