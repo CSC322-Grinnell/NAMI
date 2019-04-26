@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  practiceName: MyString
-  address: MyText
-  phone: MyString
-  description: MyText
+  practiceName: "Midwest Counseling"
+  address: "Some Address"
+  phone: "12345"
+  description: "Test"
 
 two:
-  practiceName: MyString
+  practiceName: ""
   address: MyText
   phone: MyString
   description: MyText

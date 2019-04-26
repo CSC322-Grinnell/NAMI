@@ -16,11 +16,12 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
+  ########### This test is problematic #########
   test "should get from providers to signup" do
     get page_providers_url
     assert_redirected_to user_session_path
   end
-  
+  ####################
   test "should get disorders" do
     get page_disorders_url
     assert_response :success
