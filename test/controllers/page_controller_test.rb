@@ -16,7 +16,8 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  ########### This test is problematic #########
+  ########### This test is problematic: the action has
+  ######### an if statement so there are two situations
   test "should get from providers to signup" do
     get page_providers_url
     assert_redirected_to user_session_path
