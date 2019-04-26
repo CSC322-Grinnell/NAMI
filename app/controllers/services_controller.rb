@@ -21,7 +21,13 @@ class ServicesController < ApplicationController
     
     def update
         @service = Service.find(params[:id])
-        if @service.update_attributes(service_params)
+        info = service_params
+        # if branch is not submitted in the hash, the branch
+        # must be dealt with separately.
+        if !info[:branch]
+            info[:branch] = []
+        end
+        if @service.update_attributes(info)
             flash[:success] = ["Service updated!"]
             if current_user.admin?
                 redirect_to admins_index_path
