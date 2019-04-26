@@ -21,9 +21,13 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  test "should get signup" do
-    get page_signup_url
+  test "should get disorders" do
+    get page_disorders_url
     assert_response :success
   end
-
+  
+  test "should get resources" do
+    get page_resources_url
+    assert_response :success
+  end
 end
