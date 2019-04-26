@@ -40,14 +40,16 @@ a {
 }
 
 //mobile css
+//= depend_on_asset "yellow-logo-transparent.png"
+
 @media only screen and (max-width: 1000px){
   a.navbar{
     min-height: 100px;
   }
-  #logo-navbar{
+  #logo-navbar{ //narrow pc
    display: none; 
   }
-  #logo-next-to-button{
+  #logo-next-to-button{ //mobile
     display: flex;
   }
   .mobile-navbar-search  {  

@@ -9,22 +9,20 @@
   <!-- Table starts here -->
   <table id="table" class="table table-hover table-mc-light-blue">
       <thead>
+        <!-- Column titles in search results -->
         <tr>
           <th>Practice Name</th>
           <th>Address</th>
           <th>Phone</th>
-          <th>Description</th>
         </tr>
       </thead>
       <tbody>
+        <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
           <td data-title="Provider Name"><%= result.practiceName %></td>
             <td data-title="address"><%= result.address %></td>
             <td data-title="phone"><%= result.phone %></td>
-            <td data-title="description"><%= result.description %></td>
-  
-         
           </tr>
         <% end %>
         

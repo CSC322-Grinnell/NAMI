@@ -29,7 +29,6 @@ $black: rgb(0, 0, 0);
     }
 
     body {
-        
         //display: flex;
         overflow: scroll;
         height: 100%;
@@ -334,7 +333,7 @@ a {
   opacity: 0.8;
   border: 2px solid $blue;
   border-radius: 4px;
-  transition: $hover;
+  //transition: $hover;
   color: white;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
@@ -400,8 +399,7 @@ a {
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
   margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
-  
-  
+
   &:before {
     content: "";
     transform: translateX(-50%)scaleY(1)scaleX(1.25);

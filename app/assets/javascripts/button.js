@@ -9,13 +9,13 @@ function hide_show(name) {
 } 
 
 
-
+//
 //$(document).ready(() => {
-document.body.onload(() => {
-  let hash = window.location.hash;
-  let element = $(hash+"_card");
+//document.body.onload(() => {
+//  let hash = window.location.hash;
+//  let element = $(hash+"_card");
   
-  console.debug(hash, element);
+//  console.debug(hash, element);
   
-  element.collapse('show');
-});
+//  element.collapse('show');
+//});

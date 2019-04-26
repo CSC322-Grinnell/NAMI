@@ -1,5 +1,5 @@
 var index = $(".branch").length
-$("#addBranch").on('click', function(e){
+$("#addBranch").on('click', (e) => {
     
     create_branch(index)
     index++;
@@ -26,7 +26,7 @@ function create_branch(index){
     box.append(associated_button)
     $("#branches")[0].append(box);
     
-    $(associated_button).on('click', function(e){
+    $(associated_button).on('click', (e) => {
         var id = e.target.id;
         console.log(id);
         var branch_name = "#branch\\[" + id + "\\]";
@@ -36,9 +36,10 @@ function create_branch(index){
 
 // separate event handler for the input fields that
 // are already rendered for edit page
-$(".delete").on('click', function(e){
+$(".delete").on('click', (e) => {
         var id = e.target.id;
         console.log(id)
         var branch_name = "#branch\\[" + id + "\\]";
         $(branch_name).remove();
     })
+;
