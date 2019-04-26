@@ -18,7 +18,7 @@ class PageControllerTest < ActionDispatch::IntegrationTest
   
   test "should get from providers to signup" do
     get page_providers_url
-    assert_response :redirect
+    assert_redirected_to user_session_path
   end
   
   test "should get disorders" do
