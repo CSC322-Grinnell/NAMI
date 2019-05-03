@@ -14,17 +14,16 @@
           <th>Practice Name</th>
           <th>Address</th>
           <th>Phone</th>
-          <th>Profile</th>
         </tr>
       </thead>
       <tbody>
         <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
-            <td data-title="Provider Name"></td>
+            <td data-title="Provider Name"><%= result.practiceName %></td>
             <td data-title="address"><%= result.address %></td>
             <td data-title="phone"><%= result.phone %></td>
-            <a href='/providers/profile'>Profile
+        </a>
           </tr>
         <% end %>
         
