@@ -4,9 +4,9 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( textbox.js )
 Rails.application.config.assets.precompile += %w( profile.js )
-Rails.application.config.assets.precompile += %w( reset.scss )
+Rails.application.config.assets.precompile += %w( reset.css )
 Rails.application.config.assets.precompile += %w( addBranch.js )
-Rails.application.config.assets.precompile += %w( page.scss )
+Rails.application.config.assets.precompile += %w( page.css )
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.

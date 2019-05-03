@@ -21,11 +21,10 @@
         <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
-            <td <a href='/providers/profile'>Profile
-data-title="Provider Name"></td>
+            <td data-title="Provider Name"></td>
             <td data-title="address"><%= result.address %></td>
             <td data-title="phone"><%= result.phone %></td>
-        </a>
+            <a href='/providers/profile'>Profile
           </tr>
         <% end %>
         
