@@ -58,6 +58,7 @@
        <%= label_tag criteria %>
        <input type="radio", name = "criteria", value=<%= criteria %> >
      <% end %>
+     
      <select>
        <option value = "Any"> Any </option>
        <% @waiver_params.each do |criteria| %>
@@ -66,6 +67,14 @@
      <% end %>
      </select>
      
+     <select>
+       <option value = "Any"> Any </option>
+       <% @insurance_params.each do |criteria| %>
+       <option value = "<%= criteria %>"> <%= criteria %> </option>
+         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
+     <% end %>
+     </select>
+  
   
     </fieldset>
     <fieldset>

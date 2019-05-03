@@ -297,7 +297,6 @@ a {
 //ELEMENTS
 .button-container {
   background-color: $darkcyan;
-  //padding: 100px 0;
   text-align: center;
 }
 
@@ -305,13 +304,10 @@ a {
     margin: 0 !important;
 }
 
-
-  
   .front_page_button {
   position: relative;
   color: $black; // text color while hovering
   width: 90%;
-  //height: 300px;
   text-align:center;
   display: inline-block;
   padding: 12px 24px;
@@ -319,7 +315,6 @@ a {
   opacity: 0.8;
   border: 2px solid $blue;
   border-radius: 4px;
-  //transition: $hover;
   color: white;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
