@@ -11,6 +11,8 @@ class SearchController < ApplicationController
 
    def advanced_search
       @search_criteria = search_criteria
+      @waiver_params = waiver_params
+      @insurance_params = insurance_params
    end
    
    def advanced_search_result

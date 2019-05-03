@@ -1,9 +1,6 @@
+/* page.scss is the primary CSS file for the website. Change things here to change the CSS everywhere */
 
-// Place all the styles related to the Page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-//don't use h1, use p.long_header. p can be wordwrapped.
+// IMPORTANT: don't use h1, use p.long_header. p can be wordwrapped, and h1 can't be, so h1 doesn't work for mobile
 @import url('https://fonts.googleapis.com/css?family=Lato|Neuton|Roboto|Arvo|Open%20Sans');
 
 //COLORS
@@ -24,7 +21,6 @@ $yellow: #FFD700;
 $black: rgb(0, 0, 0);
 
     html{
-        scroll-behavior: smooth;
         font-size: 16px;
     }
 
@@ -43,8 +39,6 @@ $black: rgb(0, 0, 0);
         font-family: 'Neuton';
         
     }
-    
-    
     
     h2.myclass{
         font-size:3vw;
@@ -258,16 +252,13 @@ input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
-  //border: none;
 }
 
 
 .input-group-btn {
-    // margin-bottom: 5%; //!important;    
 }
 
 .input-group {
-    //height: 6%;// !important;
 }
 
 //mobile css
@@ -285,20 +276,15 @@ input[type=text] {
 }
 
 .accordion{
-    margin-bottom: 7%;// !important;
+    margin-bottom: 7%;
 }
 .card-body {
-    padding: 2%;//!important;
+    padding: 2%;
 }
-
-// #success-message{
-//     color:green;
-//     text-align: center;
-// }
-
+//-------------------- code for buttons ----------    
 // pretty new buttons: https://www.designskilz.com/cool-css-buttons/
 // "CSS Button Hover by Karlo Videk"
-//HOVER TRANSITION
+// HOVER TRANSITION
 $hover: all 1s ease-in;
 $slide:all 0.5s 0.1s cubic-bezier(0.55,0,0.1,1);
 
@@ -445,18 +431,16 @@ a {
     }
   }
 }
+//-------------------- end of code for buttons ----------    
 
-    // mobile css
-    @media only screen and (max-width: 1000px){
+//-------------------- code for mobile ----------    
+    @media only screen and (max-width: 1000px){ // change max-width to change when mobile code activates
         h1.myclass{
-            font-size: 50px;
-            //overflow: scroll;
+            font-size: 50px; // fixed font-size for smaller windows/mobile
             word-wrap: break-word ;
-            //padding: 30%;
         }
         p.long-header{
         	font-size: 50px;
-            //overflow: scroll;
             word-wrap: break-word;
             text-align: center;
         }
