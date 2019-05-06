@@ -1,9 +1,6 @@
+/* page.scss is the primary CSS file for the website. Change things here to change the CSS everywhere */
 
-// Place all the styles related to the Page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-//don't use h1, use p.long_header. p can be wordwrapped.
+// IMPORTANT: don't use h1, use p.long_header. p can be wordwrapped, and h1 can't be, so h1 doesn't work for mobile
 @import url('https://fonts.googleapis.com/css?family=Lato|Neuton|Roboto|Arvo|Open%20Sans');
 
 //COLORS
@@ -24,7 +21,6 @@ $yellow: #FFD700;
 $black: rgb(0, 0, 0);
 
     html{
-        scroll-behavior: smooth;
         font-size: 16px;
     }
 
@@ -41,10 +37,8 @@ $black: rgb(0, 0, 0);
         font-weight: normal;
        // letter-spacing: 0.005em;
         font-family: 'Neuton';
-        
+        padding-bottom: 10px;
     }
-    
-    
     
     h2.myclass{
         font-size:3vw;
@@ -64,24 +58,23 @@ $black: rgb(0, 0, 0);
         font-style: normal;
         font-variant: normal;
         font-weight: 400;
-        
+        line-height: normal;
         overflow: normal;
     }
     
 	p.long-header{ // functionally the same as h1, but they're seperated because headers can't word wrap
         font-size:5vw;
         font-weight: normal;
-       // letter-spacing: 0.005em;
         font-family: 'Neuton';
         line-height: 50px;
         text-align: center;
+        line-height: 80%;
+        padding-bottom: 20px;
     }
     
     .container{
         font-family: 'Neuton';
-       // letter-spacing: 0.1em;
         display: flex;
-        //overflow-y: auto;
         height: 100%;
         padding-top:1em;
         flex-direction: column;
@@ -172,8 +165,9 @@ $black: rgb(0, 0, 0);
             text-decoration:none; 
         }
     }
+//-------------------- end of code for user drop-down ---------- 
 
-//-------------------- end of code for user drop-down ----------    
+
     .titles {
         color: black;
         font-family: 'Neuton', serif;
@@ -184,10 +178,8 @@ $black: rgb(0, 0, 0);
         flex: 1;
         display: flex;
         overflow-y: scroll;
-
     }
 
-    
     .footer{
         height: 50px;
         background-color: #cdd7d8;
@@ -232,7 +224,6 @@ $black: rgb(0, 0, 0);
         cursor: pointer;
     }
 
-
     .darkFooter{
       background: #292b2c;
     }
@@ -241,7 +232,6 @@ $black: rgb(0, 0, 0);
         color: white;
         padding-top: 1.2em;
     }
-    
     
     .homeButtons {
          margin: auto;
@@ -252,23 +242,18 @@ $black: rgb(0, 0, 0);
     font-family: 'Neuton', serif;
     font-size: 30px;
     margin: auto;
-}
+	}
 
 input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
-  //border: none;
 }
-
-
-.input-group-btn {
-    // margin-bottom: 5%; //!important;    
-}
-
-.input-group {
-    //height: 6%;// !important;
-}
+	.input-group-btn {
+	}
+	
+	.input-group {
+	}
 
 //mobile css
 @media only screen and (max-width: 1000px){
@@ -278,27 +263,22 @@ input[type=text] {
   }
 }
 
-.searchSubmit{
-    margin:0;
-    padding:1;
-    height:100%;
-}
-
-.accordion{
-    margin-bottom: 7%;// !important;
-}
-.card-body {
-    padding: 2%;//!important;
-}
-
-// #success-message{
-//     color:green;
-//     text-align: center;
-// }
-
+	.searchSubmit{
+	    margin:0;
+	    padding:1;
+	    height:100%;
+	}
+	
+	.accordion{
+	    margin-bottom: 7%;
+	}
+	.card-body {
+	    padding: 2%;
+	}
+//-------------------- code for buttons ----------    
 // pretty new buttons: https://www.designskilz.com/cool-css-buttons/
 // "CSS Button Hover by Karlo Videk"
-//HOVER TRANSITION
+// HOVER TRANSITION
 $hover: all 1s ease-in;
 $slide:all 0.5s 0.1s cubic-bezier(0.55,0,0.1,1);
 
@@ -311,7 +291,6 @@ a {
 //ELEMENTS
 .button-container {
   background-color: $darkcyan;
-  //padding: 100px 0;
   text-align: center;
 }
 
@@ -319,13 +298,10 @@ a {
     margin: 0 !important;
 }
 
-
-  
   .front_page_button {
   position: relative;
   color: $black; // text color while hovering
   width: 90%;
-  //height: 300px;
   text-align:center;
   display: inline-block;
   padding: 12px 24px;
@@ -333,7 +309,6 @@ a {
   opacity: 0.8;
   border: 2px solid $blue;
   border-radius: 4px;
-  //transition: $hover;
   color: white;
   display: flex; // puts text in vertical middle of button
   overflow: hidden;
@@ -445,18 +420,16 @@ a {
     }
   }
 }
+//-------------------- end of code for buttons ----------    
 
-    // mobile css
-    @media only screen and (max-width: 1000px){
+//-------------------- code for mobile ----------    
+    @media only screen and (max-width: 1000px){ // change max-width to change when mobile code activates
         h1.myclass{
-            font-size: 50px;
-            //overflow: scroll;
+            font-size: 50px; // fixed font-size for smaller windows/mobile
             word-wrap: break-word ;
-            //padding: 30%;
         }
         p.long-header{
         	font-size: 50px;
-            //overflow: scroll;
             word-wrap: break-word;
             text-align: center;
         }

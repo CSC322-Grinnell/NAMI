@@ -20,9 +20,10 @@
         <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
-          <td data-title="Provider Name"><%= result.practiceName %></td>
+            <td data-title="Provider Name"><%= result.practiceName %></td>
             <td data-title="address"><%= result.address %></td>
             <td data-title="phone"><%= result.phone %></td>
+        </a>
           </tr>
         <% end %>
         

@@ -1,64 +1,40 @@
-
+<!-- 
+To understand advanced search, look at: 
+1. /nami_website/app/controllers/search_controller.rb
+2. /nami_website/app/helpers/checkbox_params.rb
+3. /nami_website/app/views/search/advanced_search_result.html.erb
+-->
 
 <!-- fieldset is used for grouping elements in forms and also for assessibility, a screen reader will read off the legend.-->
  <form action='/search/advanced_search_result' class= "advanced_search">
   <h1>Advanced Search</h1>
   <br>
-  <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
-  <!--
-  <section>
-    <h2>Contact information</h2>
-    <fieldset>
-      <legend>Title</legend>
-      <ul>
-          <li>
-            <label for="title_1">
-              <input type="radio" id="title_1" name="title" value="M." >
-              Mister
-            </label>
-          </li>
-          <li>
-            <label for="title_2">
-              <input type="radio" id="title_2" name="title" value="Ms.">
-              Miss
-            </label>
-          </li>
-      </ul>
-    </fieldset>
-    <p>
-      <label for="name">
-        <span>Name: </span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="text" id="name" name="username">
-    </p>
-    <p>
-      <label for="mail">
-        <span>E-mail: </span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="email" id="mail" name="usermail">
-    </p>
-    <p>
-      <label for="pwd">
-        <span>Password: </span>
-        <strong><abbr title="required">*</abbr></strong>
-      </label>
-      <input type="password" id="pwd" name="password">
-    </p>
-</section>
-  -->
-  
-  
-  
-  
-  
     <fieldset>
      <legend>Select Search Criteria</legend>
      <% @search_criteria.each do |criteria| %>
-     <%= label_tag criteria %>
-     <input type="radio", name = "criteria", value=<%= criteria %> >
+       <%= label_tag criteria %>
+       <input type="radio", name = "criteria", value=<%= criteria %> >
      <% end %>
+     
+     <!-- Dropdown for waivers -->
+     <select name="waiveroptions">
+       <option value = "Any"> Any </option>
+       <% @waiver_params.each do |criteria| %>
+       <option value = "<%= criteria %>"> <%= criteria %> </option>
+         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
+     <% end %>
+     </select>
+     
+     <!-- Dropdown for insurances -->
+     <select name="insuranceoptions">
+       <option value = "Any"> Any </option>
+       <% @insurance_params.each do |criteria| %>
+       <option value = "<%= criteria %>"> <%= criteria %> </option>
+         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
+     <% end %>
+     </select>
+  
+  
     </fieldset>
     <fieldset>
      <legend>Select Additional Filters</legend>

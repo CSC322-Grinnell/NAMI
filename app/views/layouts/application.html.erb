@@ -1,18 +1,22 @@
+<!-- Application.html is the most important file since it controls all the files. It's in charge of the routing, nav bar, and footer -->
+
 <html>
-  
+  <!---------------------------------------- ROUTING ------------------------------------------------------------>
   <head>
+    <!-- We import the reset CSS file first, which sets all of the CSS defaults. This will make our page look the same on all browsers --> 
+    <!-- Then we import our CSS file, which has all of our settings --> 
     <head>
       <link rel="stylesheet" type="text/css" href="reset.scss">
       <link rel="stylesheet" type="text/css" href="page.scss">
-  </head>
+    </head>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAMI Database</title>
-        <link rel="stylesheet" type="text/css" href="reset.scss">
-
+    <title>NAMI Database</title><!-- Words in the tab -->
+    
     <%= csrf_meta_tags %>
     <%= yield(:button_style) %>
+    <%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -25,6 +29,7 @@
   </head>
   <body>
     
+    <!---------------------------------------- NAV BAR ------------------------------------------------------------>
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="parent" >
         <!-- Logo: mobile version --> 
@@ -33,7 +38,7 @@
         <%= image_tag("yellow-logo-transparent.png", id: 'logo-next-to-button', height: '40', width: '40') %>
       </a>
       <!-- User icon: mobile version --> 
-      <% if current_user.try(:admin?) %>
+      <% if current_user.try(:admin?) %> <!-- Checks to see if the admin is signed in. This controls your privledges and whether or not you see the user icon in the corner -->
           <div class="user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
@@ -43,7 +48,7 @@
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
             </div>
           </div>
-        <% elsif user_signed_in? %>
+        <% elsif user_signed_in? %> <!-- Checks to see if the user is signed in. This controls whether or not you can see the user icon in the corner -->
           <div class="user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
@@ -58,7 +63,7 @@
       <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
-    </div> <!-- End of mobile code -->
+    </div><!-- End of mobile code -->
     
     
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="height: 40px">
@@ -121,9 +126,6 @@
  
 </s>
         
-        
-        
-        
       </div>
   </nav>
 <!--Nav bar search: Mobile version-->
@@ -139,6 +141,7 @@
   </div>
     <%= yield %>
     
+    <!---------------------------------------- FOOTER ------------------------------------------------------------>
     <footer class="footer darkFooter">
         <span class="text-muted footerText" style="style=position: relative; center"><%= Time.new.year %> Copyright &copy; Grinnell College. All rights reserved.</span>
     </footer>
