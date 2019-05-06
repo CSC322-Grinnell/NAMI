@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   #routes  for search
   # explanation of route: match [url of your page] => [controller#action name in controller], 
   # :via => action type (get, post, put, delete), :as => give your route an easy-to-recognize, self-defined name
+  
   # Note: the action of your controller must match the name of the HTML page you are routing to.
   match 'search/search' => 'search#search', :via => :get, :as => :data_serach
   resources :search, only: [:search]
