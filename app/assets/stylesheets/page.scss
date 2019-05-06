@@ -37,7 +37,7 @@ $black: rgb(0, 0, 0);
         font-weight: normal;
        // letter-spacing: 0.005em;
         font-family: 'Neuton';
-        
+        padding-bottom: 10px;
     }
     
     h2.myclass{
@@ -58,24 +58,23 @@ $black: rgb(0, 0, 0);
         font-style: normal;
         font-variant: normal;
         font-weight: 400;
-        
+        line-height: normal;
         overflow: normal;
     }
     
 	p.long-header{ // functionally the same as h1, but they're seperated because headers can't word wrap
         font-size:5vw;
         font-weight: normal;
-       // letter-spacing: 0.005em;
         font-family: 'Neuton';
         line-height: 50px;
         text-align: center;
+        line-height: 80%;
+        padding-bottom: 20px;
     }
     
     .container{
         font-family: 'Neuton';
-       // letter-spacing: 0.1em;
         display: flex;
-        //overflow-y: auto;
         height: 100%;
         padding-top:1em;
         flex-direction: column;
@@ -166,8 +165,9 @@ $black: rgb(0, 0, 0);
             text-decoration:none; 
         }
     }
+//-------------------- end of code for user drop-down ---------- 
 
-//-------------------- end of code for user drop-down ----------    
+
     .titles {
         color: black;
         font-family: 'Neuton', serif;
@@ -178,10 +178,8 @@ $black: rgb(0, 0, 0);
         flex: 1;
         display: flex;
         overflow-y: scroll;
-
     }
 
-    
     .footer{
         height: 50px;
         background-color: #cdd7d8;
@@ -226,7 +224,6 @@ $black: rgb(0, 0, 0);
         cursor: pointer;
     }
 
-
     .darkFooter{
       background: #292b2c;
     }
@@ -235,7 +232,6 @@ $black: rgb(0, 0, 0);
         color: white;
         padding-top: 1.2em;
     }
-    
     
     .homeButtons {
          margin: auto;
@@ -246,20 +242,18 @@ $black: rgb(0, 0, 0);
     font-family: 'Neuton', serif;
     font-size: 30px;
     margin: auto;
-}
+	}
 
 input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
 }
-
-
-.input-group-btn {
-}
-
-.input-group {
-}
+	.input-group-btn {
+	}
+	
+	.input-group {
+	}
 
 //mobile css
 @media only screen and (max-width: 1000px){
@@ -269,18 +263,18 @@ input[type=text] {
   }
 }
 
-.searchSubmit{
-    margin:0;
-    padding:1;
-    height:100%;
-}
-
-.accordion{
-    margin-bottom: 7%;
-}
-.card-body {
-    padding: 2%;
-}
+	.searchSubmit{
+	    margin:0;
+	    padding:1;
+	    height:100%;
+	}
+	
+	.accordion{
+	    margin-bottom: 7%;
+	}
+	.card-body {
+	    padding: 2%;
+	}
 //-------------------- code for buttons ----------    
 // pretty new buttons: https://www.designskilz.com/cool-css-buttons/
 // "CSS Button Hover by Karlo Videk"

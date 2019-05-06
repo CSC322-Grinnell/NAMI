@@ -16,14 +16,22 @@ class SearchController < ApplicationController
    end
    
    def advanced_search_result
+      puts("ARYAN LOOK AT THIS")
+      puts(params)
+      
       criteria = params[:criteria]
-      query = params[:query]
+      
+      waiver = params[:waiveroptions]
+      insurance = params[:insuranceoptions]
+      
       search_function = "search_#{criteria}"
       
       if criteria == nil
          @results = Provider.all
-      elsif query != nil
-         @results = Provider.public_send(search_function, query)
+      elsif waiver != nil 
+         @results = Provider.public_send(search_function, waiver)
+      elsif insurance != nil 
+         @results = Provider.public_send(search_function, insurance)
       else
          @results = Provider.all
       end
