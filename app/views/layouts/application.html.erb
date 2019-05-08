@@ -39,7 +39,7 @@
       </a>
       <!-- User icon: mobile version --> 
       <% if current_user.try(:admin?) %> <!-- Checks to see if the admin is signed in. This controls your privledges and whether or not you see the user icon in the corner -->
-          <div class="user_icon">
+          <div class="mobile_user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
@@ -49,7 +49,7 @@
             </div>
           </div>
         <% elsif user_signed_in? %> <!-- Checks to see if the user is signed in. This controls whether or not you can see the user icon in the corner -->
-          <div class="user_icon">
+          <div class="mobile_user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
@@ -70,27 +70,27 @@
           <ul class="navbar-nav mr-auto">
             <!-- Logo: PC version --> 
             <a class="navbar-brand" href="/" type="image/png"> 
-            <%= image_tag("yellow-logo-transparent.png", id: 'logo-navbar', height: '40', width: '40') %>
+            <%= image_tag("yellow-logo-transparent.png", id: 'logo-navbar', height: '35', width: '35') %>
             </a>
-          </li>
+            </li>
           <!-- Links: both versions --> 
           <li class="nav-item active">
-            <a class="nav-link" href='/'>Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href='/' style='line-height: 27px;'>Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href='/page/parents'>For Parents</a>
+            <a class="nav-link" href='/page/parents' style='line-height: 27px;'>For Parents</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href='/page/providers'>For Providers</a>
+            <a class="nav-link" href='/page/providers' style='line-height: 27px;'>For Providers</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/page/contacts">Contact</a>
+            <a class="nav-link" href="/page/contacts" style='line-height: 27px;'>Contact</a>
           </li>
           </ul>
 
           <!-- User icon: PC version --> 
           <% if current_user.try(:admin?) %>
-          <div class="user_icon">
+          <div class="pc_user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
@@ -100,7 +100,7 @@
             </div>
           </div>
         <% elsif user_signed_in? %>
-          <div class="user_icon">
+          <div class="pc_user_icon">
             <i class="fas fa-user fa-2x"></i>
             <div class="dropdown_content">
               <span><%= current_user.email %></span>
@@ -113,7 +113,7 @@
         </div>
   <!--Nav bar search: PC version-->
   <form action='/search/search' style="margin: 0; padding: 0;">
-  <div class="navbar-search" style=" height: 50px; max-width: none;" >
+  <div class="navbar-search" style=" max-width: none;" >
       <div class="input-group">
       <input class="form-control" name="query" id = "query" placeholder="Search Database" type="text">
       <span class="input-group-btn" style="height=10">

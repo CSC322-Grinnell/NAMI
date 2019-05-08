@@ -11,6 +11,7 @@ $yellow: #F7E221;
 $red: #FF0000;
 $transparent: rgba(255, 255, 255, 0);
 $black-05: rgba(0, 0, 0, 0.05);
+
 // NAMI color scheme
 $darkgreen: #6B8E23;
 $lightgreen: #96B441;
@@ -25,17 +26,14 @@ $black: rgb(0, 0, 0);
     }
 
     body {
-        //display: flex;
         overflow: scroll;
         height: 100%;
         font-family: 'Lato', sans-serif;
-        //flex-direction: column;
     }
     
     h1.myclass{
         font-size:5vw;
         font-weight: normal;
-       // letter-spacing: 0.005em;
         font-family: 'Neuton';
         padding-bottom: 10px;
     }
@@ -48,7 +46,6 @@ $black: rgb(0, 0, 0);
     h5 {
         font-weight: normal;
         font-size: 100%;
-       // letter-spacing: 0.9em;
         font-family: 'Neuton';
     }
     
@@ -88,7 +85,7 @@ $black: rgb(0, 0, 0);
         
     }
     
-    td{
+    td {
        white-space: normal !important; 
     }
     
@@ -99,8 +96,8 @@ $black: rgb(0, 0, 0);
         font-size: 3em;
         font-family: 'Lato';
     }
-
-    .nav {
+// ------------------- Code for nav bar -----------       
+    .nav { // nav bar 
         background-color: #cdd7d8;
         font-family: 'Neuton';
         padding: 0;
@@ -111,7 +108,7 @@ $black: rgb(0, 0, 0);
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    .navbar-search {
+    .navbar-search { // mobile version of the search bar in the nav bar
         @media only screen and (max-width: 1000px){
             display: none;
         }
@@ -119,16 +116,21 @@ $black: rgb(0, 0, 0);
     .parent{
         display:none;
     }
-// ------------------- Code for user drop-down -----------       
-    .user_icon {
+// ------------------- user icon and drop-down menu -----------       
+    .mobile_user_icon { // the icon itself
         color:white;
         text-align:center;
-        margin-left:5px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-top: 10px;
     }    
     
-    .dropdown_content {
+    .pc_user_icon { // the icon itself
+        color:white;
+        text-align:center;
+        padding-right: 10px;
+        padding-top: 5px;
+    }    
+    
+    .dropdown_content { // the drop-down menu
       display:none;
       position: absolute;
       color: black;
@@ -139,13 +141,13 @@ $black: rgb(0, 0, 0);
       z-index:999; // puts the dropdown in front of all other elements
       right:16px;
       
-      a {
+      a { // this controls how the options in the drop-down look when you aren't hovering over them
         padding: 12px 16px;
         display:inline;
         color:black;
       }
       
-      a:hover{
+      a:hover{ // this controls how the options in the drop-down look when you hover over them
       	background-color: $red;
           color:white;
     }
@@ -155,7 +157,7 @@ $black: rgb(0, 0, 0);
       }
     } //dropdown-content
     
-    .user_icon:hover{
+    .pc_user_icon:hover{ // how the user icon looks when you're hovering over it
         background:black;
         .dropdown_content{
             display: block;
@@ -165,8 +167,19 @@ $black: rgb(0, 0, 0);
             text-decoration:none; 
         }
     }
-//-------------------- end of code for user drop-down ---------- 
-
+    .mobile_user_icon:hover{ // how the user icon looks when you're hovering over it
+        background:black;
+        .dropdown_content{
+            display: flex;
+            width: 100%;
+        }
+        a {
+            cursor:pointer;
+            text-decoration:none; 
+        }
+    }
+    
+//-------------------- miscellaneous ---------- 
 
     .titles {
         color: black;
@@ -194,11 +207,11 @@ $black: rgb(0, 0, 0);
         justify-content: center;
     }
     
-    .footer div{
+    .footer div{ 
         position: fixed;
     }
 
-    .sidebar {
+    .sidebar { 
         background-color: #acfca6;
         min-width: 20%;
     }
@@ -207,21 +220,6 @@ $black: rgb(0, 0, 0);
         font-family: 'Lato', sans-serif;
         background-color: #b8f4f9;
         flex: 1;
-    }
-
-    .buttons {
-        height: 100%;
-        font-family: 'Neuton', serif;
-        display: flex;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .buttons:hover {
-        background-color: black;
-        .titles {color: white};
-        cursor: pointer;
     }
 
     .darkFooter{
@@ -233,16 +231,8 @@ $black: rgb(0, 0, 0);
         padding-top: 1.2em;
     }
     
-    .homeButtons {
-         margin: auto;
-         margin-top: 0;
-    }
     
-    .buttonText{
-    font-family: 'Neuton', serif;
-    font-size: 30px;
-    margin: auto;
-	}
+//-------------------- search ---------- 
 
 input[type=text] {
   padding: 6px;
@@ -255,40 +245,44 @@ input[type=text] {
 	.input-group {
 	}
 
-//mobile css
-@media only screen and (max-width: 1000px){
-  .input-group{
-    height: 50px;
-    width: 100%;
-  }
-}
-
 	.searchSubmit{
 	    margin:0;
-	    padding:1;
+	    padding:6;
 	    height:100%;
 	}
 	
-	.accordion{
+//-------------------- accordion ---------- 
+
+	.accordion{ // accordion on the diagnosis and resource pages
 	    margin-bottom: 7%;
 	}
-	.card-body {
+	.card-body { // also related to the accordion
 	    padding: 2%;
 	}
-//-------------------- code for buttons ----------    
+	
+//-------------------- animated buttons ----------    
 // pretty new buttons: https://www.designskilz.com/cool-css-buttons/
 // "CSS Button Hover by Karlo Videk"
 // HOVER TRANSITION
 $hover: all 1s ease-in;
 $slide:all 0.5s 0.1s cubic-bezier(0.55,0,0.1,1);
 
+.homeButtons {
+    margin: auto;
+    margin-top: 0;
+}
+    
+.buttonText{
+	font-family: 'Neuton', serif;
+    font-size: 30px;
+    margin: auto;
+}
 
 a {
   text-decoration: none;
   color: $black;
 }
 
-//ELEMENTS
 .button-container {
   background-color: $darkcyan;
   text-align: center;
@@ -298,7 +292,7 @@ a {
     margin: 0 !important;
 }
 
-  .front_page_button {
+  .front_page_button { // buttons on the front page
   position: relative;
   color: $black; // text color while hovering
   width: 90%;
@@ -315,7 +309,7 @@ a {
   margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
   
   
-  &:before {
+  &:before { // front page buttons before you hover over them
     content: "";
     transform: translateX(-50%)scaleY(1)scaleX(1.25);
     top: 100%;
@@ -325,7 +319,7 @@ a {
     z-index: -1;
   }
   
-  &:after {
+  &:after { // front page buttons after you hover over them
     content: "";
     position: absolute;
     left: 55%;
@@ -341,8 +335,8 @@ a {
     z-index: -1;
   }
   
-  &:hover {
-    color: black; // text color while hovering
+  &:hover { // front page buttons while you hover over them
+    color: black; // text color 
     border: 2px solid $yellow;
     
     &:before {
@@ -358,11 +352,11 @@ a {
     }
   }
 }
-.parent_page_button {
+// the "for parents" page buttons are almost identical to the home page buttons. The colors are the most major difference
+.parent_page_button { // buttons on the "for parents" page
   position: relative;
   color: white; // text color while hovering
   width: 90%;
-  //height: 30%;
   text-align:center;
   display: inline-block;
   padding: 12px 24px;
@@ -375,7 +369,7 @@ a {
   overflow: hidden;
   margin: 5%; //changed so that the buttons center themselves properly in both PC and mobile versions
 
-  &:before {
+  &:before { // buttons on the "for parents" page before you hover over them
     content: "";
     transform: translateX(-50%)scaleY(1)scaleX(1.25);
     top: 100%;
@@ -386,7 +380,7 @@ a {
     z-index: -1;
   }
   
-  &:after {
+  &:after { // buttons on the "for parents" page after you hover over them
     content: "";
     position: absolute;
     color: $black; // text color while hovering
@@ -403,7 +397,7 @@ a {
     z-index: -1;
   }
   
-  &:hover {
+  &:hover { // buttons on the "for parents" page while you hover over them
     color: white; // text color while hovering
     border: 2px solid $blue;
     
@@ -420,10 +414,13 @@ a {
     }
   }
 }
-//-------------------- end of code for buttons ----------    
 
-//-------------------- code for mobile ----------    
-    @media only screen and (max-width: 1000px){ // change max-width to change when mobile code activates
+//-------------------- mobile ----------    
+    @media only screen and (max-width: 1000px){ // max-width determines when mobile code activates based on the window width
+    	.input-group{
+    	//	height: 50px;
+    		width: 100%;
+  		}
         h1.myclass{
             font-size: 50px; // fixed font-size for smaller windows/mobile
             word-wrap: break-word ;
@@ -441,4 +438,9 @@ a {
         p.container{
 
         }
-    } // end of mobile css
+        
+        .pc_user_icon{
+        	display: none;
+        }
+} 
+//-------------------- end of mobile ----------    

@@ -11,20 +11,19 @@
       <thead>
         <!-- Column titles in search results -->
         <tr>
-          <th>Practice Name</th>
-          <th>Address</th>
-          <th>Phone</th>
+          <th>Provider Name</th>
+          <th>Profile Link</th>
+          <th>Phone Number</th>
         </tr>
       </thead>
       <tbody>
         <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
-            <td data-title="Provider Name"><%= result.practiceName %></td>
-            <td data-title="address"><%= result.address %></td>
+            <td data-title="Provider Name"><%= result.practiceName %> </td>
+            <td><%= link_to('Profile', go_to_profile_path(result.id), method: :GET) %></td>
             <td data-title="phone"><%= result.phone %></td>
-        </a>
-          </tr>
+        </tr>
         <% end %>
         
       </tbody>

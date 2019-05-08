@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   #routes  for search
   match 'search/search' => 'search#search', :via => :get, :as => :data_serach
+  match 'search/go_to_profile/:id' => 'search#go_to_profile', :via => :get, :as => :go_to_profile
   resources :search, only: [:search]
   
   #routes for provider model

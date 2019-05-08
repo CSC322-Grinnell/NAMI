@@ -108,13 +108,16 @@ h1 {
 
 /** profile nav links **/
 #profiletabs {
+   
   display: block;
   margin-bottom: 4px;
-  height: 50px;
+  height: 10%;
   text-align: center;
 }
 
 #profiletabs ul { 
+  
+  
   list-style: none; 
   width: 95%; 
   height: 50px; 
@@ -165,12 +168,13 @@ h1 {
   padding-bottom: 4px;
 }
 
-.setting {
+.setting { // email, address, phone number, etc. under the "basic info" tab
+  
   display: block;
   font-weight: normal;
   padding: 7px 3px;
   border-top: 1px solid #d6d1af;
-  margin-bottom: 5px;
+
 }
 .setting span {
   float: left; 
@@ -195,7 +199,13 @@ h1 {
 }
 
 
-
+.pc_profile{
+        font-family: 'Neuton';
+        display: flex;
+        height: 100%;
+        padding-top:1em;
+        flex-direction: column;
+    }
 //----
 
 /** clearfix **/
@@ -204,3 +214,19 @@ h1 {
  
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
+
+.mobile-profile{
+  display: none;
+}
+
+
+@media only screen and (max-width: 1000px){ // max-width determines when mobile code activates based on the window width
+.pc_profile{
+    display:none;
+  }
+  .mobile-profile{
+    display: inline;
+  }
+  
+  
+}

@@ -33,6 +33,15 @@ To understand advanced search, look at:
          <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
      <% end %>
      </select>
+     
+     <!-- Dropdown for insurances -->
+     <select name="addressoptions">
+       <option value = "Any"> Any </option>
+       <% @address_params.each do |criteria| %>
+       <option value = "<%= criteria %>"> <%= criteria %> </option>
+         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
+     <% end %>
+     </select>
   
   
     </fieldset>
