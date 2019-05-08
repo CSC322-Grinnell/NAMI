@@ -18,7 +18,7 @@ To understand advanced search, look at:
      
      <!-- Dropdown for waivers -->
      <select name="waiveroptions">
-       <option value = "Any"> Any </option>
+       <option value = ""> Any </option>
        <% @waiver_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
          <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
@@ -27,7 +27,7 @@ To understand advanced search, look at:
      
      <!-- Dropdown for insurances -->
      <select name="insuranceoptions">
-       <option value = "Any"> Any </option>
+       <option value = ""> Any </option>
        <% @insurance_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
          <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
@@ -36,7 +36,7 @@ To understand advanced search, look at:
      
      <!-- Dropdown for insurances -->
      <select name="addressoptions">
-       <option value = "Any"> Any </option>
+       <option value = ""> Any </option>
        <% @address_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
          <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>

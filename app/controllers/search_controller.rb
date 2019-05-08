@@ -28,8 +28,9 @@ class SearchController < ApplicationController
       waiver = params[:waiveroptions]
       insurance = params[:insuranceoptions]
       address = params[:addressoptions]
+      practiceName = params[:query]
    
-      @results = Provider.search_all([:waiver, :insurance, :address])
+      @results = Provider.search_all([waiver, insurance, address, practiceName])
       
       
       # if criteria == nil
