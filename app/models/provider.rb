@@ -19,10 +19,14 @@ class Provider < ApplicationRecord
                     tsearch: { prefix: true }
     } 
     
+    
+    
     pg_search_scope :search_all, against: [
         [:waiver, 'A'],
         [:insurance, 'B'],
         [:address, 'C'],
         [:practiceName, 'D']
     ]
+    
+    
 end

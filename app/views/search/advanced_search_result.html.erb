@@ -1,7 +1,7 @@
 <!--source: https://codepen.io/anon/pen/MRgQyP-->
 <div class='container'>
 <div id="demo">
-  <h1>Advanced Search Results</h1>
+    <p class="long-header" >Search Results</p>
     <% if @results.any? %>
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
@@ -12,7 +12,7 @@
         <!-- Column titles in search results -->
         <tr>
           <th>Practice Name</th>
-          <th>Address</th>
+          <th>See Profile</th>
           <th>Phone</th>
         </tr>
       </thead>
@@ -21,7 +21,7 @@
         <% @results.each do |result| %>
         <tr>
           <td data-title="Provider Name"><%= result.practiceName %></td>
-            <td data-title="address"><%= result.address %></td>
+            <td><%= link_to('Profile', go_to_profile_path(result.id), method: :GET) %></td>
             <td data-title="phone"><%= result.phone %></td>
         </tr>
         <% end %>

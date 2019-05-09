@@ -7,48 +7,38 @@ To understand advanced search, look at:
 
 <!-- fieldset is used for grouping elements in forms and also for assessibility, a screen reader will read off the legend.-->
  <form action='/search/advanced_search_result' class= "advanced_search">
-  <h1>Advanced Search</h1>
-  <br>
-    <fieldset>
-     <legend>Select Search Criteria</legend>
-     <% @search_criteria.each do |criteria| %>
-       <%= label_tag criteria %>
-       <input type="radio", name = "criteria", value=<%= criteria %> >
-     <% end %>
+  <p class="long-header" >Advanced Search</p>
+    
+     <p>Select Search Criteria</p>
      
-     <!-- Dropdown for waivers -->
+     <fieldset>
      <select name="waiveroptions">
-       <option value = ""> Any </option>
+       <option value = ""> Choose a Waiver </option>
        <% @waiver_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
-         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
      <% end %>
      </select>
      
      <!-- Dropdown for insurances -->
      <select name="insuranceoptions">
-       <option value = ""> Any </option>
+       <option value = ""> Choose an Insurance </option>
        <% @insurance_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
-         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
      <% end %>
      </select>
      
      <!-- Dropdown for insurances -->
      <select name="addressoptions">
-       <option value = ""> Any </option>
+       <option value = ""> Choose a City </option>
        <% @address_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
-         <%# check_box_tag "waiver_params", criteria.id, id: => "waiver_params_#{waiver.id}" %>
      <% end %>
      </select>
   
   
     </fieldset>
-    <fieldset>
-     <legend>Select Additional Filters</legend>
-    </fieldset>
+   
      
-     <label for="Query">Search <input class="form-control" name="query" id = "query" placeholder="Find a resource" type="text"></label>
+     <label for="Query"> <input class="form-control" name="query" id = "query" placeholder="Search by Provider Name" type="text"></label>
      <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
  </form>

@@ -8,7 +8,7 @@ module CheckboxParams
   end
   
   def address_params 
-    ["Iowa City", "Grinnell", "Des Moines"]
+    ["Iowa City", "Grinnell", "Des Moines", "Place"]
   end
   
   def search_criteria

@@ -97,6 +97,8 @@ form .horizontal{
 }
 
 .advanced_search{
-  width: 80%;
+  width: 100%;
   max-width: none;
+  margin:0;
+  height: calc(100% - 100px);
 }

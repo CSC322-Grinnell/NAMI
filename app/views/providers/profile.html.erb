@@ -1,21 +1,21 @@
-
-
-<%= javascript_include_tag "profile" %>
-
 <div class="pc_profile">
     <%= render 'providers/shared/success_message' %>
     <%= render 'providers/shared/error_messages' %>
-     <% if p = @provider %>
+    <% if p = Provider.find_by_user_id(current_user.id) %>
      <% @user = User.find(p.user_id) %>
      
     <div id="w">
       <div id="content" class="clearfix">
-          <p class="long-header" ><%= p.practiceName %></p>
+          <p class="long-header" style="font-size: 50px;"><%= p.practiceName %></p>
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#description" class="sel">Description</a></li>
           <li><a href="#info">Basic info</a></li>
           <li><a href="#services">Services</a></li>
+           <% if user_signed_in? && p.user_id = current_user.id %>
+          <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
+          <li><%= link_to('Add Service', new_service_path(p), method: :GET) %></li>
+          <% end %>
         </ul>
       </nav>
       
@@ -34,7 +34,9 @@
       <section id="services" class="hidden">
         <% @s = Service.where(provider_id: p.id) %>
         <% @s.each do |service| %>
-          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2> </div>
+          <div class="service-title">
+            <h2 class="service-name"><%= service.service_name %></h2>
+            <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div> 
           <p class="service-description"><%= service.description %></p>
           <% if service.branch.any? %>
             <p class="service-description">Includes:</p>
@@ -45,6 +47,7 @@
             <% end %>
           <% end %>
         <% end %>
+        </div>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->
@@ -63,10 +66,10 @@
     <!--Accordion wrapper-->
     <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true" >
 
-  <!-- Accordion card -->
+  <!-- Description card -->
   <div class="card" >
 
-    <!-- Card header -->
+    <!-- Description header -->
     <div class="card-header" role="tab" id="headingOne1">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse1"
         aria-expanded="false" aria-controls="collapse1">
@@ -74,7 +77,7 @@
       </a>
     </div>
     
-    <!-- Card body -->
+    <!-- Description body -->
   <div>
     <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
       <div class="card-body card-body mb-1 rgba-grey-light white-text">
@@ -82,12 +85,10 @@
       </div>
     </div>
   </div>
-  <!-- Accordion card -->
-
-  <!-- Accordion card -->
+  <!-- Basic Info card -->
   <div class="card">
 
-    <!-- Card header -->
+    <!-- Basic Info header -->
     <div class="card-header" role="tab" id="headingTwo2">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
         aria-expanded="false" aria-controls="collapseTwo2">
@@ -96,7 +97,7 @@
       </a>
     </div>
 
-    <!-- Card body -->
+    <!-- Basic Info body -->
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
 
       <div class="card-body">
@@ -109,12 +110,11 @@
     </div>
 
   </div>
-  <!-- Accordion card -->
 
-  <!-- Accordion card -->
+  <!-- Service card -->
   <div class="card">
 
-    <!-- Card header -->
+    <!-- Service header -->
     <div class="card-header" role="tab" id="headingThree3">
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
         aria-expanded="false" aria-controls="collapseThree3">
@@ -124,12 +124,12 @@
       </a>
     </div>
 
-    <!-- Card body -->
+    <!-- Service body -->
     <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
       <div class="card-body">
         <% @s = Service.where(provider_id: p.id) %>
         <% @s.each do |service| %>
-          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2>  <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div></div>
+          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2></div><%= link_to('Edit this service', edit_service_path(service), method: :get) %></div> 
           <p class="service-description"><%= service.description %></p>
           <% if service.branch.any? %>
             <p class="service-description">Includes:</p>
@@ -143,9 +143,45 @@
       </div>
     </div>
 
-  </div>
-  <!-- Accordion card -->
+  <!-- Edit Profile card -->
+  <div class="card" >
 
+    <!-- Edit Profile header -->
+    <div class="card-header" role="tab" id="headingFour4">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4"
+        aria-expanded="false" aria-controls="collapseFour4">
+        <h5 class="mb-0 white-text font-thin"> Edit Profile <i class="fas fa-angle-down rotate-icon"></i></h5>
+      </a>
+    </div>
+    
+    <!-- Edit Profile body -->
+  <div>
+    <div id="collapseFour4" class="collapse" role="tabpanel" aria-labelledby="headingFour4" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+  <%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %>
+    </div>
+  </div>
+  
+  <!-- Add Service card -->
+  <div class="card" >
+
+    <!-- Add Service header -->
+    <div class="card-header" role="tab" id="headingFive5">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive5"
+        aria-expanded="false" aria-controls="collapseFive5">
+        <h5 class="mb-0 white-text font-thin"> Add Service <i class="fas fa-angle-down rotate-icon"></i></h5>
+      </a>
+    </div>
+    
+    <!-- Add Service body -->
+  <div>
+    <div id="collapseFive5" class="collapse" role="tabpanel" aria-labelledby="headingFive5" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+          <%= link_to('Add Service', new_service_path(p), method: :GET) %>
+    </div>
+  </div>
+  
+</div>
 </div>
 <!-- Accordion wrapper -->
 </div>
@@ -159,7 +195,7 @@
 </div>
         
         <% else %>
-          <p>You do not have a profile yet!</p>
+          <h1>You do not have a profile yet!</h1>
           <%= link_to 'Create Profile', new_provider_path %>
         <% end %>
 

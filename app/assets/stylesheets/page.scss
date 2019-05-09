@@ -137,7 +137,7 @@ $black: rgb(0, 0, 0);
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       padding: 12px 16px;
-      margin-top: 8px;
+     // margin-top: 8px;
       z-index:999; // puts the dropdown in front of all other elements
       right:16px;
       
@@ -415,6 +415,10 @@ a {
   }
 }
 
+// fieldset {
+// 	height: 2em;
+// }
+
 //-------------------- mobile ----------    
     @media only screen and (max-width: 1000px){ // max-width determines when mobile code activates based on the window width
     	.input-group{
@@ -429,6 +433,9 @@ a {
         	font-size: 50px;
             word-wrap: break-word;
             text-align: center;
+            margin:0;
+            padding:0 !important;
+            margin-bottom: 10px;
         }
         
         h2.myclass{
