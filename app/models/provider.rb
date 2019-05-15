@@ -20,7 +20,7 @@ class Provider < ApplicationRecord
     } 
     
     
-    
+    # Search function 
     pg_search_scope :search_all, against: [
         [:waiver, 'A'],
         [:insurance, 'B'],

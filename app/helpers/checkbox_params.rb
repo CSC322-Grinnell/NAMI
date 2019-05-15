@@ -1,3 +1,6 @@
+# Probably rename this module to DropdownParams since we're no longer using a checkbox (Unless future group decides to)
+
+
 module CheckboxParams
   def insurance_params
     ["Insurance 1", "Insurance 2", "Insurance 3", "Insurance 4"]
@@ -15,3 +18,6 @@ module CheckboxParams
     ["waiver", "insurance", "address", "practiceName"]
   end
 end
+
+
+
