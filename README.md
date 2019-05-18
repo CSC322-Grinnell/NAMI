@@ -1,24 +1,58 @@
 # README
+Our project is making a database and related website that contains resources for children with mental disorders. There’s a lack of easily accessible information about the mental health resources in Iowa, which makes it difficult for parents and for doctors to help mentally ill children. Iowa needs a database to help people find resources for their children/patients, but it is time-consuming and unrealistic to update health-provider information manually. We intend to make a database that is self-sustaining. People with mental disorders have so many challenges trying to operate in our world, and any sort of help and connection to resources would help immensely. The group we are partnering with is National Alliance on Mental Illness, or NAMI.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
 
-Things you may want to cover:
+## Gems
+- [pg_search](https://github.com/Casecommons/pg_search): used for advanced database search
+- [Devise](https://github.com/plataformatec/devise): used for user authentication and user actions
+- [Mocha](https://github.com/freerange/mocha): used for testing
 
-* Ruby version
+## Configuration
+[Gemfile for this project](nami_website/Gemfile)
 
-* System dependencies
+## Database
+We used PostgreSQL because we waant to store arrays in the database. 
 
-* Configuration
+To enter the PSQL console, type
+```bash
+psql
+```
+To quit the PSQL console, type
+```bash
+\q
+```
 
-* Database creation
+To enter the rails database console in order to view the data, type
+ ```bash
+ rails console
+ ```
+To quit the console, type
+```bash
+quit
+```
 
-* Database initialization
+Note: if you want to play with the database without making any accidental changes to the real database, you can type
+```bash
+rails console --sandbox
+```
+This will bring you to a "sandbox" and any changes you make in the sandbox will be rolled back once you quit.
 
-* How to run the test suite
+## How to run the test suite
+```rails
+rails test
+```
+or, to specify the test of a specific section, you can type:
+```rails
+rails test:controllers
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Deployment instructions
+The project is deployed to Heroku on https://dashboard.heroku.com/apps/frozen-hollows-51585. It should be connected already to the cloud9 repository. You can view our currently app at https://frozen-hollows-51585.herokuapp.com/ 
 
-* Deployment instructions
-
-* ...
+To deploy to the connected Heroku dashboard, type
+```git
+git push heroku
+```
+For the next group, you might want to deploy it to a completely different heroku if that’s easier. 
