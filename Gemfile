@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Postgresql Gem
- ruby '2.4.0'
+ruby '2.4.0'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
 
