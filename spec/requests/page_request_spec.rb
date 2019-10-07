@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Page Requests" do
+RSpec.describe "Page Request" do
   it "should get home" do
     get root_url
     expect(response).to have_http_status(:success)
