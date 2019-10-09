@@ -8,25 +8,22 @@ RSpec.configure do |c|
 end
 
 RSpec.describe "User Form" do
-  before(:each) { sign_in a_user }
+  before(:each) do
+    @user_params = { :email => "shelby@example.com", :password => "1234567890",
+                     :password_confirmation => "1234567890"}
+  end
 
   pending "should be able to create user if form is completed" do
-    expect(post '/page/post_create_user', params:
-                { :username => "user", :password => "1234567890", :confirm => "1234567890",
-                  :provider_name => "provider", :address => "address", :phone => "phone",
-                  :email => "qinyi@email.com" }
-          ).to change{User.count}.by(1)
+    expect{get new_user_registration_path, params: @user_params}.to change{User.count}
     expect(response).to have_http_status(:redirect)
     follow_redirect!
     expect(response).to have_http_status(:success)
     expect(response).to have_tag ".alert-success", "Account created!"
   end
 
-  pending "shouldn't create user if form is not correctly filled" do
-    expect(post '/page/post_create_user', params:
-                { :username => "user", :password => "1234567", :confirm => "123456790", :provider_name => "provider",
-                  :address => "address", :phone => "phone", :email => "email" }
-          ).to_not change{User.count}.by(1)
+  it "shouldn't create user if form is not correctly filled" do
+    @user_params[:password_confirmation] = "012"
+    expect{get new_user_registration_path, params: @user_params}.to_not change{User.count}
     expect(response).to have_http_status(:success)
   end
 end

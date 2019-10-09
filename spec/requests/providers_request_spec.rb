@@ -19,20 +19,20 @@ RSpec.describe "Providers Request when signed in with user" do
     expect(response).to have_http_status(:success)
   end
 
-  it "should create provider" do
+  pending "should create provider" do
     post providers_create_url,
          params: { provider: {
                      practiceName: "1",
                      address: "1",
                      phone: "12",
                      description: "something",
-                     user_id: User.find_by_email("qinyi@grinnell.edu")
+                     user_id: User.find_by_email("shelby@grinnell.edu")
                  }}
     expect(response).to redirect_to(providers_profile_url)
   end
 
-  pending "should get profile" do
-    get providers_profile_url
+  it "should get profile" do
+    get '/providers/profile'
     expect(response).to have_http_status(:success)
   end
 
@@ -49,7 +49,7 @@ RSpec.describe "Providers Request when signed in with user" do
   end
 
   pending "should update provider" do
-    put edit_provider_url(Provider.first),
+    put provider_url(Provider.first),
         params: { provider: {
                     practiceName: "1",
                     address: "1",
