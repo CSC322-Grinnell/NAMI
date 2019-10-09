@@ -27,5 +27,6 @@ RSpec.describe "User Form" do
                 { :username => "user", :password => "1234567", :confirm => "123456790", :provider_name => "provider",
                   :address => "address", :phone => "phone", :email => "email" }
           ).to_not change{User.count}.by(1)
+    expect(response).to have_http_status(:success)
   end
 end
