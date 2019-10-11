@@ -5,7 +5,7 @@ class Provider < ApplicationRecord
     validates :address, presence: true
     validates :phone, presence: true
     belongs_to :user
-    include PgSearch
+    include PgSearch::Model
     pg_search_scope :search_practiceName, against: [:practiceName], using: {
                     tsearch: { prefix: true }
     }

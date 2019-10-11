@@ -23,8 +23,8 @@
         <p class="setting"><span>E-mail Address </span> <%= @user.email %> </p>
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> <%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
-        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+        <p class="setting"><span>Waivers </span> <%= p.waiver %> </p>
+        <p class="setting"><span>Insurances </span> <%= p.insurance %> </p>
       </section>
       
       <section id="services" class="hidden">
@@ -99,8 +99,8 @@
         <p class="setting"><span>E-mail Address </span></br> <%= @user.email %> </p>
         <p class="setting"><span>Address </span></br> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> </br><%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span></br> <%= p.waiver.join(", ") %> </p>
-        <p class="setting"><span>Insurances </span></br> <%= p.insurance.join(", ") %> </p>
+        <p class="setting"><span>Waivers </span></br> <%= p.waiver %> </p>
+        <p class="setting"><span>Insurances </span></br> <%= p.insurance %> </p>
       </div>
     </div>
 

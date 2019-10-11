@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190417193325) do
+ActiveRecord::Schema.define(version: 20191011001615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,9 @@ ActiveRecord::Schema.define(version: 20190417193325) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.text "insurance", default: [], array: true
+    t.text "insurance", default: "--- []\n"
+    t.integer "user_id"
     t.text "waiver", default: [], array: true
-    t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -33,8 +32,8 @@ ActiveRecord::Schema.define(version: 20190417193325) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.text "branch", default: [], array: true
-    t.bigint "provider_id"
+    t.text "branch", default: "--- []\n"
+    t.integer "provider_id"
     t.index ["provider_id"], name: "index_services_on_provider_id"
   end
 
@@ -55,12 +54,10 @@ ActiveRecord::Schema.define(version: 20190417193325) do
     t.boolean "braininjury"
     t.boolean "intellectualdisability"
     t.boolean "childrensmentalhealth"
-    t.bigint "provider_id"
+    t.integer "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["provider_id"], name: "index_waivers_on_provider_id"
   end
 
-  add_foreign_key "services", "providers"
-  add_foreign_key "waivers", "providers"
 end
