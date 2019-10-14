@@ -41,11 +41,11 @@ This will bring you to a "sandbox" and any changes you make in the sandbox will 
 
 ## How to run the test suite
 ```rails
-rails test
+sprint rspec
 ```
 or, to specify the test of a specific section, you can type:
 ```rails
-rails test:controllers
+rspec spec/requests
 ```
 
 ## Deployment instructions
