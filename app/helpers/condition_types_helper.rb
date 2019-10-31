@@ -1,0 +1,2 @@
+module ConditionTypesHelper
+end

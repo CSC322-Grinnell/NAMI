@@ -10,32 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190417193325) do
+ActiveRecord::Schema.define(version: 20191031222336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "condition_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "condition_type_id"
+    t.index ["condition_type_id"], name: "index_conditions_on_condition_type_id"
+  end
+
+  create_table "conditions_services", id: false, force: :cascade do |t|
+    t.bigint "condition_id", null: false
+    t.bigint "service_id", null: false
+  end
+
+  create_table "insurances", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "insurances_providers", id: false, force: :cascade do |t|
+    t.bigint "provider_id", null: false
+    t.bigint "insurance_id", null: false
+  end
+
   create_table "providers", force: :cascade do |t|
-    t.string "practiceName"
+    t.string "name"
     t.text "address"
     t.string "phone"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.text "insurance", default: [], array: true
-    t.text "waiver", default: [], array: true
-    t.index ["user_id"], name: "index_providers_on_user_id"
+    t.string "email"
+  end
+
+  create_table "providers_services", id: false, force: :cascade do |t|
+    t.bigint "provider_id", null: false
+    t.bigint "service_id", null: false
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "service_name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-    t.text "branch", default: [], array: true
-    t.bigint "provider_id"
-    t.index ["provider_id"], name: "index_services_on_provider_id"
+  end
+
+  create_table "services_waivers", id: false, force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "waiver_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,21 +83,16 @@ ActiveRecord::Schema.define(version: 20190417193325) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.boolean "admin", default: false
+    t.boolean "is_admin", default: false
+    t.boolean "is_provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "waivers", force: :cascade do |t|
-    t.boolean "braininjury"
-    t.boolean "intellectualdisability"
-    t.boolean "childrensmentalhealth"
-    t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["provider_id"], name: "index_waivers_on_provider_id"
   end
 
-  add_foreign_key "services", "providers"
-  add_foreign_key "waivers", "providers"
+  add_foreign_key "conditions", "condition_types"
 end
