@@ -1,7 +1,7 @@
 .login-page {
   width: 100%;
   padding: 0 0 0;
-  margin: 0%;// !important;
+  margin: center;// !important;
 }
 
 form {
@@ -9,8 +9,8 @@ form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 300px;
-  margin: 0 auto 100px;
+  max-width: 400px;
+  margin: 100px auto 100px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -97,8 +97,7 @@ form .horizontal{
 }
 
 .advanced_search{
-  width: 100%;
+  width: 80%;
   max-width: none;
-  margin:0;
-  height: calc(100% - 100px);
+  margin:center;
 }

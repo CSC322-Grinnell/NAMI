@@ -8,11 +8,10 @@ To understand advanced search, look at:
 <!-- fieldset is used for grouping elements in forms and also for assessibility, a screen reader will read off the legend.-->
  <form action='/search/advanced_search_result' class= "advanced_search">
   <p class="long-header" >Advanced Search</p>
-    
-     <p>Select Search Criteria</p>
      
      <fieldset>
-     <select name="waiveroptions">
+     <label class="form-group">
+     <select name="waiveroptions" class="custom-select">
        <option value = ""> Choose a Waiver </option>
        <% @waiver_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
@@ -20,7 +19,7 @@ To understand advanced search, look at:
      </select>
      
      <!-- Dropdown for insurances -->
-     <select name="insuranceoptions">
+     <select name="insuranceoptions" class="custom-select">
        <option value = ""> Choose an Insurance </option>
        <% @insurance_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
@@ -28,15 +27,25 @@ To understand advanced search, look at:
      </select>
      
      <!-- Dropdown for insurances -->
-     <select name="addressoptions">
+     <select name="addressoptions" class="custom-select">
        <option value = ""> Choose a City </option>
        <% @address_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
      <% end %>
      </select>
+     </label>
     </fieldset>
    
      
-     <label for="Query"> <input class="form-control" name="query" id = "query" placeholder="Search by Provider Name" type="text"></label>
-     <input class="searchSubmit" type="submit" name="commit" value="Search" data-disable-with="Create" />
+     <div class="form-group centered"> 
+     	<input class="form-control col-xs-8 col-md-6 col-lg-6" name="query" id = "query" placeholder="Search by Provider Name" type="text">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="fas fa-search text-grey"></i></button>
+      </div>
+     </div>
+     
+     
+     <!--<div class="form-group">
+     <input class="searchSubmit btn btn-primary col-xs-8 col-md-6 col-lg-6" type="submit" name="commit" value="Search" data-disable-with="Create" />
+     </div>-->
  </form>
