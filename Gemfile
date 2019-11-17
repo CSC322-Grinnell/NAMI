@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Postgresql Gem
-ruby '2.4.0'
+ruby '2.4.6'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
 
@@ -17,7 +17,6 @@ gem 'devise'
 
 group :development, :test do
   gem 'mocha'
-  gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'rspec-rails', '~> 3.8'
 end
