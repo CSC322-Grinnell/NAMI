@@ -1,18 +1,18 @@
 <div class="pc_profile">
     <%= render 'providers/shared/success_message' %>
     <%= render 'providers/shared/error_messages' %>
-    <% if p = Provider.find_by_user_id(current_user.id) %>
-     <% @user = User.find(p.user_id) %>
+    <% if p = Provider.find_by_id(current_user.id) %>
+     <% @user = User.find(p.id) %>
      
     <div id="w">
       <div id="content" class="clearfix">
-          <p class="long-header" style="font-size: 50px;"><%= p.practiceName %></p>
+          <p class="long-header" style="font-size: 50px;"><%= p.name %></p>
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#description" class="sel">Description</a></li>
           <li><a href="#info">Basic info</a></li>
           <li><a href="#services">Services</a></li>
-           <% if user_signed_in? && p.user_id = current_user.id %>
+           <% if user_signed_in? && p.id = current_user.id %>
           <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
           <li><%= link_to('Add Service', new_service_path(p), method: :GET) %></li>
           <% end %>
@@ -27,25 +27,21 @@
         <p class="setting"><span>E-mail Address </span> <%= @user.email %> </p>
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> <%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
+        
+        <% if false %>
+        <p class="setting"><span>Waivers </span> <%= p.waivers.join(", ") %> </p>
         <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+				<% end %>
+				
       </section>
       
       <section id="services" class="hidden">
-        <% @s = Service.where(provider_id: p.id) %>
+        <% @s = Service.where(id: p.id) %>
         <% @s.each do |service| %>
           <div class="service-title">
-            <h2 class="service-name"><%= service.service_name %></h2>
+            <h2 class="service-name"><%= service.name %></h2>
             <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div> 
           <p class="service-description"><%= service.description %></p>
-          <% if service.branch.any? %>
-            <p class="service-description">Includes:</p>
-            <% service.branch.each do |branch| %>
-            <ul>
-              <li><%= branch %></li>
-            </ul>
-            <% end %>
-          <% end %>
         <% end %>
         </div>
       </section>
@@ -58,7 +54,7 @@
   <!-- MOBILE VERSION --> 
   <!-- grid classes  -->
   <div class="mobile-profile">
-    <p class="long-header" style="padding-bottom: 0; margin-bottom: 0;margin-top: 10;" ><%= p.practiceName %></p>
+    <p class="long-header" style="padding-bottom: 0; margin-bottom: 0;margin-top: 10;" ><%= p.name %></p>
     <!-- Grid row -->
     <div class="row accordion-gradient-bcg d-flex justify-content-center" >
       <!-- Grid column -->
@@ -104,8 +100,12 @@
         <p class="setting"><span>E-mail Address </span></br> <%= @user.email %> </p>
         <p class="setting"><span>Address </span></br> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> </br><%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span></br> <%= p.waiver.join(", ") %> </p>
+        
+        <% if false %>
+        <p class="setting"><span>Waivers </span></br> <%= p.waivers.join(", ") %> </p>
         <p class="setting"><span>Insurances </span></br> <%= p.insurance.join(", ") %> </p>
+        <% end %>
+        
       </div>
     </div>
 
@@ -127,18 +127,10 @@
     <!-- Service body -->
     <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
       <div class="card-body">
-        <% @s = Service.where(provider_id: p.id) %>
+        <% @s = Service.where(id: p.id) %>
         <% @s.each do |service| %>
-          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2></div><%= link_to('Edit this service', edit_service_path(service), method: :get) %></div> 
+          <div class="service-title"><h2 class="service-name"><%= service.name %></h2></div><%= link_to('Edit this service', edit_service_path(service), method: :get) %></div> 
           <p class="service-description"><%= service.description %></p>
-          <% if service.branch.any? %>
-            <p class="service-description">Includes:</p>
-            <% service.branch.each do |branch| %>
-            <ul>
-              <li><%= branch %></li>
-            </ul>
-            <% end %>
-          <% end %>
         <% end %>
       </div>
     </div>

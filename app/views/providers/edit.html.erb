@@ -3,8 +3,8 @@
  <%= render 'providers/shared/success_message' %>
  <%= render 'providers/shared/error_messages' %>
  <div class="field">
- <%= f.label "practice name" %>
- <%= f.text_field :practiceName %>
+ <%= f.label "name" %>
+ <%= f.text_field :name %>
  </div>
  
  <div class="field">
@@ -23,7 +23,7 @@
     <% @insurance_params.each do |i| %>
      <div class="checkbox_div">
      <%= f.label i %>
-     <%= f.check_box :insurance, {:multiple => true}, i, nil %>
+     <%= f.check_box :insurances, {:multiple => true}, i, nil %>
      </div>
     <% end %>
   </div>
@@ -35,7 +35,7 @@
    <% @waiver_params.each do |w| %>
    <div class="checkbox_div">
     <%= f.label w %>
-    <%= f.check_box :waiver, {:multiple => true}, w, nil %>
+    <%= f.check_box :waivers, {:multiple => true}, w, nil %>
    </div>
    <% end %>
   </div>

@@ -16,20 +16,14 @@ class ServicesController < ApplicationController
     
     def edit
         @service = Service.find(params[:id])
-        @branches = @service.branch
     end
     
     def update
         @service = Service.find(params[:id])
         info = service_params
-        # if branch is not submitted in the hash, the branch
-        # must be dealt with separately.
-        if !info[:branch]
-            info[:branch] = []
-        end
         if @service.update_attributes(info)
             flash[:success] = ["Service updated!"]
-            if current_user.admin?
+            if current_user.is_admin?
                 redirect_to admins_index_path
             else
                 redirect_to providers_profile_path
@@ -41,7 +35,7 @@ class ServicesController < ApplicationController
     end
     
     def service_params
-      params.require(:service).permit(:provider_id, :service_name, :description, :branch => [])
+      params.require(:service).permit(:id, :name, :description)
     end
 end
     
