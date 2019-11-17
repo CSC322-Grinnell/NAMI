@@ -3,13 +3,6 @@ class ProvidersController < ApplicationController
 
     include CheckboxParams
     
-    def provider_show
-      @insurance_params = insurance_params
-      @waiver_params = waiver_params
-      @provider = Provider.new
-    	render new_provider_path
-    end
-    
     def new
       @insurance_params = insurance_params
       @waiver_params = waiver_params
