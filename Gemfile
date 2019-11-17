@@ -4,6 +4,8 @@ ruby '2.4.6'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
 
+gem 'sprockets', '~> 3.7.2'
+
 gem 'rails',        '5.1.6'
 gem 'bcrypt',       '3.1.12'
 gem 'puma',         '3.9.1'

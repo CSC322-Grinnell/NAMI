@@ -1,12 +1,14 @@
 class Provider < ApplicationRecord
     has_and_belongs_to_many :waivers
     has_and_belongs_to_many :services
-    validates :practiceName,  presence: true
+    has_and_belongs_to_many :insurances
+    
+    validates :name,  presence: true
     validates :address, presence: true
     validates :phone, presence: true
 
     include PgSearch
-    pg_search_scope :search_practiceName, against: [:practiceName], using: {
+    pg_search_scope :search_name, against: [:name], using: {
                     tsearch: { prefix: true }
     }
     pg_search_scope :search_address, against: [:address], using: {
@@ -25,6 +27,6 @@ class Provider < ApplicationRecord
         [:waiver, 'A'],
         [:insurance, 'B'],
         [:address, 'C'],
-        [:practiceName, 'D']
+        [:name, 'D']
     ]
 end

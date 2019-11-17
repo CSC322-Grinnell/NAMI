@@ -1,11 +1,11 @@
 
 <div class="login-page">
  
-<%= form_for(:provider, url: '/providers/create', html: { method: :post, id: 'new_user'}) do |f| %>
+<%= form_for @provider, url: '/providers/create', html: { method: :post, id: 'new_user', class: 'container'} do |f| %>
   <%= render 'providers/shared/error_messages' %>
   <div class="field">
-     <%= f.label :"practice name" %><br />
-    <%= f.text_field :practiceName %><br />
+    <%= f.label :"name" %><br />
+    <%= f.text_field :name %><br />
   </div>
   
   <div class="field">
@@ -19,24 +19,25 @@
   </div>
   
   <div class="field">
-      <%= f.label :insurance %>
        <div class="field checkbox_field">
+      		 <%= f.label :insurance %>
            <% @insurance_params.each do |i| %>
            <div class="checkbox_div">
            <%= f.label i %>
-           <%= f.check_box :insurance, {:multiple => true}, i, nil %>
+           <%= f.check_box :insurances, {:multiple => true}, i, nil %>
            </div>
            <% end %>
-        </div>
+       </div>
   </div>
   
   <div class="field">
-      <%= f.label :waivers %>
       <div class="field checkbox_field">
-       <% @waiver_params.each do |w| %>
-       <div class="checkbox_div">
+      	<%= f.label :waivers %>
+      	<div class="field checkbox_field">
+       	<% @waiver_params.each do |w| %>
+       	<div class="checkbox_div">
         <%= f.label w %>
-        <%= f.check_box :waiver, {:multiple => true}, w, nil %>
+        <%= f.check_box :waivers, {:multiple => true}, w, nil %>
        </div>
        <% end %>
     </div>
@@ -49,7 +50,7 @@
   </div>
   <span id="count">Word count: <span id="wordCount"></span></span>
 
-    <%= hidden_field_tag "provider[user_id]", "#{current_user.id}" %>
+    <%= hidden_field_tag "provider[id]", "#{current_user.id}" %>
   <div class="actions">
     <%= f.submit "Submit profile" %>
   </div>

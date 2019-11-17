@@ -1,20 +1,8 @@
 <div class="login-page">
 <%= form_for @service, :url => {:controller => 'services', :action => 'update' }, html: { method: :put} do |f| %>
     <div class="field">
-        <%= f.label "service name" %><br />
-        <%= f.text_field :service_name %>
-    </div>
-    
-    <div class="field" id="branches">
-    <a href="javascript:;" id="addBranch">Add branching</a>
-    <% if @branches.any? %>
-        <% @branches.each_with_index do |branch, index| %>
-        <div id="branch[<%= index %>]">
-            <input type="text" class="branch" multiple="true" value="<%= branch %>" name="service[branch][]">
-            <span class="delete" id="<%= index %>">❌</span>
-        </div>
-        <% end %>
-    <% end %>
+        <%= f.label "name" %><br />
+        <%= f.text_field :name %>
     </div>
     
     <div class="field">
@@ -30,4 +18,3 @@
     
 <% end %>
 <%= javascript_include_tag "textbox" %>
-<%= javascript_include_tag "addBranch" %>
