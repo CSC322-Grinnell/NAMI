@@ -26,19 +26,19 @@ ConditionType.create!(name: "Developmental")
 ConditionType.create!(name: "Personality")
 ConditionType.create!(name: "Psychotic")
 
-ConditionType.find(1).conditions.create!(name: "Attention Deficit Hyperactivity Disorder (ADHD)",
+ConditionType.find(2).conditions.create!(name: "Attention Deficit Hyperactivity Disorder (ADHD)",
                    description: "People with ADHD show a persistent pattern of inattention and/or"\
                                 "hyperactivity-impulsivity that interferes with functioning or development.")
-ConditionType.find(1).conditions.create!(name: "Oppositional Defiant Disorder",
+ConditionType.find(2).conditions.create!(name: "Oppositional Defiant Disorder",
                    description: "Children and adolescents with ODD may have trouble controlling their temper"\
                                 "and are often disobedient and defiant toward others.")
-ConditionType.find(2).conditions.create!(name: "Autism Spectrum Disorder (ASD)",
+ConditionType.find(3).conditions.create!(name: "Autism Spectrum Disorder (ASD)",
                    description: "Autism spectrum disorder (ASD) is a developmental disorder that makes it"\
                                 "difficult to socialize and communicate with others.")
-ConditionType.find(0).conditions.create!(name: "Generalized Anxiety Disorder (GAD)",
+ConditionType.find(1).conditions.create!(name: "Generalized Anxiety Disorder (GAD)",
                    description: "Everyone experiences anxiety sometimes, but when it becomes overwhelming"\
                                 "and repeatedly impacts a person's life, it may be an anxiety disorder.")
-ConditionType.find(1).conditions.create!(name: "Major Depressive Disorder (MDD)",
+ConditionType.find(2).conditions.create!(name: "Major Depressive Disorder (MDD)",
                    description: "Depression is more than just feeling sad or going through a rough"\
                                 "patch; it’s a serious mental health condition that requires understanding"\
                                 "and treatment.")
@@ -56,13 +56,13 @@ Waiver.create!(name: "Intellectual Disability (ID)")
 Waiver.create!(name: "Brain Injury (BI)")
 
 8.times do |n|
-  service = Services.new(name: "Service #{n}",
-                         description: "This is service #{n}'s description.")
+  service = Service.new(name: "Service #{n}",
+                        description: "This is service #{n}'s description.")
   (rand(3) + 1).times do
     condition = Condition.find(rand(5) + 1)
-    services.conditions << condition
+    service.conditions << condition
     waiver = Waiver.find(rand(5) + 1)
-    services.waivers << waiver
+    service.waivers << waiver
   end
   service.save
 end
