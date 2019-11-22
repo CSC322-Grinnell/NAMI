@@ -1,8 +1,8 @@
 <!--source: https://codepen.io/anon/pen/MRgQyP-->
 <div class='container'>
 <div id="demo">
-          <p class="long-header" >Search Results</p>
-  
+  <p class="long-header" >Search Results</p>
+
   <!-- Responsive table starts here -->
   <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
   <div class="table-responsive-vertical shadow-z-1">
@@ -20,12 +20,11 @@
         <!-- Column data in search results -->
         <% @results.each do |result| %>
         <tr>
-            <td data-title="Provider Name"><%= result.practiceName %> </td>
+            <td data-title="Provider Name"><%= result.name %> </td>
             <td><%= link_to('Profile', go_to_profile_path(result.id), method: :GET) %></td>
             <td data-title="phone"><%= result.phone %></td>
         </tr>
         <% end %>
-        
       </tbody>
     </table>
   </div>

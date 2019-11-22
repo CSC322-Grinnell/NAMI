@@ -1,12 +1,13 @@
+
+
 <div class="pc_profile">
     <%= render 'providers/shared/success_message' %>
     <%= render 'providers/shared/error_messages' %>
      <% if p = @provider %>
-     <% @user = User.find(p.user_id) %>
-     
+
     <div id="w">
       <div id="content" class="clearfix">
-      <p class="long-header" ><%= p.practiceName %></p>
+      <p class="long-header" ><%= p.name %></p>
       <nav id="profiletabs">
         <ul class="clearfix">
           <li><a href="#description" class="sel">Description</a></li>
@@ -14,44 +15,37 @@
           <li><a href="#services">Services</a></li>
         </ul>
       </nav>
-      
+
       <section id="description">
-        <p><%= p.description %></p>
+        <div class="description">
+          <p><%= p.description %></p>
+        </div>
       </section>
-     
+
       <section id="info" class="hidden">
-        <p class="setting"><span>E-mail Address </span> <%= @user.email %> </p>
+        <p class="setting"><span>E-mail Address </span> <%= p.email %> </p>
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> <%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span> <%= p.waiver.join(", ") %> </p>
-        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+<!-- Add waivers when that works -->
+        <p class="setting"><span>Insurances </span> <%= p.insurances.all.join(", ") %> </p>
       </section>
-      
+
       <section id="services" class="hidden">
-        <% @s = Service.where(provider_id: p.id) %>
+        <% @s = p.services.all %>
         <% @s.each do |service| %>
-          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2> </div>
+          <div class="service-title"><h2 class="service-name"><%= service.name %></h2> </div>
           <p class="service-description"><%= service.description %></p>
-          <% if service.branch.any? %>
-            <p class="service-description">Includes:</p>
-            <% service.branch.each do |branch| %>
-            <ul>
-              <li><%= branch %></li>
-            </ul>
-            <% end %>
-          <% end %>
         <% end %>
       </section>
     </div><!-- @end #content -->
   </div><!-- @end #w -->
   </div>
-  
-  
-  
-  <!-- MOBILE VERSION --> 
+
+
+  <!-- MOBILE VERSION -->
   <!-- grid classes  -->
   <div class="mobile-profile">
-    <p class="long-header" style="padding-bottom: 0; margin-bottom: 0;margin-top: 10;" ><%= p.practiceName %></p>
+    <p class="long-header" style="padding-bottom: 0; margin-bottom: 0;margin-top: 10;" ><%= p.name %></p>
     <!-- Grid row -->
     <div class="row accordion-gradient-bcg d-flex justify-content-center" >
       <!-- Grid column -->
@@ -69,7 +63,7 @@
         <h5 class="mb-0 white-text font-thin"> Description <i class="fas fa-angle-down rotate-icon"></i></h5>
       </a>
     </div>
-    
+
     <!-- Card body -->
   <div>
     <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
@@ -96,11 +90,11 @@
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
 
       <div class="card-body">
-        <p class="setting"><span>E-mail Address </span></br> <%= @user.email %> </p>
+        <p class="setting"><span>E-mail Address </span></br> <%= p.email %> </p>
         <p class="setting"><span>Address </span></br> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> </br><%= p.phone %> </p>
-        <p class="setting"><span>Waivers </span></br> <%= p.waiver.join(", ") %> </p>
-        <p class="setting"><span>Insurances </span></br> <%= p.insurance.join(", ") %> </p>
+<!-- Add waivers when that works -->
+        <p class="setting"><span>Insurances </span></br> <%= p.insurances.all.join(", ") %> </p>
       </div>
     </div>
 
@@ -123,18 +117,10 @@
     <!-- Card body -->
     <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
       <div class="card-body">
-        <% @s = Service.where(provider_id: p.id) %>
+        <% @s = p.services.all %>
         <% @s.each do |service| %>
-          <div class="service-title"><h2 class="service-name"><%= service.service_name %></h2> </div>
+          <div class="service-title"><h2 class="service-name"><%= service.name %></h2> </div>
           <p class="service-description"><%= service.description %></p>
-          <% if service.branch.any? %>
-            <p class="service-description">Includes:</p>
-            <% service.branch.each do |branch| %>
-            <ul>
-              <li><%= branch %></li>
-            </ul>
-            <% end %>
-          <% end %>
         <% end %>
       </div>
     </div>
@@ -149,11 +135,11 @@
 
 </div>
 </div>
-</div> <!-- Mobile profile --> 
+</div> <!-- Mobile profile -->
 
 </div>
 </div>
-        
+
         <% else %>
           <h1>This provider doesn't have a profile yet!</h1>
         <% end %>
