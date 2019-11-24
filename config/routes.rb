@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # :via => action type (get, post, put, delete), :as => give your route an easy-to-recognize, self-defined name
 
   # Note: the action of your controller must match the name of the HTML page you are routing to.
-  match 'search/search' => 'search#search', :via => :get, :as => :data_serach
+  match 'search/search' => 'search#search', :via => :get, :as => :data_search
   match 'search/go_to_profile/:id' => 'search#go_to_profile', :via => :get, :as => :go_to_profile
   get "search/advanced_search"
   get "search/advanced_search_result"

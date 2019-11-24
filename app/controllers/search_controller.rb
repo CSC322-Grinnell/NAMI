@@ -29,7 +29,6 @@ class SearchController < ApplicationController
       name = params[:query]
 
       @results = Provider.search_all([waiver, insurance, address, name])
-
    end
 
 end
