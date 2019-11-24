@@ -23,12 +23,10 @@ class SearchController < ApplicationController
    def advanced_search_result
       puts(params)
 
-      waiver = params[:waiveroptions]
-      insurance = params[:insuranceoptions]
-      address = params[:addressoptions]
       name = params[:query]
+      service = params[:service_options]
+      insurance = params[:insurance_options]
 
-      @results = Provider.search_all([waiver, insurance, address, name])
+      @results = Provider.search_all([name, service, insurance])
    end
-
 end

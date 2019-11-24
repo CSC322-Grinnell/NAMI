@@ -30,7 +30,7 @@ RSpec.describe "Search Request" do
     expect(response.body).to_not include("Healthcare, Inc.")
   end
 
-  xit "should load advanced search" do
+  it "should load advanced search" do
     get search_advanced_search_url
     expect(response).to have_http_status(:success)
   end
