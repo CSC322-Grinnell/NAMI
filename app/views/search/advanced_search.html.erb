@@ -11,23 +11,23 @@ To understand advanced search, look at:
 
      <fieldset>
      <label class="form-group">
-     <select name="waiveroptions" class="custom-select">
-       <option value = ""> Choose a Waiver </option>
-       <% @waiver_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+     <select name="service_options" class="custom-select">
+       <option value = ""> Choose a Service </option>
+       <% Service.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
 
      <!-- Dropdown for insurances -->
-     <select name="insuranceoptions" class="custom-select">
+     <select name="insurance_options" class="custom-select">
        <option value = ""> Choose an Insurance </option>
-       <% @insurance_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+       <% Insurance.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
 
      <!-- Dropdown for addresses -->
-     <select name="addressoptions" class="custom-select">
+     <select name="address_options" class="custom-select">
        <option value = ""> Choose a City </option>
        <% @address_params.each do |criteria| %>
        <option value = "<%= criteria %>"> <%= criteria %> </option>
