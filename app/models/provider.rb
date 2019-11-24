@@ -7,7 +7,7 @@ class Provider < ApplicationRecord
     validates :address, presence: true
     validates :phone, presence: true
 
-    include PgSearch
+    include PgSearch::Model
     # provider search by name (from the nav bar)
     pg_search_scope :search_name, against: [:name], using: {
                     tsearch: { prefix: true }

@@ -21,12 +21,14 @@ class SearchController < ApplicationController
    end
 
    def advanced_search_result
-      puts(params)
-
       name = params[:query]
       service = params[:service_options]
       insurance = params[:insurance_options]
 
-      @results = Provider.search_all([name, service, insurance])
+      if ([name, service, insurance].count{ |q| q=="" }) == 3
+        @results = Provider.order(name: :desc)
+      else
+        @results = Provider.search_all([name, service, insurance])
+      end
    end
 end

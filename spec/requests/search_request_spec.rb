@@ -19,8 +19,9 @@ RSpec.describe "Search Request" do
   it "should successfully search no query" do
     get data_search_url
     expect(response).to have_http_status(:success)
-    expect(response.body).to include("Provider Example")
-    expect(response.body).to include("Healthcare, Inc.")
+    Provider.all.each do |p|
+      expect(response.body).to include(p.name)
+    end
   end
 
   it "should successfully search with query" do
@@ -35,10 +36,26 @@ RSpec.describe "Search Request" do
     expect(response).to have_http_status(:success)
   end
 
-  xit "should successfully get advanced search results" do
-    @query = { query: "P", waiveroptions: "", insuranceoptions: "", addressoptions: ""}
-    get search_advanced_search_result_url, params: @query
+  it "should successfully get advanced search results empty query" do
+    query = { query: "", service_options: "", insurance_options: "", address_options: ""}
+    get search_advanced_search_result_url, params: query
     expect(response).to have_http_status(:success)
+    Provider.all.each do |p|
+      expect(response.body).to include(p.name)
+    end
+  end
+
+  it "should get advanced_search sophisticated query" do
+    service = Service.create!(name: "Service", description: "description")
+    insurance = Insurance.create!(name: "Insurance", phone: "123", website: "www.website.com")
+    @provider.services << service
+    @provider.insurances << insurance
+    @provider.save
+    query = { query: "", service_options: "Service", insurance_options: "Insurance",
+              address_options: ""}
+    get search_advanced_search_result_url, params: query
+    expect(response.body).to include("Provider Example")
+    expect(response.body).to_not include("Healthcare, Inc.")
   end
 
   it "should go to profile" do
