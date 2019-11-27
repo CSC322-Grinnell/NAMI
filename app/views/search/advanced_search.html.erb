@@ -26,11 +26,11 @@ To understand advanced search, look at:
      <% end %>
      </select>
 
-     <!-- Dropdown for addresses -->
-     <select name="address_options" class="custom-select">
-       <option value = ""> Choose a City </option>
-       <% @address_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+     <!-- Dropdown for waivers -->
+     <select name="waiver_options" class="custom-select">
+       <option value = ""> Choose a Waiver </option>
+       <% Waiver.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
      </label>

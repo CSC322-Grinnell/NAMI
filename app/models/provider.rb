@@ -14,9 +14,10 @@ class Provider < ApplicationRecord
                     }
     # advanced search
     pg_search_scope :search_all,
-                    against: [:name],
+                    against: [:name], using: {tsearch: {prefix: true}},
                     associated_against: {
                       services: :name,
                       insurances: :name,
+                      waivers: :name
                     }
 end

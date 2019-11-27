@@ -24,11 +24,8 @@ class SearchController < ApplicationController
       name = params[:query]
       service = params[:service_options]
       insurance = params[:insurance_options]
+      waiver = params[:waiver_options]
 
-      if ([name, service, insurance].count{ |q| q=="" }) == 3
-        @results = Provider.order(name: :desc)
-      else
-        @results = Provider.search_all([name, service, insurance])
-      end
+      @results = Provider.search_all([name, service, insurance, waiver])
    end
 end

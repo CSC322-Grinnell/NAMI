@@ -41,18 +41,20 @@ RSpec.describe "Search Request" do
     get search_advanced_search_result_url, params: query
     expect(response).to have_http_status(:success)
     Provider.all.each do |p|
-      expect(response.body).to include(p.name)
+      expect(response.body).to_not include(p.name)
     end
   end
 
-  it "should get advanced_search sophisticated query" do
+  it "should get advanced_search service query" do
     service = Service.create!(name: "Service", description: "description")
     insurance = Insurance.create!(name: "Insurance", phone: "123", website: "www.website.com")
+    waiver = Waiver.create!(name: "Waiver")
     @provider.services << service
     @provider.insurances << insurance
+    @provider.waivers << waiver
     @provider.save
     query = { query: "", service_options: "Service", insurance_options: "Insurance",
-              address_options: ""}
+              waiver_options: "Waiver"}
     get search_advanced_search_result_url, params: query
     expect(response.body).to include("Provider Example")
     expect(response.body).to_not include("Healthcare, Inc.")
