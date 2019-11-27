@@ -69,9 +69,9 @@ Service.create!(name: "After-school Care")
   service.description = "This is service #{n+1}'s description."
   (rand(3) + 1).times do
     condition = Condition.find(rand(5) + 1)
-    service.conditions << condition
+    service.conditions << condition unless service.conditions.include?(condition)
     waiver = Waiver.find(rand(5) + 1)
-    service.waivers << waiver
+    service.waivers << waiver unless service.waivers.include?(waiver)
   end
   service.save
 end
@@ -84,15 +84,15 @@ end
                           email: "provider#{n}@example.com")
   (rand(2) + 1).times do
     insurance = Insurance.find(rand(5) + 1)
-    provider.insurances << insurance
+    provider.insurances << insurance unless provider.insurances.include?(insurance)
   end
   (rand(5) + 1).times do
     service = Service.find(rand(8) + 1)
-    provider.services << service
+    provider.services << service unless provider.services.include?(service)
   end
   (rand(3) + 1).times do
     waiver = Waiver.find(rand(5) + 1)
-    provider.waivers << waiver
+    provider.waivers << waiver unless provider.waivers.include?(waiver)
   end
   provider.save
 end
