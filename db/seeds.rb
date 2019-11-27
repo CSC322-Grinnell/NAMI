@@ -46,7 +46,7 @@ ConditionType.find(2).conditions.create!(name: "Major Depressive Disorder (MDD)"
 5.times do |n|
   Insurance.create!(name: Faker::Company.name,
                     phone: Faker::PhoneNumber.cell_phone,
-                    website: "www.provider#{n}.com")
+                    website: "www.insurance#{n+1}.com")
 end
 
 Waiver.create!(name: "Health and Disability (HD)")
@@ -55,9 +55,18 @@ Waiver.create!(name: "Elderly (E)")
 Waiver.create!(name: "Intellectual Disability (ID)")
 Waiver.create!(name: "Brain Injury (BI)")
 
+Service.create!(name: "Social Skills Therapy")
+Service.create!(name: "Parent-child Interaction Therapy")
+Service.create!(name: "Support Groups for Youth")
+Service.create!(name: "Family Therapy")
+Service.create!(name: "Talk Therapy")
+Service.create!(name: "Play Therapy")
+Service.create!(name: "Medicine Management")
+Service.create!(name: "After-school Care")
+
 8.times do |n|
-  service = Service.new(name: "Service #{n}",
-                        description: "This is service #{n}'s description.")
+  service = Service.find(n + 1)
+  service.description = "This is service #{n+1}'s description."
   (rand(3) + 1).times do
     condition = Condition.find(rand(5) + 1)
     service.conditions << condition
