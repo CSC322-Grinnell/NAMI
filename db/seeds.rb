@@ -81,5 +81,9 @@ end
     service = Service.find(rand(8) + 1)
     provider.services << service
   end
+  (rand(3) + 1).times do
+    waiver = Waiver.find(rand(5) + 1)
+    provider.waivers << waiver
+  end
   provider.save
 end
