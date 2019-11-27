@@ -1,7 +1,7 @@
 /* page.scss is the primary CSS file for the website. Change things here to change the CSS everywhere */
 
 // IMPORTANT: don't use h1, use p.long_header. p can be wordwrapped, and h1 can't be, so h1 doesn't work for mobile
-@import url('https://fonts.googleapis.com/css?family=Lato|Neuton|Roboto|Arvo|Open%20Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto|Arvo|Open%20Sans|Archivo');
 
 //COLORS
 $grey: #4f4f4f;
@@ -34,19 +34,19 @@ $black: rgb(0, 0, 0);
     h1.myclass{
         font-size:5vw;
         font-weight: normal;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         padding-bottom: 10px;
     }
     
     h2.myclass{
         font-size:3vw;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
     }
     
     h5 {
         font-weight: normal;
         font-size: 100%;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
     }
     
     p {
@@ -62,15 +62,16 @@ $black: rgb(0, 0, 0);
 	p.long-header{ // functionally the same as h1, but they're seperated because headers can't word wrap
         font-size:4vw;
         font-weight: normal;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         line-height: 50px;
         text-align: center;
         line-height: 80%;
         padding-bottom: 20px;
+        padding-top: 2rem;
     }
     
     .container{
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         display: flex;
         height: 100%;
         padding-top:1em;

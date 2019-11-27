@@ -1,0 +1,51 @@
+$nami-blue: rgb(5, 75, 150);
+
+.main_button {
+    font-family: 'Archivo Narrow', 'Arial', sans-serif;
+    font-size: 1.5rem;
+    background-color: $nami-blue;
+    color: white;
+    width: 60%;
+    padding: .5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    display: block;
+    margin-top: 2rem;
+    cursor:pointer;
+}
+.submenu {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1rem;
+    background-color: lightblue;
+    color: $nami-blue;
+    padding: 1rem 0.3rem 0.3rem 0.3rem;
+    margin-bottom: 3rem;
+    width: 60%;
+    display: none;
+}
+.submenu ul {
+    /* text-decoration: none; */
+    list-style-type: '—  ';
+}
+.submenu ul li a {
+    text-decoration: none;
+}
+
+#nami-logo {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+#menu_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+img.arrow {
+    max-height: 1.8rem;
+    padding-bottom: 0.25rem;
+}

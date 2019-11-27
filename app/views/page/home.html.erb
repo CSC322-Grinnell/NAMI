@@ -5,15 +5,30 @@
 </head>
     <div class="container">
       <div class="mt-1">
-        <p class="long-header" >NAMI Johnson County Database</p>
+        <%= image_tag("nami-logo-blue", id: "nami-logo") %>
+        <p class="long-header" >Johnson County Database</p>
       </div>
-      <div class="row">
-        <div class="col-sm-6"><a class="front_page_button"  href="/page/parents"><span class="buttonText">Parents, click here!</span></a></div> 
-        <div class="col-sm-6"><a class="front_page_button" href="/page/providers"><span class="buttonText">Health care providers, click here!</span></a></div>
-        <div class="col-sm-6"><a class="front_page_button" href="/search/advanced_search"><span class="buttonText">Advanced database search</span></a></div>
-        <div class="col-sm-6"><a class="front_page_button" href="/page/providers"><span class="buttonText">Add a provider to the database</span></a></div>
-			
+
+      <div id="menu_container">
+      <div class="main_button"><img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false"> For clients & parents</div>
+        <div class="submenu">
+            <ul>
+                <li>Understanding your diagnosis</li>
+                <li>Resources</li>
+                <li>Search providers</li>
+                <li>Submit a provider</li>
+            </ul>
+        </div>
+    <div class="main_button"><img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false">
+     For healthcare providers</div>
+        <div class="submenu">
+            <ul>
+                <li>Log in/Sign up</li>
+            </ul>
+        </div>
+
       </div>
+      
     </div>
 
 
