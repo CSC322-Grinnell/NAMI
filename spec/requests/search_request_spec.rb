@@ -41,7 +41,7 @@ RSpec.describe "Search Request" do
     get search_advanced_search_result_url, params: query
     expect(response).to have_http_status(:success)
     Provider.all.each do |p|
-      expect(response.body).to_not include(p.name)
+      expect(response.body).to include(p.name)
     end
   end
 
