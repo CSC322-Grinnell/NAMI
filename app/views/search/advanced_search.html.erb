@@ -1,5 +1,5 @@
-<!-- 
-To understand advanced search, look at: 
+<!--
+To understand advanced search, look at:
 1. /nami_website/app/controllers/search_controller.rb
 2. /nami_website/app/helpers/checkbox_params.rb
 3. /nami_website/app/views/search/advanced_search_result.html.erb
@@ -8,43 +8,41 @@ To understand advanced search, look at:
 <!-- fieldset is used for grouping elements in forms and also for assessibility, a screen reader will read off the legend.-->
  <form action='/search/advanced_search_result' class= "advanced_search">
   <p class="long-header" >Advanced Search</p>
-     
+
      <fieldset>
      <label class="form-group">
-     <select name="waiveroptions" class="custom-select">
-       <option value = ""> Choose a Waiver </option>
-       <% @waiver_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+     <select name="service_options" class="custom-select">
+       <option value = ""> Choose a Service </option>
+       <% Service.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
-     
+
      <!-- Dropdown for insurances -->
-     <select name="insuranceoptions" class="custom-select">
+     <select name="insurance_options" class="custom-select">
        <option value = ""> Choose an Insurance </option>
-       <% @insurance_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+       <% Insurance.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
-     
-     <!-- Dropdown for insurances -->
-     <select name="addressoptions" class="custom-select">
-       <option value = ""> Choose a City </option>
-       <% @address_params.each do |criteria| %>
-       <option value = "<%= criteria %>"> <%= criteria %> </option>
+
+     <!-- Dropdown for waivers -->
+     <select name="waiver_options" class="custom-select">
+       <option value = ""> Choose a Waiver </option>
+       <% Waiver.all.each do |criteria| %>
+       <option value = "<%= criteria.name %>"> <%= criteria.name %> </option>
      <% end %>
      </select>
      </label>
     </fieldset>
-   
-     
-     <div class="form-group centered"> 
+
+
+     <div class="form-group centered">
      	<input class="form-control col-xs-8 col-md-6 col-lg-6" name="query" id = "query" placeholder="Search by Provider Name" type="text">
       <div class="input-group-btn">
         <button class="btn btn-default" type="submit"><i class="fas fa-search text-grey"></i></button>
       </div>
      </div>
-     
-     
      <!--<div class="form-group">
      <input class="searchSubmit btn btn-primary col-xs-8 col-md-6 col-lg-6" type="submit" name="commit" value="Search" data-disable-with="Create" />
      </div>-->
