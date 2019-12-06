@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1>Conditions</h1>
+    <h2>by type</h2>
+
+    <% @ctypes.each do |ct| %>
+        <div class="main_button">
+        <%= ct.name %>
+        </div>
+            <div class="submenu"><ul>
+                <% ct.conditions.each do |c| %>
+                    <li><%= c.name %>
+                <% end %>
+                </ul></div>
+    <% end %>
+
+</div>
