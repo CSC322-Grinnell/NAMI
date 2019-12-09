@@ -9,7 +9,7 @@ To understand advanced search, look at:
 <form action='/search/advanced_search_result' class= "advanced_search">
   <p class="long-header" >Advanced Search</p>
   <div class="form-group centered">
-    <input class="form-control col-xs-8 col-md-6 col-lg-6" name="query" id = "query" placeholder="Search by Provider Name" type="text">
+    <input class="form-control col-xs-8 col-md-6 col-lg-6" name="name" id = "name" placeholder="Search by Provider Name" type="text">
     <div class="input-group-btn">
       <button class="btn btn-default" type="submit"><i class="fas fa-search text-grey"></i></button>
     </div>
@@ -23,8 +23,18 @@ To understand advanced search, look at:
             <%= label 'services', 'Services' %>
           </div>
           <div class="row">
-            <%= select_tag 'service_ids',
-                options_for_select(Service.all.collect{|s| [s.name, s.id]}), multiple: true %>
+            <div class="col-sm">
+              <%= collection_check_boxes(:query, :service_ids, Service.all, :id, :name) do |s| %>
+                <div class="row">
+                  <div class="col-1">
+                    <%= s.check_box %>
+                  </div>
+                  <div class="col">
+                    <%= s.label %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="col-sm">

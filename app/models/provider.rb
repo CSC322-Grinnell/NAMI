@@ -8,15 +8,15 @@ class Provider < ApplicationRecord
   validates :phone, presence: true
 
   scope :by_services, -> (service_ids) {
-    joins(:services).where(services: {id: service_ids })
+    joins(:services).where(services: {id: service_ids }) if service_ids.present?
   }
 
   scope :by_insurances, -> (insurance_ids) {
-    joins(:insurances).where(insurances: {id: insurance_ids })
+    joins(:insurances).where(insurances: {id: insurance_ids }) if insurance_ids.present?
   }
 
   scope :by_waivers, -> (waiver_ids) {
-    joins(:waivers).where(waivers: {id: waiver_ids })
+    joins(:waivers).where(waivers: {id: waiver_ids }) if waiver_ids.present?
   }
 
   include PgSearch::Model
@@ -32,4 +32,12 @@ class Provider < ApplicationRecord
                     insurances: :id,
                     waivers: :id
                   }
+
+  def self.search(query)
+    if query.present?
+      search_name(query)
+    else
+      order(name: :asc)
+    end
+  end
 end

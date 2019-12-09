@@ -14,19 +14,19 @@ class SearchController < ApplicationController
   end
 
   def advanced_search_result
-    name = params[:query]
-    services = params[:service_ids]
-    insurances = params[:insurance_ids]
-    waivers = params[:waiver_ids]
+    name = params[:name]
+    services = params[:query][:service_ids]
+    insurances = params[:query][:insurance_ids]
+    waivers = params[:query][:waiver_ids]
 
+    puts("SERVICES: #{services}")
     if ([name, services, insurances, waivers].count{ |q| q.blank? }) == 4
       @results = Provider.order(name: :asc)
     else
-      @results = Provider.all
-      unless services.nil?
-        @results = Provider.by_services(services)
-      end
-      @results = @results.search_name(name)
+      @results = Provider.by_services(services)
+                         .by_insurances(insurances)
+                         .by_waivers(waivers)
+                         .search(name).uniq
     end
   end
 end
