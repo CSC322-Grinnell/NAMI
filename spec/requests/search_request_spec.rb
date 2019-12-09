@@ -37,7 +37,7 @@ RSpec.describe "Search Request" do
   end
 
   it "should successfully get advanced search results empty query" do
-    query = { query: "", service_options: "", insurance_options: "", address_options: ""}
+    query = { name: "", query: { service_ids: [""], insurance_ids: [""], waiver_ids: [""]}}
     get search_advanced_search_result_url, params: query
     expect(response).to have_http_status(:success)
     Provider.all.each do |p|
@@ -53,10 +53,37 @@ RSpec.describe "Search Request" do
     @provider.insurances << insurance
     @provider.waivers << waiver
     @provider.save
-    query = { query: "", service_options: "Service", insurance_options: "Insurance",
-              waiver_options: "Waiver"}
+    query = { name: "", query: { service_ids: [service.id], insurance_ids: [insurance.id], waiver_ids: [waiver.id]}}
     get search_advanced_search_result_url, params: query
     expect(response.body).to include("Provider Example")
+    expect(response.body).to_not include("Healthcare, Inc.")
+  end
+
+  it "should get advanced_search multi query" do
+    service = Service.create!(name: "Service", description: "description")
+    other_service = Service.create!(name: "Other Service", description: "desc")
+    insurance = Insurance.create!(name: "Insurance", phone: "123", website: "www.website.com")
+    waiver = Waiver.create!(name: "Waiver")
+
+    @provider.services << service
+    @provider.insurances << insurance
+    @provider.waivers << waiver
+    @provider.save
+
+    other_provider = Provider.create(name: "Other Provider", address: "Address 2", phone: "1234",
+                                     email: "email2@email.edu", description: "description")
+
+    other_provider.services << other_service
+    other_provider.insurances << insurance
+    other_provider.waivers << waiver
+    other_provider.save
+
+    query = { name: "", query: { service_ids: [service.id, other_service.id],
+                                 insurance_ids: [insurance.id],
+                                 waiver_ids: [waiver.id]}}
+    get search_advanced_search_result_url, params: query
+    expect(response.body).to include("Provider Example")
+    expect(response.body).to include("Other Provider")
     expect(response.body).to_not include("Healthcare, Inc.")
   end
 
