@@ -18,38 +18,30 @@
         </ul>
       </nav>
 
-      <section id="description">
+      <section class="tab-header" id="description">
         <p><%= p.description %></p>
       </section>
 
-      <section id="info" class="hidden">
+      <section class="hidden tab-header" id="info">
         <p class="setting"><span>E-mail Address </span> <%= p.email %> </p>
         <p class="setting"><span>Address </span> <%= p.address %> </p>
         <p class="setting"><span>Phone </span> <%= p.phone %> </p>
-
-        <% if false %>
-        <p class="setting"><span>Waivers </span> <%= p.waivers.join(", ") %> </p>
-        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
-				<% end %>
-
       </section>
 
-      <section id="services" class="hidden">
-        <% @s = p.services %>
-        <% @s.each do |service| %>
+      <section class="hidden tab-header" id="services">
+        <% p.services.each do |service| %>
           <div class="service-title">
             <h2 class="service-name"><%= service.name %></h2>
           </div>
-            <% if can_edit  %>
-              <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div>
-            <% end %>
+          <% if can_edit  %>
+            <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div>
+          <% end %>
           <p class="service-description"><%= service.description %></p>
         <% end %>
       </section>
 
-      <section id="insurances" class="hidden">
-      <% @i = p.insurances %>
-        <% @i.each do |insurance| %>
+      <section class="hidden tab-header" id="insurances">
+        <% p.insurances.each do |insurance| %>
           <div class="insurance-title">
             <h2 class="insurance-name"><%= insurance.name %></h2>
           </div>
@@ -57,18 +49,17 @@
         <% end %>
       </section>
 
-      <section id="waivers" class="hidden">
-      <% @w = p.waivers %>
-      <% @w.each do |waiver| %>
-        <div class="waiver-title">
-          <h2 class="waiver-name"><%= waiver.name %></h2>
-        </div>
-        <p class="waiver-description">No desciption</p>
-      <% end %>
+      <section class="hidden tab-header" id="waivers">
+        <% p.waivers.each do |waiver| %>
+          <div class="waiver-title">
+            <h2 class="waiver-name"><%= waiver.name %></h2>
+          </div>
+          <p class="waiver-description">No desciption</p>
+        <% end %>
       </section>
 
     </div><!-- @end #content -->
-  </div><!-- @end #w -->
+</div><!-- @end #w -->
 </div>
 
   <!-- MOBILE VERSION -->
