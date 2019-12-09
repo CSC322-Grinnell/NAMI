@@ -42,8 +42,18 @@ To understand advanced search, look at:
             <%= label 'insurances', 'Insurances' %>
           </div>
           <div class="row">
-            <%= select_tag 'insurance_ids',
-                options_for_select(Insurance.all.collect{|i| [i.name, i.id]}), multiple: true %>
+            <div class="col-sm">
+              <%= collection_check_boxes(:query, :insurance_ids, Insurance.all, :id, :name) do |i| %>
+                <div class="row">
+                  <div class="col-1">
+                    <%= i.check_box %>
+                  </div>
+                  <div class="col">
+                    <%= i.label %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="col-sm">
@@ -51,8 +61,18 @@ To understand advanced search, look at:
             <%= label 'waivers', 'Waivers' %>
           </div>
           <div class="row">
-            <%= select_tag 'waiver_ids',
-                options_for_select(Waiver.all.collect{|w| [w.name, w.id]}), multiple: true %>
+            <div class="col-sm">
+              <%= collection_check_boxes(:query, :waiver_ids, Waiver.all, :id, :name) do |w| %>
+                <div class="row">
+                  <div class="col-1">
+                    <%= w.check_box %>
+                  </div>
+                  <div class="col">
+                    <%= w.label %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

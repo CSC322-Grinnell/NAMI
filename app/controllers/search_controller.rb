@@ -15,9 +15,9 @@ class SearchController < ApplicationController
 
   def advanced_search_result
     name = params[:name]
-    services = params[:query][:service_ids]
-    insurances = params[:query][:insurance_ids]
-    waivers = params[:query][:waiver_ids]
+    services = params[:query][:service_ids].select { |e| e != "" }
+    insurances = params[:query][:insurance_ids].select { |e| e != "" }
+    waivers = params[:query][:waiver_ids].select { |e| e != "" }
 
     puts("SERVICES: #{services}")
     if ([name, services, insurances, waivers].count{ |q| q.blank? }) == 4

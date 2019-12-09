@@ -24,14 +24,6 @@ class Provider < ApplicationRecord
   pg_search_scope :search_name, against: [:name], using: {
                     tsearch: { prefix: true }
                   }
-  # advanced search
-  pg_search_scope :search_all,
-                  against: [:name], using: {tsearch: {prefix: true}},
-                  associated_against: {
-                    services: :id,
-                    insurances: :id,
-                    waivers: :id
-                  }
 
   def self.search(query)
     if query.present?
