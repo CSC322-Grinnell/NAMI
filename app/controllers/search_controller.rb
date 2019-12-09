@@ -3,9 +3,9 @@ class SearchController < ApplicationController
 
   def search
     if params[:query].present?
-      @results = Provider.search_name(params[:query])
+      @results = Provider.search(params[:query])
     else
-      @results = Provider.all
+      @results = Provider.order(name: :asc)
     end
   end
 
