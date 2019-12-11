@@ -1,14 +1,14 @@
 class SearchController < ApplicationController
    include CheckboxParams
-   
+
    def search
       if params[:query].present?
-         @results = Provider.search_practiceName(params[:query])
+         @results = Provider.search_name(params[:query])
       else
          @results = Provider.all
       end
    end
-   
+
    def go_to_profile
       @provider = Provider.find(params[:id])
    end
@@ -19,17 +19,17 @@ class SearchController < ApplicationController
       @insurance_params = insurance_params
       @address_params = address_params
    end
-   
-   def advanced_search_result
-      puts(params)
-      
-      waiver = params[:waiveroptions]
-      insurance = params[:insuranceoptions]
-      address = params[:addressoptions]
-      practiceName = params[:query]
-   
-      @results = Provider.search_all([waiver, insurance, address, practiceName])
-      
-   end
 
+   def advanced_search_result
+      name = params[:query]
+      service = params[:service_options]
+      insurance = params[:insurance_options]
+      waiver = params[:waiver_options]
+
+      if ([name, service, insurance, waiver].count{ |q| q.blank? }) == 4
+        @results = Provider.order(name: :asc)
+      else
+        @results = Provider.search_all([name, service, insurance, waiver])
+      end
+   end
 end

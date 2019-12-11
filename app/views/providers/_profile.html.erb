@@ -1,0 +1,215 @@
+<div class="pc_profile">
+    <%= render 'providers/shared/success_message' %>
+    <%= render 'providers/shared/error_messages' %>
+    <div id="w">
+      <div id="content" class="clearfix">
+          <p class="long-header" style="font-size: 50px;"><%= p.name %></p>
+      <nav id="profiletabs">
+        <ul class="clearfix">
+          <li><a href="#description" class="sel">Description</a></li>
+          <li><a href="#info">Basic info</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#insurances">Insurances</a></li>
+          <li><a href="#waivers">Waivers</a></li>
+          <% if can_edit && user_signed_in? && p.id = current_user.id %>
+          <li><%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %></li>
+          <li><%= link_to('Add Service', new_service_path(p), method: :GET) %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+      <section id="description">
+        <p><%= p.description %></p>
+      </section>
+
+      <section id="info" class="hidden">
+        <p class="setting"><span>E-mail Address </span> <%= p.email %> </p>
+        <p class="setting"><span>Address </span> <%= p.address %> </p>
+        <p class="setting"><span>Phone </span> <%= p.phone %> </p>
+
+        <% if false %>
+        <p class="setting"><span>Waivers </span> <%= p.waivers.join(", ") %> </p>
+        <p class="setting"><span>Insurances </span> <%= p.insurance.join(", ") %> </p>
+				<% end %>
+
+      </section>
+
+      <section id="services" class="hidden">
+        <% @s = p.services %>
+        <% @s.each do |service| %>
+          <div class="service-title">
+            <h2 class="service-name"><%= service.name %></h2>
+          </div>
+            <% if can_edit  %>
+              <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div>
+            <% end %>
+          <p class="service-description"><%= service.description %></p>
+        <% end %>
+      </section>
+
+      <section id="insurances" class="hidden">
+      <% @i = p.insurances %>
+        <% @i.each do |insurance| %>
+          <div class="insurance-title">
+            <h2 class="insurance-name"><%= insurance.name %></h2>
+          </div>
+          <p class="insurance-phone"><%= "Phone: #{insurance.phone}" %>
+        <% end %>
+      </section>
+
+      <section id="waivers" class="hidden">
+      <% @w = p.waivers %>
+      <% @w.each do |waiver| %>
+        <div class="waiver-title">
+          <h2 class="waiver-name"><%= waiver.name %></h2>
+        </div>
+        <p class="waiver-description">No desciption</p>
+      <% end %>
+      </section>
+
+    </div><!-- @end #content -->
+  </div><!-- @end #w -->
+</div>
+
+  <!-- MOBILE VERSION -->
+  <!-- grid classes  -->
+  <div class="mobile-profile">
+    <p class="long-header" style="padding-bottom: 0; margin-bottom: 0;margin-top: 10;" ><%= p.name %></p>
+    <!-- Grid row -->
+    <div class="row accordion-gradient-bcg d-flex justify-content-center" >
+      <!-- Grid column -->
+      <div class="col-md-5 col-xl-6 py-5">
+    <!--Accordion wrapper-->
+    <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true" >
+
+  <!-- Description card -->
+  <div class="card" >
+
+    <!-- Description header -->
+    <div class="card-header" role="tab" id="headingOne1">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse1"
+        aria-expanded="false" aria-controls="collapse1">
+        <h5 class="mb-0 white-text font-thin"> Description <i class="fas fa-angle-down rotate-icon"></i></h5>
+      </a>
+    </div>
+
+    <!-- Description body -->
+  <div>
+    <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+        <p><%= p.description %></p>
+      </div>
+    </div>
+  </div>
+  <!-- Basic Info card -->
+  <div class="card">
+
+    <!-- Basic Info header -->
+    <div class="card-header" role="tab" id="headingTwo2">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+        aria-expanded="false" aria-controls="collapseTwo2">
+        <h5 class="mb-0">Basic Info <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Basic Info body -->
+    <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+
+      <div class="card-body">
+        <p class="setting"><span>E-mail Address </span></br> <%= p.email %> </p>
+        <p class="setting"><span>Address </span></br> <%= p.address %> </p>
+        <p class="setting"><span>Phone </span> </br><%= p.phone %> </p>
+
+        <% if false %>
+        <p class="setting"><span>Waivers </span></br> <%= p.waivers.join(", ") %> </p>
+        <p class="setting"><span>Insurances </span></br> <%= p.insurance.join(", ") %> </p>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Service card -->
+  <div class="card">
+
+    <!-- Service header -->
+    <div class="card-header" role="tab" id="headingThree3">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+        aria-expanded="false" aria-controls="collapseThree3">
+        <h5 class="mb-0">
+          Services <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Service body -->
+    <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+      <div class="card-body">
+        <% @s = Service.where(id: p.id) %>
+        <% @s.each do |service| %>
+          <div class="service-title"><h2 class="service-name"><%= service.name %></h2></div>
+          <% if can_edit %>
+            <%= link_to('Edit this service', edit_service_path(service), method: :get) %></div>
+          <% end %>
+          <p class="service-description"><%= service.description %></p>
+        <% end %>
+      </div>
+    </div>
+
+  <% if can_edit %>
+  <!-- Edit Profile card -->
+  <div class="card" >
+
+    <!-- Edit Profile header -->
+    <div class="card-header" role="tab" id="headingFour4">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4"
+        aria-expanded="false" aria-controls="collapseFour4">
+        <h5 class="mb-0 white-text font-thin"> Edit Profile <i class="fas fa-angle-down rotate-icon"></i></h5>
+      </a>
+    </div>
+
+    <!-- Edit Profile body -->
+  <div>
+    <div id="collapseFour4" class="collapse" role="tabpanel" aria-labelledby="headingFour4" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+  <%= link_to('Edit Profile', edit_provider_path(p), method: :GET) %>
+    </div>
+  </div>
+
+  <!-- Add Service card -->
+  <div class="card" >
+
+    <!-- Add Service header -->
+    <div class="card-header" role="tab" id="headingFive5">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive5"
+        aria-expanded="false" aria-controls="collapseFive5">
+        <h5 class="mb-0 white-text font-thin"> Add Service <i class="fas fa-angle-down rotate-icon"></i></h5>
+      </a>
+    </div>
+
+    <!-- Add Service body -->
+  <div>
+    <div id="collapseFive5" class="collapse" role="tabpanel" aria-labelledby="headingFive5" data-parent="#accordionEx">
+      <div class="card-body card-body mb-1 rgba-grey-light white-text">
+          <%= link_to('Add Service', new_service_path(p), method: :GET) %>
+    </div>
+    </div>
+
+</div>
+  </div>
+  <% end %>
+<!-- Accordion wrapper -->
+</div>
+  <!-- Grid column -->
+
+</div>
+</div>
+</div> <!-- Mobile profile -->
+
+</div>
+</div>
+
+</div>
+
+<%= javascript_include_tag "profile" %>

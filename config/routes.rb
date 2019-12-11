@@ -14,16 +14,18 @@ Rails.application.routes.draw do
   get 'conditions/by_type' => 'condition_types#index'
   get 'conditions' => 'conditions#index'
   get 'conditions/:name' => 'conditions#info'
-  
+
   #routes  for search
   # explanation of route: match [url of your page] => [controller#action name in controller], 
   # :via => action type (get, post, put, delete), :as => give your route an easy-to-recognize, self-defined name
-  
+
   # Note: the action of your controller must match the name of the HTML page you are routing to.
-  match 'search/search' => 'search#search', :via => :get, :as => :data_serach
+  match 'search/search' => 'search#search', :via => :get, :as => :data_search
   match 'search/go_to_profile/:id' => 'search#go_to_profile', :via => :get, :as => :go_to_profile
+  get "search/advanced_search"
+  get "search/advanced_search_result"
   resources :search, only: [:search]
-  
+
   #routes for provider model
   post 'providers/create' => 'providers#create'
   resources :providers
@@ -38,8 +40,6 @@ Rails.application.routes.draw do
   match "admins/create_account" => "admins#create_account", :via => :post, :as => :admin_create_account
   match "admins/show/:id" => "admins#show", :via => :get, :as => :admin_show_account
   match "admins/edit/:id" => "admins#edit", :via => :get, :as => :admin_edit_account
-  get "search/advanced_search" 
-  get "search/advanced_search_result"
   #get 'admins/update/:id' => 'admins#update'
   
   #routes to create/update services for a provider
