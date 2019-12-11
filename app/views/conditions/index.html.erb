@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h1>Conditions</h1>
+    <h2>A-Z</h2>
+
+    <% @conditions.each do |c| %>
+        <div class="main_button">
+            <img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false"><%= c.name %>
+        </div>
+        <div class="submenu">
+            <%= c.description %>
+        </div>
+    <% end %>
+
+</div>
+

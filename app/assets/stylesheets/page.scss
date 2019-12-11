@@ -21,6 +21,8 @@ $red: #8B0000;
 $yellow: #FFD700;
 $black: rgb(0, 0, 0);
 
+$nami-blue: rgb(5, 75, 150);
+
     html{
         font-size: 16px;
     }
@@ -36,6 +38,11 @@ $black: rgb(0, 0, 0);
         font-weight: normal;
         font-family: 'Archivo';
         padding-bottom: 10px;
+    }
+
+    h1.page_title {
+        letter-spacing: normal;
+        text-align: left;
     }
     
     h2.myclass{
@@ -82,9 +89,9 @@ $black: rgb(0, 0, 0);
         margin-bottom: 6em !important;
     }
     
-    .wrapper{
+    // .wrapper{
         
-    }
+    // }
     
     td {
        white-space: normal !important; 
@@ -246,11 +253,11 @@ input[type=text] {
   margin-top: 8px;
   font-size: 17px;
 }
-	.input-group-btn {
-	}
+	// .input-group-btn {
+	// }
 	
-	.input-group {
-	}
+	// .input-group {
+	// }
 
 	.searchSubmit{
 			width: auto;
@@ -261,7 +268,7 @@ input[type=text] {
 	
 //-------------------- accordion ---------- 
 
-$nami-blue: rgb(5, 75, 150);
+
 
 .main_button {
     font-family: 'Archivo Narrow', 'Arial', sans-serif;
@@ -311,6 +318,7 @@ $nami-blue: rgb(5, 75, 150);
 img.arrow {
     max-height: 1.8rem;
     padding-bottom: 0.25rem;
+    padding-right: 0.3rem;
 }
 	
 //-------------------- animated buttons ----------    
@@ -498,9 +506,9 @@ a {
             font-size: 20px;
         }
         
-        p.container{
+        // p.container{
 
-        }
+        // }
         
         .pc_user_icon{
         	display: none;

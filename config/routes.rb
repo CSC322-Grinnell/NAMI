@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get 'providers/profile' => 'providers#profile'
   get 'page/disorders' => 'page#disorders'
   get 'page/resources' => 'page#resources'
+
   get 'conditions/by_type' => 'condition_types#index'
-  get 'conditions/all' => 'conditions#index'
+  get 'conditions' => 'conditions#index'
+  get 'conditions/:name' => 'conditions#info'
   
   #routes  for search
   # explanation of route: match [url of your page] => [controller#action name in controller], 
