@@ -1,6 +1,6 @@
 class ConditionsController < ApplicationController
     def index
-        @conditions = Condition.all
+        @conditions = Condition.order(name: :asc)
     end
     def info
       @c = Condition.find_by(name: (params[:name].gsub("_", " ")))
