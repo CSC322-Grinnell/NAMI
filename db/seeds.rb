@@ -20,11 +20,11 @@ User.create!(email: "provider@example.com",
                is_admin: false)
 end
 
-ConditionType.create!(name: "Anxiety")
-ConditionType.create!(name: "Mood")
-ConditionType.create!(name: "Developmental")
-ConditionType.create!(name: "Personality")
-ConditionType.create!(name: "Psychotic")
+ConditionType.create!(name: "Anxiety Disorders")
+ConditionType.create!(name: "Mood Disorders")
+ConditionType.create!(name: "Developmental Conditions")
+ConditionType.create!(name: "Personality Disorders")
+ConditionType.create!(name: "Psychosis")
 
 ConditionType.find(2).conditions.create!(name: "Attention Deficit Hyperactivity Disorder (ADHD)",
                    description: "People with ADHD show a persistent pattern of inattention and/or"\
