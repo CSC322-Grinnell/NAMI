@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow&display=swap" rel="stylesheet"> 
+    <title>Test of homepage</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="./jquery.transit.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.main_button').click(function(){
+                $( this ).next().slideToggle();
+                
+                if( $(this).children("img").prop("arrowRotated") == true ) {
+                    $( this ).children("img").transition({rotate: "0deg"}, "slow");
+                    $( this ).children("img").prop("arrowRotated", false);
+                }
+                else {
+                    $( this ).children("img").transition({rotate: "90deg"}, "slow");
+                    $( this ).children("img").prop("arrowRotated", true);
+                }
+                
+                
+            });
+        });
+    </script>
+    <style>
+        html {
+            font-size: 25px;
+        }
+        body {
+            margin: 5%;
+        }
+        .main_button {
+            font-family: 'Archivo Narrow', 'Arial', sans-serif;
+            font-size: 1.5rem;
+            background-color: rgb(0, 10, 125);
+            color: white;
+            width: 40%;
+            padding: .5rem;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            display: block;
+            margin-top: 2rem;
+            cursor:pointer;
+        }
+        .submenu {
+            font-family: 'Archivo', sans-serif;
+            font-size: 1rem;
+            background-color: lightblue;
+            color: darkblue;
+            padding: .3rem;
+            margin-bottom: 3rem;
+            width: 60%;
+            display: none;
+        }
+        .submenu ul {
+            /* text-decoration: none; */
+            list-style-type: '—  ';
+        }
+        .submenu ul li a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_button"><img src="./right-arrow.svg" alt="=>" style="max-height: 1.5rem" arrow-rotated="false"> For clients & parents</div>
+        <div class="submenu">
+            <ul>
+                <li>Understanding your diagnosis</li>
+                <li>Resources</li>
+                <li>Search providers</li>
+                <li>Submit a provider</li>
+            </ul>
+        </div>
+    <div class="main_button"><img src="./right-arrow.svg" alt="=>" style="max-height: 1.5rem" arrow-rotated="false"> For healthcare providers</div>
+        <div class="submenu">
+            <ul>
+                <li>Log in/Sign up</li>
+            </ul>
+        </div>
+    
+</body>
+</html>

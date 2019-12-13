@@ -1,5 +1,7 @@
 {
   "name": "nami_website",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "tether": "^1.4.7"
+  }
 }

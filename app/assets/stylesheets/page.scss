@@ -1,7 +1,7 @@
 /* page.scss is the primary CSS file for the website. Change things here to change the CSS everywhere */
 
 // IMPORTANT: don't use h1, use p.long_header. p can be wordwrapped, and h1 can't be, so h1 doesn't work for mobile
-@import url('https://fonts.googleapis.com/css?family=Lato|Neuton|Roboto|Arvo|Open%20Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto|Arvo|Open%20Sans|Archivo');
 
 //COLORS
 $grey: #4f4f4f;
@@ -21,6 +21,8 @@ $red: #8B0000;
 $yellow: #FFD700;
 $black: rgb(0, 0, 0);
 
+$nami-blue: rgb(5, 75, 150);
+
     html{
         font-size: 16px;
     }
@@ -34,19 +36,24 @@ $black: rgb(0, 0, 0);
     h1.myclass{
         font-size:5vw;
         font-weight: normal;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         padding-bottom: 10px;
+    }
+
+    h1.page_title {
+        letter-spacing: normal;
+        text-align: left;
     }
     
     h2.myclass{
         font-size:3vw;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
     }
     
     h5 {
         font-weight: normal;
         font-size: 100%;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
     }
     
     p {
@@ -62,15 +69,16 @@ $black: rgb(0, 0, 0);
 	p.long-header{ // functionally the same as h1, but they're seperated because headers can't word wrap
         font-size:4vw;
         font-weight: normal;
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         line-height: 50px;
         text-align: center;
         line-height: 80%;
         padding-bottom: 20px;
+        padding-top: 2rem;
     }
     
     .container{
-        font-family: 'Neuton';
+        font-family: 'Archivo';
         display: flex;
         height: 100%;
         padding-top:1em;
@@ -81,9 +89,9 @@ $black: rgb(0, 0, 0);
         margin-bottom: 6em !important;
     }
     
-    .wrapper{
+    // .wrapper{
         
-    }
+    // }
     
     td {
        white-space: normal !important; 
@@ -245,11 +253,11 @@ input[type=text] {
   margin-top: 8px;
   font-size: 17px;
 }
-	.input-group-btn {
-	}
+	// .input-group-btn {
+	// }
 	
-	.input-group {
-	}
+	// .input-group {
+	// }
 
 	.searchSubmit{
 			width: auto;
@@ -260,12 +268,58 @@ input[type=text] {
 	
 //-------------------- accordion ---------- 
 
-	.accordion{ // accordion on the diagnosis and resource pages
-	    margin-bottom: 7%;
-	}
-	.card-body { // also related to the accordion
-	    padding: 2%;
-	}
+
+
+.main_button {
+    font-family: 'Archivo Narrow', 'Arial', sans-serif;
+    font-size: 1.5rem;
+    background-color: $nami-blue;
+    color: white;
+    width: 60%;
+    padding: .5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    display: block;
+    margin-top: 2rem;
+    cursor:pointer;
+}
+.submenu {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1rem;
+    background-color: lightblue;
+    color: $nami-blue;
+    padding: 1rem 0.3rem 0.3rem 0.3rem;
+    margin-bottom: 3rem;
+    width: 60%;
+    display: none;
+}
+.submenu ul {
+    /* text-decoration: none; */
+    list-style-type: '—  ';
+}
+.submenu ul li a {
+    text-decoration: none;
+}
+
+#nami-logo {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+#menu_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+img.arrow {
+    max-height: 1.8rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0.3rem;
+}
 	
 //-------------------- animated buttons ----------    
 // pretty new buttons: https://www.designskilz.com/cool-css-buttons/
@@ -452,9 +506,9 @@ a {
             font-size: 20px;
         }
         
-        p.container{
+        // p.container{
 
-        }
+        // }
         
         .pc_user_icon{
         	display: none;

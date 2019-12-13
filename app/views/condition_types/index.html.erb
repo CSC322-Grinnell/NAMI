@@ -1,0 +1,32 @@
+<div class="container">
+
+    <h1 class="page_title">Conditions</h1>
+    <h2>By type &emsp; <a href="/conditions">A-Z &#8594;</a></h2>
+
+    <% @ctypes.each do |ct| %>
+        <div class="main_button">
+            <img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false"><%= ct.name %>
+        </div>
+            <div class="submenu"><ul>
+                <% ct.conditions.each do |c| %>
+                    <li><a href="<%= c.name.gsub(" ", "_") %>"><%= c.name %></a>
+                <% end %>
+                </ul></div>
+    <% end %>
+
+</div>
+
+<!-- 
+TODO:
+Each of the pages linked here need URLs. The obvious choice
+for what they should look like is to append the condition's
+name to the root URL, e.g. ".../conditions/schizophrenia" or
+with an underscore between words if the name has two or more
+words that would ordinarily be separated by spaces, e.g.
+".../conditions/tourettes_syndrome". The problem is that in
+the latter case, aren't sure how to make the router and/or 
+controller recognize and translate this URL name, which 
+contains underscores, to the name of the record (e.g. title 
+of the web page), which has spaces. This is a task we are 
+leaving for the next group to complete.
+-->
