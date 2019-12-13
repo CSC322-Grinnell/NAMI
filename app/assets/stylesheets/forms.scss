@@ -10,7 +10,7 @@ form {
   z-index: 1;
   background: #FFFFFF;
   max-width: 400px;
-  margin: 100px auto 100px;
+  margin: 100px auto;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -21,7 +21,7 @@ form {
 
 form input, textarea { // input box
   font-family: "lato", sans-serif;
-  outline: 45%;
+  // outline: 45%;
   width: 100%;
   border: 1;
   margin: 0 0 15px; // vertical distance between words and input boxes

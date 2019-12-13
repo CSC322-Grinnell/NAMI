@@ -1,0 +1,549 @@
+@charset "UTF-8";
+/* page.scss is the primary CSS file for the website. Change things here to change the CSS everywhere */
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto|Arvo|Open%20Sans|Archivo");
+/* line 26, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+html {
+  font-size: 16px;
+}
+
+/* line 30, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+body {
+  overflow: scroll;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 36, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+h1.myclass {
+  font-size: 5vw;
+  font-weight: normal;
+  font-family: 'Archivo';
+  padding-bottom: 10px;
+}
+
+/* line 43, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+h1.page_title {
+  letter-spacing: normal;
+  text-align: left;
+}
+
+/* line 48, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+h2.myclass {
+  font-size: 3vw;
+  font-family: 'Archivo';
+}
+
+/* line 53, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+h5 {
+  font-weight: normal;
+  font-size: 100%;
+  font-family: 'Archivo';
+}
+
+/* line 59, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: normal;
+  overflow: normal;
+}
+
+/* line 69, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+p.long-header {
+  font-size: 4vw;
+  font-weight: normal;
+  font-family: 'Archivo';
+  line-height: 50px;
+  text-align: center;
+  line-height: 80%;
+  padding-bottom: 20px;
+  padding-top: 2rem;
+}
+
+/* line 80, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.container {
+  font-family: 'Archivo';
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  padding-top: 1em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+/* line 88, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+table {
+  margin-bottom: 6em !important;
+}
+
+/* line 96, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+td {
+  white-space: normal !important;
+}
+
+/* line 100, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+#sitename {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 5%;
+  font-size: 3em;
+  font-family: 'Lato';
+}
+
+/* line 108, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.nav {
+  background-color: #cdd7d8;
+  font-family: 'Neuton';
+  padding: 0;
+  height: 5%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* line 119, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  .navbar-search {
+    display: none;
+  }
+}
+
+/* line 124, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent {
+  display: none;
+}
+
+/* line 128, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.mobile_user_icon {
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* line 134, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.pc_user_icon {
+  color: white;
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+/* line 141, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.dropdown_content {
+  display: none;
+  position: absolute;
+  color: black;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 999;
+  right: 16px;
+}
+/* line 152, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.dropdown_content a {
+  padding: 12px 16px;
+  display: inline;
+  color: black;
+}
+/* line 158, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.dropdown_content a:hover {
+  background-color: #8B0000;
+  color: white;
+}
+/* line 163, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.dropdown_content span {
+  font-size: 0.7em;
+}
+
+/* line 168, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.pc_user_icon:hover {
+  background: black;
+}
+/* line 170, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.pc_user_icon:hover .dropdown_content {
+  display: block;
+}
+/* line 173, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.pc_user_icon:hover a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 178, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.mobile_user_icon:hover {
+  background: black;
+}
+/* line 180, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.mobile_user_icon:hover .dropdown_content {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+}
+/* line 184, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.mobile_user_icon:hover a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 192, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.titles {
+  color: black;
+  font-family: 'Neuton', serif;
+}
+
+/* line 198, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.content {
+  -webkit-box-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: flex;
+  overflow-y: scroll;
+}
+
+/* line 204, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.footer {
+  height: 50px;
+  background-color: #cdd7d8;
+  font-size: 12px;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  clear: both;
+  bottom: 0;
+  z-index: 500;
+  position: fixed;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+/* line 218, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.footer div {
+  position: fixed;
+}
+
+/* line 222, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.sidebar {
+  background-color: #acfca6;
+  min-width: 20%;
+}
+
+/* line 227, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.content-body {
+  font-family: 'Lato', sans-serif;
+  background-color: #b8f4f9;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+/* line 233, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.darkFooter {
+  background: #292b2c;
+}
+
+/* line 237, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.footerText {
+  color: white;
+  padding-top: 1.2em;
+}
+
+/* line 242, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.centered {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+/* line 251, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+/* line 262, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.searchSubmit {
+  width: auto;
+  margin: 0;
+  padding: 6;
+  height: 100%;
+}
+
+/* line 273, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.main_button {
+  font-family: 'Archivo Narrow', 'Arial', sans-serif;
+  font-size: 1.5rem;
+  background-color: #054b96;
+  color: white;
+  width: 60%;
+  padding: .5rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  display: block;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+/* line 286, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.submenu {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1rem;
+  background-color: lightblue;
+  color: #054b96;
+  padding: 1rem 0.3rem 0.3rem 0.3rem;
+  margin-bottom: 3rem;
+  width: 60%;
+  display: none;
+}
+
+/* line 296, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.submenu ul {
+  /* text-decoration: none; */
+  list-style-type: '—  ';
+}
+
+/* line 300, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.submenu ul li a {
+  text-decoration: none;
+}
+
+/* line 304, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+#nami-logo {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: flex;
+}
+
+/* line 311, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+#menu_container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 100%;
+}
+
+/* line 318, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+img.arrow {
+  max-height: 1.8rem;
+  padding-bottom: 0.25rem;
+  padding-right: 0.3rem;
+}
+
+/* line 329, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.homeButtons {
+  margin: auto;
+  margin-top: 0;
+}
+
+/* line 334, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.buttonText {
+  font-family: 'Neuton', serif;
+  font-size: 30px;
+  margin: auto;
+}
+
+/* line 342, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 347, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.button-container {
+  background-color: #008B8B;
+  text-align: center;
+}
+
+/* line 352, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.form-control {
+  margin: 0 !important;
+}
+
+/* line 356, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button {
+  position: relative;
+  color: #ffffff;
+  width: 90%;
+  text-align: center;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #156FB5;
+  opacity: 0.8;
+  border: 2px solid #156FB5;
+  border-radius: 4px;
+  color: white;
+  display: -webkit-box;
+  display: flex;
+  overflow: hidden;
+  margin: 5%;
+  box-shadow: none;
+}
+/* line 374, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button:before {
+  content: "";
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+          transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  border-radius: 50%;
+  display: block;
+  z-index: -1;
+}
+/* line 383, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+          transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  border: 2px solid #156FB5;
+  background-color: #156FB5;
+  border-radius: 50%;
+  display: block;
+  z-index: -1;
+}
+/* line 398, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button:hover {
+  color: white;
+  border: 2px solid #156FB5;
+  text-decoration: none;
+  opacity: 1;
+  box-shadow: 5px 3px 3px grey;
+}
+/* line 405, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button:hover:before {
+  top: -35%;
+  background-color: #156FB5;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* line 411, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.front_page_button:hover:after {
+  top: -45%;
+  background-color: #156FB5;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* line 419, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button {
+  position: relative;
+  color: white;
+  width: 90%;
+  text-align: center;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #8B0000;
+  opacity: 0.8;
+  border: 2px solid #8B0000;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: flex;
+  overflow: hidden;
+  margin: 5%;
+  box-shadow: none;
+}
+/* line 435, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button:before {
+  content: "";
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+          transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  border-radius: 50%;
+  display: block;
+  color: white;
+  z-index: -1;
+}
+/* line 445, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button:after {
+  content: "";
+  position: absolute;
+  color: #ffffff;
+  left: 55%;
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+          transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #8B0000 !important;
+  border: 2px solid #8B0000;
+  border-radius: 50%;
+  display: block;
+  z-index: -1;
+}
+/* line 461, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button:hover {
+  color: white;
+  border: 2px solid #8B0000;
+  text-decoration: none;
+  opacity: 1;
+  box-shadow: 5px 3px 3px grey;
+}
+/* line 468, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button:hover:before {
+  top: -45%;
+  background-color: #8B0000;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+/* line 474, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+.parent_page_button:hover:after {
+  top: -45%;
+  background-color: #8B0000;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+@media only screen and (max-width: 1000px) {
+  /* line 488, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  .input-group {
+    width: 100%;
+  }
+
+  /* line 492, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  h1.myclass {
+    font-size: 50px;
+    word-wrap: break-word;
+  }
+
+  /* line 496, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  p.long-header {
+    font-size: 50px;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 0;
+    padding: 0 !important;
+    margin-bottom: 10px;
+  }
+
+  /* line 505, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  h2.myclass {
+    font-size: 20px;
+  }
+
+  /* line 513, /mnt/c/code/NAMI/app/assets/stylesheets/page.scss */
+  .pc_user_icon {
+    display: none;
+  }
+}
