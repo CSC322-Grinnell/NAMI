@@ -4,7 +4,7 @@
     <h2>A-Z  &emsp; <a href="/conditions/by_type">By type &#8594;</a></h2>
 
     <% @conditions.each do |c| %>
-        <h3><a href="<%= c.name.gsub(" ", "_") %>"><%= c.name %></a></h3>
+        <h3><a href="/conditions/<%= c.name.gsub(" ", "_") %>"><%= c.name %></a></h3>
     <% end %>
 
 </div>
