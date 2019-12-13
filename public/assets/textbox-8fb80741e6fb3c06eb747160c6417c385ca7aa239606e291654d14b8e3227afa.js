@@ -1,0 +1,1 @@
+function textbox(){document.getElementById("textbox").addEventListener("input",function(){document.getElementById("count").style.color="black";var t,e=this.value;t=""!=e?e.trim().replace(/\s+/g," ").split(" ").length:0,document.getElementById("wordCount").textContent=t,t>250&&(document.getElementById("count").style.color="red")})}
