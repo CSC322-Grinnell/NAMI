@@ -1,35 +1,32 @@
 class SearchController < ApplicationController
-   include CheckboxParams
+  include CheckboxParams
 
-   def search
-      if params[:query].present?
-         @results = Provider.search_name(params[:query])
-      else
-         @results = Provider.all
-      end
-   end
+  def search
+    if params[:query].present?
+      @results = Provider.search(params[:query])
+    else
+      @results = Provider.order(name: :asc)
+    end
+  end
 
-   def go_to_profile
-      @provider = Provider.find(params[:id])
-   end
+  def go_to_profile
+    @provider = Provider.find(params[:id])
+  end
 
-   def advanced_search
-      @search_criteria = search_criteria
-      @waiver_params = waiver_params
-      @insurance_params = insurance_params
-      @address_params = address_params
-   end
+  def advanced_search_result
+    name = params[:name]
+    services = params[:query][:service_ids].select { |e| e != "" }
+    insurances = params[:query][:insurance_ids].select { |e| e != "" }
+    waivers = params[:query][:waiver_ids].select { |e| e != "" }
 
-   def advanced_search_result
-      name = params[:query]
-      service = params[:service_options]
-      insurance = params[:insurance_options]
-      waiver = params[:waiver_options]
-
-      if ([name, service, insurance, waiver].count{ |q| q.blank? }) == 4
-        @results = Provider.order(name: :asc)
-      else
-        @results = Provider.search_all([name, service, insurance, waiver])
-      end
-   end
+    if ([name, services, insurances, waivers].count{ |q| q.blank? }) == 4
+      @results = Provider.order(name: :asc)
+    else
+      @results = Provider.by_services(services)
+                         .by_insurances(insurances)
+                         .by_waivers(waivers)
+                         .search(name)
+                         .uniq
+    end
+  end
 end
