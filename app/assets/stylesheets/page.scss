@@ -22,6 +22,7 @@ $yellow: #FFD700;
 $black: rgb(0, 0, 0);
 
 $nami-blue: rgb(5, 75, 150);
+$lightblue: lightblue;
 
     html{
         font-size: 16px;
@@ -282,11 +283,18 @@ input[type=text] {
     display: block;
     margin-top: 2rem;
     cursor:pointer;
+    text-align: left;
+    border: none;
 }
+
+.main_button:focus {
+    border: 3px black dotted;
+}
+
 .submenu {
     font-family: 'Archivo', sans-serif;
     font-size: 1rem;
-    background-color: lightblue;
+    background-color: $lightblue;
     color: $nami-blue;
     padding: 1rem 0.3rem 0.3rem 0.3rem;
     margin-bottom: 3rem;
@@ -319,6 +327,7 @@ img.arrow {
     max-height: 1.8rem;
     padding-bottom: 0.25rem;
     padding-right: 0.3rem;
+    transform: rotate(0);
 }
 	
 //-------------------- animated buttons ----------    

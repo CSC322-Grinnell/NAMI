@@ -5,17 +5,13 @@
   <head>
     <!-- We import the reset CSS file first, which sets all of the CSS defaults. This will make our page look the same on all browsers --> 
     <!-- Then we import our CSS file, which has all of our settings --> 
-    <head>
-      <link rel="stylesheet" type="text/css" href="reset.scss">
-      <link rel="stylesheet" type="text/css" href="page.scss">
-    </head>
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAMI Database</title><!-- Words in the tab -->
     
     <%= csrf_meta_tags %>
     <%= yield(:button_style) %>
-    <%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- <%= stylesheet_link_tag    'reset', media: 'all', 'data-turbolinks-track': 'reload' %> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"

@@ -1,6 +1,6 @@
 //= require transit.js
 
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
 
     $('.main_button').click(function(){
         $( this ).next().slideToggle();

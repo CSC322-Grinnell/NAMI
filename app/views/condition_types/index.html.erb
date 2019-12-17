@@ -5,7 +5,7 @@
 
     <% @ctypes.each do |ct| %>
         <div class="main_button">
-            <img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false"><%= ct.name %>
+            <%= image_tag("/assets/right-arrow.svg", :class => "arrow", :alt => "=>", "arrow-rotated" => "false" ) %><%= ct.name %>
         </div>
             <div class="submenu"><ul>
                 <% ct.conditions.each do |c| %>

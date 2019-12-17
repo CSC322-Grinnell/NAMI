@@ -10,7 +10,7 @@
       </div>
 
       <div id="menu_container">
-      <div class="main_button"><img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false"> For clients & parents</div>
+      <button class="main_button"><%= image_tag("/assets/right-arrow.svg", :class => "arrow", :alt => "=>", "arrow-rotated" => "false" ) %> For clients & parents</button>
         <div class="submenu">
             <ul>
                 <li><a href="/conditions/by_type">Understanding your diagnosis</a></li>
@@ -19,8 +19,8 @@
                 <li>Submit a provider</li>
             </ul>
         </div>
-    <div class="main_button"><img src="/assets/right-arrow.svg" class="arrow" alt="=>" arrow-rotated="false">
-     For healthcare providers</div>
+    <button class="main_button"><%= image_tag("/assets/right-arrow.svg", :class => "arrow", :alt => "=>", "arrow-rotated" => "false" ) %>
+     For healthcare providers</button>
         <div class="submenu">
             <ul>
                 <li>Log in/Sign up</li>
