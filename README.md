@@ -55,4 +55,4 @@ To deploy to the connected Heroku dashboard, type
 ```git
 git push heroku
 ```
-For the next group, you might want to deploy it to a completely different heroku if that’s easier. 
+For the next group, you might want to deploy it to a completely different heroku if that’s easier. Note: the current deployment is behind this repo!!
