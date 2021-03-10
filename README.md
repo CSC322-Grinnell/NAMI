@@ -49,7 +49,9 @@ rspec spec/requests
 ```
 
 ## Deployment instructions
-The project is deployed to Heroku on https://dashboard.heroku.com/apps/frozen-hollows-51585. It should be connected already to the cloud9 repository. You can view our currently app at https://frozen-hollows-51585.herokuapp.com/ 
+IMPORTANT NOTE: due to limitations on free Heroku accounts, this app is no longer deployed.  If you want to deploy the app, you will need to create a new Heroku account and link to heroku.
+
+The project WAS deployed to Heroku on https://dashboard.heroku.com/apps/frozen-hollows-51585. It should be connected already to the cloud9 repository. You can view our currently app at https://frozen-hollows-51585.herokuapp.com/ 
 
 To deploy to the connected Heroku dashboard, type
 ```git
